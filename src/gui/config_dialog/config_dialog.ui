@@ -88,12 +88,8 @@
       <string>General</string>
      </attribute>
      <widget class="QWidget" name="gridLayoutWidget">
-      <property name="styleSheet">
-        <string notr="true">
-          #gridLayoutWidget {
-            background-color: rgba(128, 128, 128, 55);
-          }
-        </string>
+      <property name="autoFillBackground">
+        <bool>true</bool>
       </property>
       <property name="geometry">
        <rect>
