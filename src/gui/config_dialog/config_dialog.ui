@@ -37,8 +37,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>525</width>
-    <height>440</height>
+    <width>538</width>
+    <height>480</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -49,14 +49,14 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>525</width>
-    <height>440</height>
+    <width>538</width>
+    <height>480</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>525</width>
-    <height>440</height>
+    <width>538</width>
+    <height>480</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -67,15 +67,15 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>525</width>
-     <height>440</height>
+     <width>538</width>
+     <height>480</height>
     </rect>
    </property>
    <widget class="QTabWidget" name="configDialogTabWidget">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
+      <x>16</x>
+      <y>16</y>
       <width>506</width>
       <height>381</height>
      </rect>
@@ -93,13 +93,25 @@
       </property>
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>30</y>
-        <width>441</width>
-        <height>234</height>
+        <x>24</x>
+        <y>44</y>
+        <width>450</width>
+        <height>50</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout">
+    <property name="topMargin">
+     <number>8</number>
+    </property>
+    <property name="leftMargin">
+     <number>8</number>
+    </property>
+    <property name="rightMargin">
+     <number>8</number>
+    </property>
+    <property name="bottomMargin">
+     <number>8</number>
+    </property>
        <item row="0" column="1">
         <widget class="QComboBox" name="inputModeComboBox"/>
        </item>
@@ -236,25 +248,19 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="horizontalLayoutWidget">
+        <widget class="QLabel" name="basicsLabel">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>10</y>
-        <width>461</width>
-        <height>21</height>
+        <x>24</x>
+        <y>16</y>
+        <width>200</width>
+        <height>20</height>
        </rect>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QLabel" name="basicsLabel">
          <property name="text">
           <string>Basics</string>
          </property>
         </widget>
-       </item>
-      </layout>
-     </widget>
      <widget class="QWidget" name="horizontalLayoutWidget_8">
       <property name="geometry">
        <rect>
@@ -1715,32 +1721,20 @@
    <widget class="QWidget" name="horizontalLayoutWidget_12">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>400</y>
+      <x>16</x>
+      <y>436</y>
       <width>506</width>
-      <height>35</height>
+      <height>36</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QPushButton" name="resetToDefaultsButton">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>110</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>200</width>
-         <height>16777215</height>
-        </size>
        </property>
        <property name="text">
         <string>Reset to defaults</string>
