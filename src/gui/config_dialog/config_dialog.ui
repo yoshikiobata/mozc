@@ -87,14 +87,32 @@
      <attribute name="title">
       <string>General</string>
      </attribute>
+     <widget class="QFrame">
+      <property name="geometry">
+       <rect>
+        <x>24</x>
+        <y>44</y>
+        <width>454</width>
+        <height>246</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+        <enum>QFrame::Panel</enum>
+      </property>
+      <property name="frameShadow">
+        <enum>QFrame::Sunken</enum>
+      </property>
+      <property name="lineWidth">
+        <number>1</number>
+      </property>
      <widget class="QWidget" name="gridLayoutWidget">
       <property name="autoFillBackground">
         <bool>true</bool>
       </property>
       <property name="geometry">
        <rect>
-        <x>24</x>
-        <y>44</y>
+        <x>0</x>
+        <y>0</y>
         <width>454</width>
         <height>246</height>
        </rect>
@@ -199,6 +217,7 @@
        </item>
       </layout>
      </widget>
+     </widget>
      <widget class="QFrame">
       <property name="geometry">
        <rect>
@@ -215,7 +234,7 @@
         <enum>QFrame::Sunken</enum>
       </property>
       <property name="lineWidth">
-        <number>1</number>
+        <number>2</number>
       </property>
      <widget class="QWidget" name="gridLayoutWidget_2">
       <property name="geometry">
