@@ -776,7 +776,6 @@ void ConfigDialog::SelectSuggestionSetting(int state) {
 
 void ConfigDialog::Apply() {
   Update();
-  DisableApplyButton();
 }
 
 void ConfigDialog::ResetToDefaults() {
