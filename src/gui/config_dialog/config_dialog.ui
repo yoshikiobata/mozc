@@ -37,8 +37,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>525</width>
-    <height>440</height>
+    <width>738</width>
+    <height>534</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -49,14 +49,14 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>525</width>
-    <height>440</height>
+    <width>738</width>
+    <height>534</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>525</width>
-    <height>440</height>
+    <width>738</width>
+    <height>534</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -65,19 +65,19 @@
   <widget class="QWidget" name="centralwidget" native="true">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>200</x>
      <y>0</y>
-     <width>525</width>
-     <height>440</height>
+     <width>538</width>
+     <height>534</height>
     </rect>
    </property>
    <widget class="QTabWidget" name="configDialogTabWidget">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
+      <x>216</x>
+      <y>16</y>
       <width>506</width>
-      <height>381</height>
+      <height>470</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -90,13 +90,28 @@
      <widget class="QWidget" name="gridLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>30</y>
-        <width>441</width>
-        <height>234</height>
+        <x>24</x>
+        <y>44</y>
+        <width>454</width>
+        <height>246</height>
        </rect>
       </property>
-      <layout class="QGridLayout" name="gridLayout">
+      <property name="autoFillBackground">
+        <bool>true</bool>
+      </property>
+      <layout class="QGridLayout" name="gridLayout" columnstretch="2,1">
+    <property name="topMargin">
+     <number>8</number>
+    </property>
+    <property name="leftMargin">
+     <number>12</number>
+    </property>
+    <property name="rightMargin">
+     <number>12</number>
+    </property>
+    <property name="bottomMargin">
+     <number>8</number>
+    </property>
        <item row="0" column="1">
         <widget class="QComboBox" name="inputModeComboBox"/>
        </item>
@@ -187,24 +202,56 @@
      <widget class="QWidget" name="gridLayoutWidget_2">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>280</y>
-        <width>441</width>
-        <height>66</height>
+        <x>24</x>
+        <y>334</y>
+        <width>454</width>
+        <height>84</height>
        </rect>
       </property>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="1">
-        <widget class="QComboBox" name="keymapSettingComboBox"/>
-       </item>
+      <property name="autoFillBackground">
+        <bool>true</bool>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2" columnstretch="2,1">
+    <property name="topMargin">
+     <number>8</number>
+    </property>
+    <property name="leftMargin">
+     <number>12</number>
+    </property>
+    <property name="rightMargin">
+     <number>12</number>
+    </property>
+    <property name="bottomMargin">
+     <number>8</number>
+    </property>
        <item row="0" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
         <widget class="QLabel" name="keymapSettingLabel">
          <property name="text">
           <string>Keymap style</string>
          </property>
         </widget>
+     </item>
+     <item>
+      <spacer>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+        <widget class="QComboBox" name="keymapSettingComboBox"/>
+     </item>
+</layout>
        </item>
-       <item row="0" column="2">
+       <item row="0" column="1">
         <widget class="QPushButton" name="editKeymapButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -217,13 +264,6 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="2">
-        <widget class="QPushButton" name="editRomanTableButton">
-         <property name="text">
-          <string>Customize...</string>
-         </property>
-        </widget>
-       </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_11">
          <property name="text">
@@ -231,72 +271,51 @@
          </property>
         </widget>
        </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="editRomanTableButton">
+         <property name="text">
+          <string>Customize...</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="horizontalLayoutWidget">
+        <widget class="QLabel" name="basicsLabel">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>10</y>
-        <width>461</width>
-        <height>21</height>
+        <x>24</x>
+        <y>16</y>
+        <width>200</width>
+        <height>20</height>
        </rect>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QLabel" name="basicsLabel">
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
          <property name="text">
           <string>Basics</string>
          </property>
         </widget>
-       </item>
-       <item>
-        <widget class="Line" name="basicsLine">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="horizontalLayoutWidget_8">
+        <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>260</y>
-        <width>461</width>
+        <x>24</x>
+        <y>306</y>
+        <width>200</width>
         <height>20</height>
        </rect>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_11">
-       <item>
-        <widget class="QLabel" name="label_4">
+         <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+         </property>
          <property name="text">
           <string>Keymap</string>
          </property>
         </widget>
-       </item>
-       <item>
-        <widget class="Line" name="line_3">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
     </widget>
     <widget class="QWidget" name="dictionaryTab">
      <attribute name="title">
@@ -609,6 +628,9 @@
       </layout>
      </widget>
      <widget class="QWidget" name="gridLayoutWidget_8">
+      <property name="autoFillBackground">
+        <bool>true</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -1725,32 +1747,20 @@
    <widget class="QWidget" name="horizontalLayoutWidget_12">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>400</y>
+      <x>216</x>
+      <y>494</y>
       <width>506</width>
-      <height>35</height>
+      <height>36</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QPushButton" name="resetToDefaultsButton">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>110</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>200</width>
-         <height>16777215</height>
-        </size>
        </property>
        <property name="text">
         <string>Reset to defaults</string>
@@ -1771,15 +1781,15 @@
       </spacer>
      </item>
      <item>
-      <widget class="QDialogButtonBox" name="configDialogButtonBox">
+      <widget class="QPushButton" name="applyButton">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <property name="standardButtons">
-        <set>QDialogButtonBox::Apply|QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+       <property name="text">
+        <string>Apply</string>
        </property>
       </widget>
      </item>
