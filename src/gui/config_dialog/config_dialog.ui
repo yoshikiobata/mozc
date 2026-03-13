@@ -99,19 +99,16 @@
       <property name="autoFillBackground">
         <bool>true</bool>
       </property>
+     <widget class="QWidget" name="gridLayoutWidgetinner">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>8</y>
+        <width>430</width>
+        <height>230</height>
+       </rect>
+      </property>
       <layout class="QGridLayout" name="gridLayout" columnstretch="2,1">
-    <property name="topMargin">
-     <number>8</number>
-    </property>
-    <property name="leftMargin">
-     <number>12</number>
-    </property>
-    <property name="rightMargin">
-     <number>12</number>
-    </property>
-    <property name="bottomMargin">
-     <number>8</number>
-    </property>
        <item row="0" column="1">
         <widget class="QComboBox" name="inputModeComboBox"/>
        </item>
@@ -199,6 +196,7 @@
        </item>
       </layout>
      </widget>
+     </widget>
      <widget class="QWidget" name="gridLayoutWidget_2">
       <property name="geometry">
        <rect>
@@ -211,7 +209,7 @@
       <property name="autoFillBackground">
         <bool>true</bool>
       </property>
-      <layout class="QGridLayout" name="gridLayout_2" columnstretch="2,1">
+      <layout class="QGridLayout" name="gridLayout_2" columnstretch="1,1,1">
     <property name="topMargin">
      <number>8</number>
     </property>
@@ -225,33 +223,16 @@
      <number>8</number>
     </property>
        <item row="0" column="0">
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item>
         <widget class="QLabel" name="keymapSettingLabel">
          <property name="text">
           <string>Keymap style</string>
          </property>
         </widget>
      </item>
-     <item>
-      <spacer>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-        <widget class="QComboBox" name="keymapSettingComboBox"/>
-     </item>
-</layout>
-       </item>
        <item row="0" column="1">
+        <widget class="QComboBox" name="keymapSettingComboBox"/>
+       </item>
+       <item row="0" column="2">
         <widget class="QPushButton" name="editKeymapButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -271,7 +252,7 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="1">
+       <item row="1" column="2">
         <widget class="QPushButton" name="editRomanTableButton">
          <property name="text">
           <string>Customize...</string>
@@ -324,20 +305,18 @@
      <widget class="QWidget" name="gridLayoutWidget_5">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>24</x>
         <y>30</y>
         <width>441</width>
         <height>71</height>
        </rect>
       </property>
-      <layout class="QGridLayout" name="gridLayout_5">
-       <item row="1" column="1">
         <widget class="QPushButton" name="clearUserHistoryButton">
          <property name="text">
           <string>Clear personalization data</string>
          </property>
         </widget>
-       </item>
+      <layout class="QGridLayout" name="gridLayout_5" columnstretch="2,1">
        <item row="0" column="0">
         <widget class="QLabel" name="label_7">
          <property name="text">
