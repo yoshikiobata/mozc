@@ -90,13 +90,28 @@
      <widget class="QWidget" name="gridLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>30</y>
-        <width>441</width>
-        <height>234</height>
+        <x>24</x>
+        <y>44</y>
+        <width>454</width>
+        <height>246</height>
        </rect>
       </property>
-      <layout class="QGridLayout" name="gridLayout">
+      <property name="autoFillBackground">
+        <bool>true</bool>
+      </property>
+      <layout class="QGridLayout" name="gridLayout" columnstretch="2,1">
+    <property name="topMargin">
+     <number>8</number>
+    </property>
+    <property name="leftMargin">
+     <number>12</number>
+    </property>
+    <property name="rightMargin">
+     <number>12</number>
+    </property>
+    <property name="bottomMargin">
+     <number>8</number>
+    </property>
        <item row="0" column="1">
         <widget class="QComboBox" name="inputModeComboBox"/>
        </item>
@@ -187,24 +202,43 @@
      <widget class="QWidget" name="gridLayoutWidget_2">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>280</y>
-        <width>441</width>
-        <height>66</height>
+        <x>24</x>
+        <y>334</y>
+        <width>454</width>
+        <height>84</height>
        </rect>
       </property>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="1">
-        <widget class="QComboBox" name="keymapSettingComboBox"/>
-       </item>
-       <item row="0" column="0">
+      <property name="autoFillBackground">
+        <bool>true</bool>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2" columnstretch="2,1">
+    <property name="verticalSpacing">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>8</number>
+    </property>
+    <property name="leftMargin">
+     <number>12</number>
+    </property>
+    <property name="rightMargin">
+     <number>12</number>
+    </property>
+    <property name="bottomMargin">
+     <number>8</number>
+    </property>
+
+     <item row="0" column="0">
         <widget class="QLabel" name="keymapSettingLabel">
          <property name="text">
           <string>Keymap style</string>
          </property>
         </widget>
-       </item>
-       <item row="0" column="2">
+    </item>
+     <item row="0" column="1">
+        <widget class="QComboBox" name="keymapSettingComboBox"/>
+    </item>
+     <item row="1" column="1">
         <widget class="QPushButton" name="editKeymapButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -217,86 +251,61 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="2">
+
+     <item row="2" column="0">
+         <widget class="QLabel" name="label_11">
+          <property name="text">
+           <string>Romaji table</string>
+          </property>
+         </widget>
+    </item>
+
+     <item row="2" column="1">
         <widget class="QPushButton" name="editRomanTableButton">
          <property name="text">
           <string>Customize...</string>
          </property>
         </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_11">
-         <property name="text">
-          <string>Romaji table</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+    </item>
+</layout>
      </widget>
-     <widget class="QWidget" name="horizontalLayoutWidget">
+
+        <widget class="QLabel" name="basicsLabel">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>10</y>
-        <width>461</width>
-        <height>21</height>
+        <x>24</x>
+        <y>16</y>
+        <width>200</width>
+        <height>20</height>
        </rect>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QLabel" name="basicsLabel">
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
          <property name="text">
           <string>Basics</string>
          </property>
         </widget>
-       </item>
-       <item>
-        <widget class="Line" name="basicsLine">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="horizontalLayoutWidget_8">
+        <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>260</y>
-        <width>461</width>
+        <x>24</x>
+        <y>306</y>
+        <width>200</width>
         <height>20</height>
        </rect>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_11">
-       <item>
-        <widget class="QLabel" name="label_4">
+         <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+         </property>
          <property name="text">
           <string>Keymap</string>
          </property>
         </widget>
-       </item>
-       <item>
-        <widget class="Line" name="line_3">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
     </widget>
     <widget class="QWidget" name="dictionaryTab">
      <attribute name="title">
@@ -609,6 +618,9 @@
       </layout>
      </widget>
      <widget class="QWidget" name="gridLayoutWidget_8">
+      <property name="autoFillBackground">
+        <bool>true</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>30</x>
