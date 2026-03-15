@@ -379,7 +379,20 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QComboBox" name="historyLearningLevelComboBox"/>
+        <widget class="QComboBox" name="historyLearningLevelComboBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>147</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -415,7 +428,7 @@
        <item row="0" column="1">
         <widget class="QPushButton" name="editUserDictionaryButton">
          <property name="text">
-          <string>Edit ...</string>
+          <string>Edit...</string>
          </property>
         </widget>
        </item>
