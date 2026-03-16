@@ -41,6 +41,7 @@ jobs:
         working-directory: ./src
         run: |
           python3 build_tools/build_qt.py --release --confirm_license --macos_cpus=arm64
+          ls ${PWD}/third_party/qt
           echo "MOZC_QT_PATH=${PWD}/third_party/qt" >> $GITHUB_ENV
 
       - name: bazel build
