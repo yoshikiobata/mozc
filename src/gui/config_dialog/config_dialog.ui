@@ -62,23 +62,30 @@
       <string>[ProductName] Settings</string>
     </property>
     <widget class="QWidget" name="centralwidget" native="true">
-      <property name="geometry">
-        <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>538</width>
-          <height>578</height>
-        </rect>
-      </property>
-      <widget class="QTabWidget" name="configDialogTabWidget">
         <property name="geometry">
           <rect>
-            <x>16</x>
-            <y>16</y>
-            <width>506</width>
-            <height>514</height>
+            <width>538</width>
+            <height>578</height>
           </rect>
         </property>
+          <layout class="QVBoxLayout" name="centrallayout">
+            <property name="spacing">
+              <number>12</number>
+            </property>
+            <property name="leftMargin">
+              <number>16</number>
+            </property>
+            <property name="topMargin">
+              <number>16</number>
+            </property>
+            <property name="rightMargin">
+              <number>16</number>
+            </property>
+            <property name="bottomMargin">
+              <number>16</number>
+            </property>
+        <item>
+      <widget class="QTabWidget" name="configDialogTabWidget">
         <property name="currentIndex">
           <number>0</number>
         </property>
@@ -120,6 +127,12 @@
                         <bold>true</bold>
                       </font>
                     </property>
+                      <property name="minimumSize">
+                        <size>
+                          <width>0</width>
+                          <height>20</height>
+                        </size>
+                      </property>
                     <property name="text">
                       <string>Basics</string>
                     </property>
@@ -249,6 +262,12 @@
                 </property>
                 <item>
                   <widget class="QLabel" name="label_4">
+                      <property name="minimumSize">
+                        <size>
+                          <width>0</width>
+                          <height>20</height>
+                        </size>
+                      </property>
                     <property name="font">
                       <font>
                         <bold>true</bold>
@@ -402,6 +421,12 @@
                         <bold>true</bold>
                       </font>
                     </property>
+                      <property name="minimumSize">
+                        <size>
+                          <width>0</width>
+                          <height>20</height>
+                        </size>
+                      </property>
                     <property name="text">
                       <string>Personalization</string>
                     </property>
@@ -485,6 +510,12 @@
                         <bold>true</bold>
                       </font>
                     </property>
+                      <property name="minimumSize">
+                        <size>
+                          <width>0</width>
+                          <height>20</height>
+                        </size>
+                      </property>
                     <property name="text">
                       <string>User dictionary</string>
                     </property>
@@ -560,6 +591,12 @@
                         <bold>true</bold>
                       </font>
                     </property>
+                      <property name="minimumSize">
+                        <size>
+                          <width>0</width>
+                          <height>20</height>
+                        </size>
+                      </property>
                     <property name="text">
                       <string>Usage dictionary</string>
                     </property>
@@ -623,6 +660,12 @@
                         <bold>true</bold>
                       </font>
                     </property>
+                      <property name="minimumSize">
+                        <size>
+                          <width>0</width>
+                          <height>20</height>
+                        </size>
+                      </property>
                     <property name="text">
                       <string>Special conversions</string>
                     </property>
@@ -1801,11 +1844,11 @@
           </widget>
         </widget>
       </widget>
+          </item>
+        <item>
       <widget class="QWidget" name="horizontalLayoutWidget_12">
         <property name="geometry">
           <rect>
-            <x>16</x>
-            <y>538</y>
             <width>506</width>
             <height>36</height>
           </rect>
@@ -1866,6 +1909,8 @@
           </item>
         </layout>
       </widget>
+          </item>
+    </layout>
     </widget>
   </widget>
   <customwidgets>
