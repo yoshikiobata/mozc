@@ -37,7 +37,7 @@
         <x>0</x>
         <y>0</y>
         <width>538</width>
-        <height>546</height>
+        <height>578</height>
       </rect>
     </property>
     <property name="sizePolicy">
@@ -49,13 +49,13 @@
     <property name="minimumSize">
       <size>
         <width>538</width>
-        <height>546</height>
+        <height>578</height>
       </size>
     </property>
     <property name="maximumSize">
       <size>
         <width>538</width>
-        <height>546</height>
+        <height>578</height>
       </size>
     </property>
     <property name="windowTitle">
@@ -67,7 +67,7 @@
           <x>0</x>
           <y>0</y>
           <width>538</width>
-          <height>546</height>
+          <height>578</height>
         </rect>
       </property>
       <widget class="QTabWidget" name="configDialogTabWidget">
@@ -76,7 +76,7 @@
             <x>16</x>
             <y>16</y>
             <width>506</width>
-            <height>482</height>
+            <height>514</height>
           </rect>
         </property>
         <property name="currentIndex">
@@ -374,347 +374,357 @@
           <attribute name="title">
             <string>Dictionary</string>
           </attribute>
-          <widget class="QWidget" name="gridLayoutWidget_5">
-            <property name="geometry">
-              <rect>
-                <x>30</x>
-                <y>30</y>
-                <width>441</width>
-                <height>71</height>
-              </rect>
+          <layout class="QVBoxLayout" name="rootDictionary">
+            <property name="spacing">
+              <number>12</number>
             </property>
-            <layout class="QGridLayout" name="gridLayout_5">
-              <item row="1" column="1">
-                <widget class="QPushButton" name="clearUserHistoryButton">
-                  <property name="text">
-                    <string>Clear personalization data</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="0" column="0">
-                <widget class="QLabel" name="label_7">
-                  <property name="text">
-                    <string>Adjust conversion based on previous input</string>
-                  </property>
-                  <property name="wordWrap">
-                    <bool>true</bool>
-                  </property>
-                </widget>
-              </item>
-              <item row="0" column="1">
-                <widget class="QComboBox" name="historyLearningLevelComboBox">
-                  <property name="minimumSize">
-                    <size>
-                      <width>150</width>
-                      <height>0</height>
-                    </size>
-                  </property>
-                </widget>
-              </item>
-              <item row="1" column="0">
-                <spacer name="horizontalSpacer_2">
-                  <property name="orientation">
-                    <enum>Qt::Orientation::Horizontal</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                    <size>
-                      <width>40</width>
-                      <height>20</height>
-                    </size>
-                  </property>
-                </spacer>
-              </item>
-            </layout>
-          </widget>
-          <widget class="QWidget" name="gridLayoutWidget_6">
-            <property name="geometry">
-              <rect>
-                <x>30</x>
-                <y>120</y>
-                <width>441</width>
-                <height>32</height>
-              </rect>
+            <property name="leftMargin">
+              <number>24</number>
             </property>
-            <layout class="QGridLayout" name="gridLayout_6">
-              <item row="0" column="1">
-                <spacer name="horizontalSpacer">
-                  <property name="orientation">
-                    <enum>Qt::Orientation::Horizontal</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                    <size>
-                      <width>40</width>
-                      <height>20</height>
-                    </size>
-                  </property>
-                </spacer>
-              </item>
-              <item row="0" column="2">
-                <widget class="QPushButton" name="editUserDictionaryButton">
-                  <property name="sizePolicy">
-                    <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                    </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                    <size>
-                      <width>150</width>
-                      <height>0</height>
-                    </size>
-                  </property>
-                  <property name="text">
-                    <string>Edit user dictionary...</string>
-                  </property>
-                </widget>
-              </item>
-            </layout>
-          </widget>
-          <widget class="QWidget" name="gridLayoutWidget_3">
-            <property name="geometry">
-              <rect>
-                <x>30</x>
-                <y>220</y>
-                <width>456</width>
-                <height>121</height>
-              </rect>
+            <property name="topMargin">
+              <number>16</number>
             </property>
-            <layout class="QGridLayout" name="gridLayout_3">
-              <item row="0" column="0">
-                <widget class="QCheckBox" name="singleKanjiConversionCheckBox">
-                  <property name="text">
-                    <string>Single kanji conversion</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="1" column="0">
-                <widget class="QCheckBox" name="symbolConversionCheckBox">
-                  <property name="text">
-                    <string>Symbol conversion</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="2" column="0">
-                <widget class="QCheckBox" name="emoticonConversionCheckBox">
-                  <property name="text">
-                    <string>Emoticon conversion</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="3" column="0">
-                <widget class="QCheckBox" name="t13nConversionCheckBox">
-                  <property name="text">
-                    <string>Katakana to English conversion</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="4" column="0">
-                <widget class="QCheckBox" name="zipcodeConversionCheckBox">
-                  <property name="text">
-                    <string>Postal code conversion</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="4" column="1">
-                <widget class="QCheckBox" name="spellingCorrectionCheckBox">
-                  <property name="text">
-                    <string>Spelling correction</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="3" column="1">
-                <widget class="QCheckBox" name="calculatorCheckBox">
-                  <property name="text">
-                    <string>Calculator</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="2" column="1">
-                <widget class="QCheckBox" name="numberConversionCheckBox">
-                  <property name="text">
-                    <string>Special number conversion</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="1" column="1">
-                <widget class="QCheckBox" name="dateConversionCheckBox">
-                  <property name="text">
-                    <string>Date/time conversion</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="0" column="1">
-                <widget class="QCheckBox" name="emojiConversionCheckBox">
-                  <property name="text">
-                    <string>Emoji conversion</string>
-                  </property>
-                </widget>
-              </item>
-            </layout>
-          </widget>
-          <widget class="QWidget" name="horizontalLayoutWidget_5">
-            <property name="geometry">
-              <rect>
-                <x>20</x>
-                <y>10</y>
-                <width>461</width>
-                <height>21</height>
-              </rect>
+            <property name="rightMargin">
+              <number>24</number>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_8">
-              <item>
-                <widget class="QLabel" name="label">
-                  <property name="text">
-                    <string>Personalization</string>
-                  </property>
-                </widget>
-              </item>
-              <item>
-                <widget class="Line" name="line">
-                  <property name="sizePolicy">
-                    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                    </sizepolicy>
-                  </property>
-                  <property name="orientation">
-                    <enum>Qt::Orientation::Horizontal</enum>
-                  </property>
-                </widget>
-              </item>
-            </layout>
-          </widget>
-          <widget class="QWidget" name="horizontalLayoutWidget_11">
-            <property name="geometry">
-              <rect>
-                <x>20</x>
-                <y>100</y>
-                <width>461</width>
-                <height>20</height>
-              </rect>
+            <property name="bottomMargin">
+              <number>16</number>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_14">
-              <item>
-                <widget class="QLabel" name="label_6">
-                  <property name="text">
-                    <string>User dictionary</string>
+            <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_8">
+                <property name="topMargin">
+                  <number>4</number>
+                </property>
+                <item>
+                  <widget class="QLabel" name="label">
+                    <property name="font">
+                      <font>
+                        <bold>true</bold>
+                      </font>
+                    </property>
+                    <property name="text">
+                      <string>Personalization</string>
+                    </property>
+                  </widget>
+                </item>
+              </layout>
+            </item>
+            <item>
+              <widget class="QWidget" name="gridLayoutWidget_5">
+                <property name="autoFillBackground">
+                  <bool>true</bool>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_5">
+                  <property name="leftMargin">
+                    <number>12</number>
                   </property>
-                </widget>
-              </item>
-              <item>
-                <widget class="Line" name="line_6">
-                  <property name="sizePolicy">
-                    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                    </sizepolicy>
+                  <property name="topMargin">
+                    <number>12</number>
                   </property>
-                  <property name="orientation">
-                    <enum>Qt::Orientation::Horizontal</enum>
+                  <property name="rightMargin">
+                    <number>12</number>
                   </property>
-                </widget>
-              </item>
-            </layout>
-          </widget>
-          <widget class="QWidget" name="horizontalLayoutWidget_7">
-            <property name="geometry">
-              <rect>
-                <x>20</x>
-                <y>200</y>
-                <width>461</width>
-                <height>21</height>
-              </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_22">
-              <item>
-                <widget class="QLabel" name="specialConversionLabel">
-                  <property name="text">
-                    <string>Special conversions</string>
+                  <property name="bottomMargin">
+                    <number>12</number>
                   </property>
-                </widget>
-              </item>
-              <item>
-                <widget class="Line" name="specialConversionLine">
-                  <property name="sizePolicy">
-                    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                    </sizepolicy>
+                  <property name="verticalSpacing">
+                    <number>12</number>
                   </property>
-                  <property name="orientation">
-                    <enum>Qt::Orientation::Horizontal</enum>
+                  <item row="1" column="1">
+                    <widget class="QPushButton" name="clearUserHistoryButton">
+                      <property name="text">
+                        <string>Clear personalization data</string>
+                      </property>
+                    </widget>
+                  </item>
+                  <item row="0" column="0">
+                    <widget class="QLabel" name="label_7">
+                      <property name="text">
+                        <string>Adjust conversion based on previous input</string>
+                      </property>
+                      <property name="wordWrap">
+                        <bool>true</bool>
+                      </property>
+                    </widget>
+                  </item>
+                  <item row="0" column="1">
+                    <widget class="QComboBox" name="historyLearningLevelComboBox">
+                      <property name="minimumSize">
+                        <size>
+                          <width>150</width>
+                          <height>0</height>
+                        </size>
+                      </property>
+                    </widget>
+                  </item>
+                  <item row="1" column="0">
+                    <spacer name="horizontalSpacer_2">
+                      <property name="orientation">
+                        <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                        <size>
+                          <width>40</width>
+                          <height>20</height>
+                        </size>
+                      </property>
+                    </spacer>
+                  </item>
+                </layout>
+              </widget>
+            </item>
+            <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_14">
+                <property name="topMargin">
+                  <number>4</number>
+                </property>
+                <item>
+                  <widget class="QLabel" name="label_6">
+                    <property name="font">
+                      <font>
+                        <bold>true</bold>
+                      </font>
+                    </property>
+                    <property name="text">
+                      <string>User dictionary</string>
+                    </property>
+                  </widget>
+                </item>
+              </layout>
+            </item>
+            <item>
+              <widget class="QWidget" name="gridLayoutWidget_6">
+                <property name="autoFillBackground">
+                  <bool>true</bool>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_6">
+                  <property name="leftMargin">
+                    <number>12</number>
                   </property>
-                </widget>
-              </item>
-            </layout>
-          </widget>
-          <widget class="QWidget" name="horizontalLayoutWidget_21">
-            <property name="geometry">
-              <rect>
-                <x>20</x>
-                <y>150</y>
-                <width>461</width>
-                <height>20</height>
-              </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_24">
-              <item>
-                <widget class="QLabel" name="label_9">
-                  <property name="text">
-                    <string>Usage dictionary</string>
+                  <property name="topMargin">
+                    <number>12</number>
                   </property>
-                </widget>
-              </item>
-              <item>
-                <widget class="Line" name="line_9">
-                  <property name="sizePolicy">
-                    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                    </sizepolicy>
+                  <property name="rightMargin">
+                    <number>12</number>
                   </property>
-                  <property name="orientation">
-                    <enum>Qt::Orientation::Horizontal</enum>
+                  <property name="bottomMargin">
+                    <number>12</number>
                   </property>
-                </widget>
-              </item>
-            </layout>
-          </widget>
-          <widget class="QWidget" name="gridLayoutWidget_8">
-            <property name="geometry">
-              <rect>
-                <x>30</x>
-                <y>170</y>
-                <width>441</width>
-                <height>32</height>
-              </rect>
-            </property>
-            <property name="autoFillBackground">
-              <bool>true</bool>
-            </property>
-            <layout class="QGridLayout" name="gridLayout_12">
-              <item row="0" column="0">
-                <widget class="QCheckBox" name="localUsageDictionaryCheckBox">
-                  <property name="text">
-                    <string>Homonym dictionary</string>
+                  <property name="verticalSpacing">
+                    <number>12</number>
                   </property>
-                </widget>
-              </item>
-              <item row="0" column="1">
-                <spacer name="horizontalSpacer_5">
-                  <property name="orientation">
-                    <enum>Qt::Orientation::Horizontal</enum>
+                  <item row="0" column="1">
+                    <spacer name="horizontalSpacer">
+                      <property name="orientation">
+                        <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                        <size>
+                          <width>40</width>
+                          <height>20</height>
+                        </size>
+                      </property>
+                    </spacer>
+                  </item>
+                  <item row="0" column="2">
+                    <widget class="QPushButton" name="editUserDictionaryButton">
+                      <property name="sizePolicy">
+                        <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                        </sizepolicy>
+                      </property>
+                      <property name="minimumSize">
+                        <size>
+                          <width>150</width>
+                          <height>0</height>
+                        </size>
+                      </property>
+                      <property name="text">
+                        <string>Edit user dictionary...</string>
+                      </property>
+                    </widget>
+                  </item>
+                </layout>
+              </widget>
+            </item>
+            <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_24">
+                <property name="topMargin">
+                  <number>4</number>
+                </property>
+                <item>
+                  <widget class="QLabel" name="label_9">
+                    <property name="font">
+                      <font>
+                        <bold>true</bold>
+                      </font>
+                    </property>
+                    <property name="text">
+                      <string>Usage dictionary</string>
+                    </property>
+                  </widget>
+                </item>
+              </layout>
+            </item>
+            <item>
+              <widget class="QWidget" name="gridLayoutWidget_8">
+                <property name="autoFillBackground">
+                  <bool>true</bool>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_12">
+                  <property name="leftMargin">
+                    <number>12</number>
                   </property>
-                  <property name="sizeHint" stdset="0">
-                    <size>
-                      <width>20</width>
-                      <height>20</height>
-                    </size>
+                  <property name="topMargin">
+                    <number>12</number>
                   </property>
-                </spacer>
-              </item>
-            </layout>
-          </widget>
+                  <property name="rightMargin">
+                    <number>12</number>
+                  </property>
+                  <property name="bottomMargin">
+                    <number>12</number>
+                  </property>
+                  <property name="verticalSpacing">
+                    <number>12</number>
+                  </property>
+                  <item row="0" column="0">
+                    <widget class="QCheckBox" name="localUsageDictionaryCheckBox">
+                      <property name="text">
+                        <string>Homonym dictionary</string>
+                      </property>
+                    </widget>
+                  </item>
+                  <item row="0" column="1">
+                    <spacer name="horizontalSpacer_5">
+                      <property name="orientation">
+                        <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                        <size>
+                          <width>20</width>
+                          <height>20</height>
+                        </size>
+                      </property>
+                    </spacer>
+                  </item>
+                </layout>
+              </widget>
+            </item>
+            <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_22">
+                <property name="topMargin">
+                  <number>4</number>
+                </property>
+                <item>
+                  <widget class="QLabel" name="specialConversionLabel">
+                    <property name="font">
+                      <font>
+                        <bold>true</bold>
+                      </font>
+                    </property>
+                    <property name="text">
+                      <string>Special conversions</string>
+                    </property>
+                  </widget>
+                </item>
+              </layout>
+            </item>
+            <item>
+              <widget class="QWidget" name="gridLayoutWidget_3">
+                <property name="autoFillBackground">
+                  <bool>true</bool>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_3">
+                  <property name="leftMargin">
+                    <number>12</number>
+                  </property>
+                  <property name="topMargin">
+                    <number>12</number>
+                  </property>
+                  <property name="rightMargin">
+                    <number>12</number>
+                  </property>
+                  <property name="bottomMargin">
+                    <number>12</number>
+                  </property>
+                  <property name="verticalSpacing">
+                    <number>12</number>
+                  </property>
+                  <item row="0" column="0">
+                    <widget class="QCheckBox" name="singleKanjiConversionCheckBox">
+                      <property name="text">
+                        <string>Single kanji conversion</string>
+                      </property>
+                    </widget>
+                  </item>
+                  <item row="1" column="0">
+                    <widget class="QCheckBox" name="symbolConversionCheckBox">
+                      <property name="text">
+                        <string>Symbol conversion</string>
+                      </property>
+                    </widget>
+                  </item>
+                  <item row="2" column="0">
+                    <widget class="QCheckBox" name="emoticonConversionCheckBox">
+                      <property name="text">
+                        <string>Emoticon conversion</string>
+                      </property>
+                    </widget>
+                  </item>
+                  <item row="3" column="0">
+                    <widget class="QCheckBox" name="t13nConversionCheckBox">
+                      <property name="text">
+                        <string>Katakana to English conversion</string>
+                      </property>
+                    </widget>
+                  </item>
+                  <item row="4" column="0">
+                    <widget class="QCheckBox" name="zipcodeConversionCheckBox">
+                      <property name="text">
+                        <string>Postal code conversion</string>
+                      </property>
+                    </widget>
+                  </item>
+                  <item row="4" column="1">
+                    <widget class="QCheckBox" name="spellingCorrectionCheckBox">
+                      <property name="text">
+                        <string>Spelling correction</string>
+                      </property>
+                    </widget>
+                  </item>
+                  <item row="3" column="1">
+                    <widget class="QCheckBox" name="calculatorCheckBox">
+                      <property name="text">
+                        <string>Calculator</string>
+                      </property>
+                    </widget>
+                  </item>
+                  <item row="2" column="1">
+                    <widget class="QCheckBox" name="numberConversionCheckBox">
+                      <property name="text">
+                        <string>Special number conversion</string>
+                      </property>
+                    </widget>
+                  </item>
+                  <item row="1" column="1">
+                    <widget class="QCheckBox" name="dateConversionCheckBox">
+                      <property name="text">
+                        <string>Date/time conversion</string>
+                      </property>
+                    </widget>
+                  </item>
+                  <item row="0" column="1">
+                    <widget class="QCheckBox" name="emojiConversionCheckBox">
+                      <property name="text">
+                        <string>Emoji conversion</string>
+                      </property>
+                    </widget>
+                  </item>
+                </layout>
+              </widget>
+            </item>
+          </layout>
         </widget>
         <widget class="QWidget" name="inputsupport_tab">
           <attribute name="title">
@@ -1795,7 +1805,7 @@
         <property name="geometry">
           <rect>
             <x>16</x>
-            <y>506</y>
+            <y>538</y>
             <width>506</width>
             <height>36</height>
           </rect>
