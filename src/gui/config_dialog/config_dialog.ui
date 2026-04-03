@@ -954,115 +954,68 @@
           <attribute name="title">
             <string>Suggest</string>
           </attribute>
-          <widget class="QWidget" name="horizontalLayoutWidget_9">
-            <property name="geometry">
-              <rect>
-                <x>20</x>
-                <y>10</y>
-                <width>461</width>
-                <height>21</height>
-              </rect>
+          <layout class="QVBoxLayout" name="rootSugggestion">
+            <property name="spacing">
+              <number>8</number>
             </property>
+            <property name="leftMargin">
+              <number>24</number>
+            </property>
+            <property name="topMargin">
+              <number>16</number>
+            </property>
+            <property name="rightMargin">
+              <number>24</number>
+            </property>
+            <property name="bottomMargin">
+              <number>16</number>
+            </property>
+<item>
             <layout class="QHBoxLayout" name="horizontalLayout_12">
-              <item>
-                <widget class="QLabel" name="label_3">
-                  <property name="text">
+                <property name="topMargin">
+                  <number>4</number>
+                </property>
+                <item>
+                  <widget class="QLabel" name="label">
+                    <property name="font">
+                      <font>
+                        <bold>true</bold>
+                      </font>
+                    </property>
+                      <property name="minimumSize">
+                        <size>
+                          <width>0</width>
+                          <height>20</height>
+                        </size>
+                      </property>
+                    <property name="text">
                     <string>Source data</string>
-                  </property>
-                </widget>
-              </item>
-              <item>
-                <widget class="Line" name="line_4">
-                  <property name="sizePolicy">
-                    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                    </sizepolicy>
-                  </property>
-                  <property name="orientation">
-                    <enum>Qt::Orientation::Horizontal</enum>
-                  </property>
-                </widget>
-              </item>
+                    </property>
+                  </widget>
+                </item>
             </layout>
-          </widget>
-          <widget class="QWidget" name="horizontalLayoutWidget_14">
-            <property name="geometry">
-              <rect>
-                <x>20</x>
-                <y>180</y>
-                <width>461</width>
-                <height>21</height>
-              </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_16">
-              <item>
-                <widget class="QLabel" name="SuggestionPreferenceLabel">
-                  <property name="text">
-                    <string>Other settings</string>
-                  </property>
-                </widget>
-              </item>
-              <item>
-                <widget class="Line" name="line_8">
-                  <property name="sizePolicy">
-                    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                    </sizepolicy>
-                  </property>
-                  <property name="orientation">
-                    <enum>Qt::Orientation::Horizontal</enum>
-                  </property>
-                </widget>
-              </item>
-            </layout>
-          </widget>
-          <widget class="QWidget" name="gridLayoutWidget_10">
-            <property name="geometry">
-              <rect>
-                <x>30</x>
-                <y>200</y>
-                <width>441</width>
-                <height>31</height>
-              </rect>
-            </property>
-            <layout class="QGridLayout" name="gridLayout_11">
-              <item row="0" column="0">
-                <widget class="QLabel" name="defaultNUmberofSuggestionsLabel">
-                  <property name="text">
-                    <string>Maximum number of suggestions</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="0" column="2">
-                <widget class="QSpinBox" name="suggestionsSizeSpinBox"/>
-              </item>
-              <item row="0" column="1">
-                <spacer name="horizontalSpacer_8">
-                  <property name="orientation">
-                    <enum>Qt::Orientation::Horizontal</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                    <size>
-                      <width>40</width>
-                      <height>20</height>
-                    </size>
-                  </property>
-                </spacer>
-              </item>
-            </layout>
-          </widget>
+        </item>
+<item>
           <widget class="QWidget" name="gridLayoutWidget_4">
-            <property name="geometry">
-              <rect>
-                <x>30</x>
-                <y>40</y>
-                <width>441</width>
-                <height>121</height>
-              </rect>
-            </property>
+                <property name="autoFillBackground">
+                  <bool>true</bool>
+                </property>
             <layout class="QGridLayout" name="gridLayout_4">
+                  <property name="leftMargin">
+                    <number>12</number>
+                  </property>
+                  <property name="topMargin">
+                    <number>12</number>
+                  </property>
+                  <property name="rightMargin">
+                    <number>12</number>
+                  </property>
+                  <property name="bottomMargin">
+                    <number>12</number>
+                  </property>
+                  <property name="verticalSpacing">
+                    <number>12</number>
+                  </property>
               <item row="0" column="0" colspan="3">
                 <widget class="QCheckBox" name="historySuggestCheckBox">
                   <property name="text">
@@ -1083,7 +1036,7 @@
                   </property>
                 </widget>
               </item>
-              <item row="3" column="0" colspan="3">
+              <item row="2" column="0" colspan="3">
                 <widget class="QCheckBox" name="dictionarySuggestCheckBox">
                   <property name="text">
                     <string>Use system dictionary</string>
@@ -1116,20 +1069,7 @@
                   </property>
                 </spacer>
               </item>
-              <item row="2" column="1">
-                <spacer name="verticalSpacer">
-                  <property name="orientation">
-                    <enum>Qt::Orientation::Vertical</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                    <size>
-                      <width>20</width>
-                      <height>40</height>
-                    </size>
-                  </property>
-                </spacer>
-              </item>
-              <item row="4" column="0" colspan="3">
+              <item row="3" column="0" colspan="3">
                 <widget class="QCheckBox" name="realtimeConversionCheckBox">
                   <property name="text">
                     <string>Use realtime conversion</string>
@@ -1138,6 +1078,74 @@
               </item>
             </layout>
           </widget>
+</item>
+<item>
+            <layout class="QHBoxLayout" name="horizontalLayout_16">
+                <property name="topMargin">
+                  <number>4</number>
+                </property>
+                <item>
+                  <widget class="QLabel" name="label">
+                    <property name="font">
+                      <font>
+                        <bold>true</bold>
+                      </font>
+                    </property>
+                      <property name="minimumSize">
+                        <size>
+                          <width>0</width>
+                          <height>20</height>
+                        </size>
+                      </property>
+                    <property name="text">
+                    <string>Other settings</string>
+                    </property>
+                  </widget>
+                </item>
+            </layout>
+        </item>
+<item>
+          <widget class="QWidget" name="gridLayoutWidget_10">
+                <property name="autoFillBackground">
+                  <bool>true</bool>
+                </property>
+            <layout class="QGridLayout" name="gridLayout_11" columnstretch="2,1">
+                  <property name="leftMargin">
+                    <number>12</number>
+                  </property>
+                  <property name="topMargin">
+                    <number>12</number>
+                  </property>
+                  <property name="rightMargin">
+                    <number>12</number>
+                  </property>
+                  <property name="bottomMargin">
+                    <number>12</number>
+                  </property>
+              <item row="0" column="0">
+                <widget class="QLabel" name="defaultNUmberofSuggestionsLabel">
+                  <property name="text">
+                    <string>Maximum number of suggestions</string>
+                  </property>
+                </widget>
+              </item>
+              <item row="0" column="1">
+                <widget class="QSpinBox" name="suggestionsSizeSpinBox"/>
+              </item>
+            </layout>
+          </widget>
+</item>
+            <item>
+              <spacer name="suggesttabspacer">
+                <property name="orientation">
+                  <enum>Qt::Orientation::Vertical</enum>
+                </property>
+                <property name="sizeType">
+                  <enum>QSizePolicy::Policy::Expanding</enum>
+                </property>
+              </spacer>
+            </item>
+            </layout>
         </widget>
         <widget class="QWidget" name="privacyTab">
           <attribute name="title">
