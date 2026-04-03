@@ -245,7 +245,6 @@ ConfigDialog::ConfigDialog()
 
 #ifndef _WIN32
   checkDefaultCheckBox->setVisible(false);
-  checkDefaultLine->setVisible(false);
   checkDefaultLabel->setVisible(false);
 #endif  // !_WIN32
 
@@ -269,7 +268,6 @@ ConfigDialog::ConfigDialog()
   launchAdministrationDialogButton->setVisible(false);
   launchAdministrationDialogButtonForUsageStats->setEnabled(false);
   launchAdministrationDialogButtonForUsageStats->setVisible(false);
-  administrationLine->setVisible(false);
   administrationLabel->setVisible(false);
   dictionaryPreloadingAndUACLabel->setVisible(false);
 #endif  // _WIN32
