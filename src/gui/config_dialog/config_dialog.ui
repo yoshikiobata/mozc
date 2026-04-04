@@ -1213,6 +1213,10 @@
                       <number>12</number>
                     </property>
               <item row="0" column="0">
+
+
+            <layout class="QVBoxLayout">
+                <item>
           <widget class="QCheckBox" name="incognitoModeCheckBox">
               <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -1223,11 +1227,28 @@
             </property>
           </widget>
                 </item>
+                <item>
+                <spacer name="verticalSpacer_2">
+                  <property name="orientation">
+                    <enum>Qt::Orientation::Vertical</enum>
+                  </property>
+                </spacer>
+                </item>
+</layout>
+
+                </item>
               <item row="0" column="1">
           <widget class="QLabel" name="incognitoModeMessage">
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+        </property>
             <property name="styleSheet">
  <string>color: palette(button-text);</string>
 </property>
+              <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                </sizepolicy>
+              </property>
             <property name="text">
               <string>Temporarily disable conversion personalization, history-based suggestions and user dictionary</string>
             </property>
@@ -1265,11 +1286,32 @@
             </layout>
 </item>
 <item>
+       <widget class="QWidget" name="widget_12">
+                <property name="autoFillBackground">
+                  <bool>true</bool>
+                </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_12">
+                    <property name="leftMargin">
+                      <number>12</number>
+                    </property>
+                    <property name="topMargin">
+                      <number>12</number>
+                    </property>
+                    <property name="rightMargin">
+                      <number>12</number>
+                    </property>
+                    <property name="bottomMargin">
+                      <number>12</number>
+                    </property>
+            <item>
           <widget class="QCheckBox" name="presentationModeCheckBox">
             <property name="text">
               <string>Temporarily disable all suggestions</string>
             </property>
           </widget>
+            </item>
+            </layout>
+        </widget>
 </item>
 <item>
             <layout class="QHBoxLayout" name="horizontalLayout_12">
@@ -1314,6 +1356,9 @@
                     <property name="bottomMargin">
                       <number>12</number>
                     </property>
+                    <property name="spacing">
+                      <number>8</number>
+                    </property>
               <item row="0" column="0">
 
             <layout class="QVBoxLayout">
@@ -1336,10 +1381,19 @@
                 </spacer>
                 </item>
 </layout>
-
                 </item>
               <item row="0" column="1">
           <widget class="QLabel" name="usageStatsMessage">
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+        </property>
+            <property name="styleSheet">
+ <string>color: palette(button-text);</string>
+</property>
+              <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                </sizepolicy>
+              </property>
             <property name="text">
               <string>Help make [ProductName] better by automatically sending usage statistics and crash reports to Google (changes will take effect after you log out and log back in)</string>
             </property>
@@ -1349,7 +1403,14 @@
           </widget>
                 </item>
               <item row="1" column="0" colspan="2">
-            <layout class="QHBoxLayout" name="horizontalLayout_12">
+            <layout class="QHBoxLayout" name="launchAdministrationDialogButtonForUsageStatsContainer">
+                <item>
+                <spacer name="horizontalSpacer">
+                  <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                </spacer>
+                </item>
                 <item>
           <widget class="QPushButton" name="launchAdministrationDialogButtonForUsageStats">
             <property name="minimumSize">
