@@ -756,94 +756,73 @@
             </item>
           </layout>
         </widget>
+
         <widget class="QWidget" name="inputsupport_tab">
           <attribute name="title">
             <string>Advanced</string>
           </attribute>
-          <widget class="CharacterFormEditor" name="characterFormEditor">
-            <property name="geometry">
-              <rect>
-                <x>30</x>
-                <y>190</y>
-                <width>441</width>
-                <height>141</height>
-              </rect>
+          <layout class="QVBoxLayout" name="rootinputsupport">
+            <property name="spacing">
+              <number>8</number>
             </property>
-          </widget>
-          <widget class="QWidget" name="horizontalLayoutWidget_2">
-            <property name="geometry">
-              <rect>
-                <x>20</x>
-                <y>10</y>
-                <width>461</width>
-                <height>21</height>
-              </rect>
+            <property name="leftMargin">
+              <number>24</number>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_4">
-              <item>
-                <widget class="QLabel" name="autoCorrectionLable">
-                  <property name="text">
+            <property name="topMargin">
+              <number>16</number>
+            </property>
+            <property name="rightMargin">
+              <number>24</number>
+            </property>
+            <property name="bottomMargin">
+              <number>16</number>
+            </property>
+            <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_22">
+                <property name="topMargin">
+                  <number>4</number>
+                </property>
+                <item>
+                  <widget class="QLabel" name="inputassistancelabel">
+                    <property name="font">
+                      <font>
+                        <bold>true</bold>
+                      </font>
+                    </property>
+                      <property name="minimumSize">
+                        <size>
+                          <width>0</width>
+                          <height>20</height>
+                        </size>
+                      </property>
+                    <property name="text">
                     <string>Input Assistance</string>
-                  </property>
-                </widget>
-              </item>
-              <item>
-                <widget class="Line" name="autoCorrectionLine_2">
-                  <property name="sizePolicy">
-                    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                    </sizepolicy>
-                  </property>
-                  <property name="orientation">
-                    <enum>Qt::Orientation::Horizontal</enum>
-                  </property>
-                </widget>
-              </item>
-            </layout>
-          </widget>
-          <widget class="QWidget" name="horizontalLayoutWidget_3">
-            <property name="geometry">
-              <rect>
-                <x>20</x>
-                <y>160</y>
-                <width>461</width>
-                <height>21</height>
-              </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_6">
-              <item>
-                <widget class="QLabel" name="autoCorrectionLable_2">
-                  <property name="text">
-                    <string>Fullwidth/Halfwidth</string>
-                  </property>
-                </widget>
-              </item>
-              <item>
-                <widget class="Line" name="halffullWidthLine">
-                  <property name="sizePolicy">
-                    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                    </sizepolicy>
-                  </property>
-                  <property name="orientation">
-                    <enum>Qt::Orientation::Horizontal</enum>
-                  </property>
-                </widget>
-              </item>
-            </layout>
-          </widget>
+                    </property>
+                  </widget>
+                </item>
+              </layout>
+            </item>
+            <item>
           <widget class="QWidget" name="gridLayoutWidget_9">
-            <property name="geometry">
-              <rect>
-                <x>30</x>
-                <y>40</y>
-                <width>441</width>
-                <height>121</height>
-              </rect>
-            </property>
+                <property name="autoFillBackground">
+                  <bool>true</bool>
+                </property>
             <layout class="QGridLayout" name="gridLayout_9">
+                  <property name="leftMargin">
+                    <number>12</number>
+                  </property>
+                  <property name="topMargin">
+                    <number>12</number>
+                  </property>
+                  <property name="rightMargin">
+                    <number>12</number>
+                  </property>
+                  <property name="bottomMargin">
+                    <number>12</number>
+                  </property>
+                  <property name="verticalSpacing">
+                    <number>12</number>
+                  </property>
               <item row="0" column="0" colspan="7">
                 <widget class="QCheckBox" name="autoSwitchCompositionMode">
                   <property name="text">
@@ -949,7 +928,47 @@
               </item>
             </layout>
           </widget>
+</item>
+            <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_22">
+                <property name="topMargin">
+                  <number>4</number>
+                </property>
+                <item>
+                  <widget class="QLabel" name="inputassistancelabel">
+                    <property name="font">
+                      <font>
+                        <bold>true</bold>
+                      </font>
+                    </property>
+                      <property name="minimumSize">
+                        <size>
+                          <width>0</width>
+                          <height>20</height>
+                        </size>
+                      </property>
+                    <property name="text">
+                    <string>Fullwidth/Halfwidth</string>
+                    </property>
+                  </widget>
+                </item>
+              </layout>
+            </item>
+            <item>
+          <widget class="CharacterFormEditor" name="characterFormEditor">
+            <property name="geometry">
+              <rect>
+                <x>30</x>
+                <y>190</y>
+                <width>441</width>
+                <height>141</height>
+              </rect>
+            </property>
+          </widget>
+            </item>
+            </layout>
         </widget>
+
         <widget class="QWidget" name="suggestionsTab">
           <attribute name="title">
             <string>Suggest</string>
