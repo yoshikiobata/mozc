@@ -267,7 +267,7 @@ ConfigDialog::ConfigDialog()
   launchAdministrationDialogButton->setEnabled(false);
   launchAdministrationDialogButton->setVisible(false);
   launchAdministrationDialogButtonForUsageStats->setEnabled(false);
-  launchAdministrationDialogButtonForUsageStats->setVisible(false);
+  launchAdministrationDialogButtonForUsageStatsContainer->setVisible(false);
   administrationLabel->setVisible(false);
   dictionaryPreloadingAndUACLabel->setVisible(false);
 #endif  // _WIN32
