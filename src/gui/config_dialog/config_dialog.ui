@@ -1232,6 +1232,10 @@
                   <property name="orientation">
                     <enum>Qt::Orientation::Vertical</enum>
                   </property>
+              <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+                </sizepolicy>
+              </property>
                 </spacer>
                 </item>
 </layout>
@@ -1243,7 +1247,7 @@
          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
         </property>
             <property name="styleSheet">
- <string>color: palette(button-text);</string>
+ <string>color: palette(button-text);padding-top 2px;</string>
 </property>
               <property name="sizePolicy">
                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -1378,6 +1382,10 @@
                   <property name="orientation">
                     <enum>Qt::Orientation::Vertical</enum>
                   </property>
+              <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+                </sizepolicy>
+              </property>
                 </spacer>
                 </item>
 </layout>
@@ -1388,7 +1396,7 @@
          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
         </property>
             <property name="styleSheet">
- <string>color: palette(button-text);</string>
+ <string>color: palette(button-text);padding-top 2px;</string>
 </property>
               <property name="sizePolicy">
                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
