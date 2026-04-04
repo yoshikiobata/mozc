@@ -160,12 +160,13 @@ void CharacterFormEditor::Load(const config::Config &config) {
     setItem(row, 1, item_preedit);
     setItem(row, 2, item_conversion);
     const int height = rowHeight(row);
-    setRowHeight(row, static_cast<int>(height * 0.7));
+    setRowHeight(row, height);
   }
 
-  setColumnWidth(0, static_cast<int>(width() * 0.3));
-  setColumnWidth(1, static_cast<int>(width() * 0.3));
-  setColumnWidth(2, static_cast<int>(width() * 0.3));
+  horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+  //setColumnWidth(0, static_cast<int>(width() * 0.3));
+  //setColumnWidth(1, static_cast<int>(width() * 0.3));
+  //setColumnWidth(2, static_cast<int>(width() * 0.3));
 }
 
 void CharacterFormEditor::Save(config::Config *config) {

@@ -955,16 +955,7 @@
               </layout>
             </item>
             <item>
-          <widget class="CharacterFormEditor" name="characterFormEditor">
-            <property name="geometry">
-              <rect>
-                <x>30</x>
-                <y>190</y>
-                <width>441</width>
-                <height>141</height>
-              </rect>
-            </property>
-          </widget>
+          <widget class="CharacterFormEditor" name="characterFormEditor"/>
             </item>
             </layout>
         </widget>
