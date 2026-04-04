@@ -1403,7 +1403,8 @@
           </widget>
                 </item>
               <item row="1" column="0" colspan="2">
-            <layout class="QHBoxLayout" name="launchAdministrationDialogButtonForUsageStatsContainer">
+            <widget class="QWidget" name="launchAdministrationDialogButtonForUsageStatsContainer">
+            <layout class="QHBoxLayout" name="launchAdministrationDialogButtonForUsageStatsContainerLayout">
                 <item>
                 <spacer name="horizontalSpacer">
                   <property name="orientation">
@@ -1431,6 +1432,7 @@
           </widget>
         </item>
             </layout>
+</widget>
         </item>
             </layout>
           </widget>
