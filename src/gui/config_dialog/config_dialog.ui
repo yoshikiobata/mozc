@@ -1246,6 +1246,12 @@
                 <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
                 </sizepolicy>
               </property>
+              <property name="sizeHint" stdset="0">
+                <size>
+                  <width>1</width>
+                  <height>1</height>
+                </size>
+              </property>
                 </spacer>
                 </item>
 </layout>
@@ -1257,10 +1263,10 @@
          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
         </property>
             <property name="styleSheet">
- <string>color: palette(button-text);padding-top 2px;</string>
+ <string>color: palette(button-text);background-color: red;</string>
 </property>
               <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
                 </sizepolicy>
               </property>
             <property name="text">
@@ -1357,6 +1363,10 @@
                 <property name="autoFillBackground">
                   <bool>true</bool>
                 </property>
+              <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                </sizepolicy>
+              </property>
             <layout class="QGridLayout" name="horizontalLayout_12">
                     <property name="leftMargin">
                       <number>12</number>
@@ -1392,6 +1402,12 @@
                   <property name="orientation">
                     <enum>Qt::Orientation::Vertical</enum>
                   </property>
+              <property name="sizeHint" stdset="0">
+                <size>
+                  <width>1</width>
+                  <height>1</height>
+                </size>
+              </property>
               <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
                 </sizepolicy>
@@ -1406,10 +1422,10 @@
          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
         </property>
             <property name="styleSheet">
- <string>color: palette(button-text);padding-top 2px;</string>
+ <string>color: palette(button-text);background-color: red;</string>
 </property>
               <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
                 </sizepolicy>
               </property>
             <property name="text">
