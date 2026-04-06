@@ -276,8 +276,6 @@ ConfigDialog::ConfigDialog()
   // On Linux, disable all fields for UsageStats
   usageStatsLabel->setEnabled(false);
   usageStatsLabel->setVisible(false);
-  usageStatsLine->setEnabled(false);
-  usageStatsLine->setVisible(false);
   usageStatsMessage->setEnabled(false);
   usageStatsMessage->setVisible(false);
   usageStatsCheckBox->setEnabled(false);
