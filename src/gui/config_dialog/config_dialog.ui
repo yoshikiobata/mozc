@@ -1234,15 +1234,21 @@
           </widget>
                 </item>
               <item row="0" column="1">
+          <widget class="QWidget" name="incognitoModeMessageContainer">
+            <layout class="QVBoxLayout" name="horizontalLayout_12">
+                    <property name="topMargin">
+                      <number>2</number>
+                    </property>
+<item>
           <widget class="QLabel" name="incognitoModeMessage">
         <property name="alignment">
          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
         </property>
             <property name="styleSheet">
- <string>color: palette(button-text);background-color: red;</string>
+ <string>color: palette(button-text);</string>
 </property>
               <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                 </sizepolicy>
               </property>
             <property name="text">
@@ -1251,6 +1257,9 @@
             <property name="wordWrap">
               <bool>true</bool>
             </property>
+          </widget>
+</item>
+            </layout>
           </widget>
                 </item>
             </layout>
