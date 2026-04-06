@@ -1222,11 +1222,7 @@
                     <property name="bottomMargin">
                       <number>12</number>
                     </property>
-              <item row="0" column="0">
-
-
-            <layout class="QVBoxLayout">
-                <item>
+              <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop">
           <widget class="QCheckBox" name="incognitoModeCheckBox">
               <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -1236,26 +1232,6 @@
               <bool>false</bool>
             </property>
           </widget>
-                </item>
-                <item>
-                <spacer name="verticalSpacer_2">
-                  <property name="orientation">
-                    <enum>Qt::Orientation::Vertical</enum>
-                  </property>
-              <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
-                </sizepolicy>
-              </property>
-              <property name="sizeHint" stdset="0">
-                <size>
-                  <width>1</width>
-                  <height>1</height>
-                </size>
-              </property>
-                </spacer>
-                </item>
-</layout>
-
                 </item>
               <item row="0" column="1">
           <widget class="QLabel" name="incognitoModeMessage">
