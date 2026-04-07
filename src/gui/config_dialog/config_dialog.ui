@@ -1238,9 +1238,6 @@
                 </item>
               <item row="0" column="1">
           <widget class="QLabel" name="incognitoModeMessage">
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
-        </property>
             <property name="styleSheet">
  <string>color: palette(button-text);</string>
 </property>
@@ -1251,7 +1248,7 @@
                       <property name="minimumSize">
                         <size>
                           <width>0</width>
-                          <height>36</height>
+                          <height>34</height>
                         </size>
                       </property>
             <property name="text">
@@ -1403,7 +1400,7 @@
             <property name="minimumSize">
               <size>
                 <width>0</width>
-                <height>48</height>
+                <height>50</height>
               </size>
             </property>
             <property name="text">
