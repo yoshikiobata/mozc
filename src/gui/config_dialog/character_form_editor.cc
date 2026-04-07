@@ -103,9 +103,9 @@ CharacterFormEditor::CharacterFormEditor(QWidget *parent)
   delegate_->SetItemList(item_list);
   setEditTriggers(QAbstractItemView::AllEditTriggers);
   setItemDelegate(delegate_.get());
-  setToolTip(tr("Character form editor"));
+  //setToolTip(tr("Character form editor"));
   setColumnCount(3);
-  setAlternatingRowColors(true);
+  //setAlternatingRowColors(true);
   setSelectionMode(QAbstractItemView::SingleSelection);
   setSelectionBehavior(QAbstractItemView::SelectItems);
   verticalHeader()->hide();
