@@ -1046,13 +1046,6 @@
                   </property>
                 </widget>
               </item>
-              <item row="2" column="0" colspan="3">
-                <widget class="QCheckBox" name="dictionarySuggestCheckBox">
-                  <property name="text">
-                    <string>Use system dictionary</string>
-                  </property>
-                </widget>
-              </item>
               <item row="1" column="1">
                 <widget class="QPushButton" name="clearUnusedUserPredictionButton">
                   <property name="minimumSize">
@@ -1066,20 +1059,38 @@
                   </property>
                 </widget>
               </item>
-              <item row="1" column="0">
-                <spacer name="horizontalSpacer_6">
-                  <property name="orientation">
-                    <enum>Qt::Orientation::Horizontal</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                    <size>
-                      <width>40</width>
-                      <height>20</height>
-                    </size>
-                  </property>
-                </spacer>
+            </layout>
+          </widget>
               </item>
-              <item row="3" column="0" colspan="3">
+              <item>
+          <widget class="QWidget" name="gridLayoutWidget_4">
+                <property name="autoFillBackground">
+                  <bool>true</bool>
+                </property>
+            <layout class="QGridLayout" name="gridLayout_4">
+                  <property name="leftMargin">
+                    <number>12</number>
+                  </property>
+                  <property name="topMargin">
+                    <number>12</number>
+                  </property>
+                  <property name="rightMargin">
+                    <number>12</number>
+                  </property>
+                  <property name="bottomMargin">
+                    <number>12</number>
+                  </property>
+                  <property name="verticalSpacing">
+                    <number>12</number>
+                  </property>
+              <item row="0" column="0">
+                <widget class="QCheckBox" name="dictionarySuggestCheckBox">
+                  <property name="text">
+                    <string>Use system dictionary</string>
+                  </property>
+                </widget>
+              </item>
+              <item row="1" column="0">
                 <widget class="QCheckBox" name="realtimeConversionCheckBox">
                   <property name="text">
                     <string>Use realtime conversion</string>
