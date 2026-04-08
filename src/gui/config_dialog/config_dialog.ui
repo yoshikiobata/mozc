@@ -32,6 +32,9 @@
 <ui version="4.0">
   <class>ConfigDialog</class>
   <widget class="QDialog" name="ConfigDialog">
+    <property name="styleSheet">
+      <string>QComboBox:!active { color: palette(button-text) };</string>
+    </property>
     <property name="geometry">
       <rect>
         <x>0</x>

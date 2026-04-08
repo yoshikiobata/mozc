@@ -107,6 +107,7 @@ CharacterFormEditor::CharacterFormEditor(QWidget *parent)
   setColumnCount(3);
   //setAlternatingRowColors(true);
   setSelectionMode(QAbstractItemView::NoSelection);
+  setFocusPolicy(Qt::NoFocus);
   //setSelectionBehavior(QAbstractItemView::SelectItems);
   setStyleSheet("QTableWidget::item:selected { background: transparent; }");
   verticalHeader()->hide();
