@@ -947,7 +947,11 @@
               </layout>
             </item>
             <item>
-          <widget class="CharacterFormEditor" name="characterFormEditor"/>
+          <widget class="CharacterFormEditor" name="characterFormEditor">
+            <property name="autoFillBackground">
+              <bool>true</bool>
+            </property>
+          </widget>
             </item>
             </layout>
         </widget>
