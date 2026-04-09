@@ -110,13 +110,13 @@
               <number>24</number>
             </property>
             <property name="topMargin">
-              <number>16</number>
+              <number>12</number>
             </property>
             <property name="rightMargin">
               <number>24</number>
             </property>
             <property name="bottomMargin">
-              <number>16</number>
+              <number>24</number>
             </property>
             <item>
               <layout class="QHBoxLayout" name="basicsLabelLayout">
@@ -761,13 +761,13 @@
               <number>24</number>
             </property>
             <property name="topMargin">
-              <number>16</number>
+              <number>12</number>
             </property>
             <property name="rightMargin">
               <number>24</number>
             </property>
             <property name="bottomMargin">
-              <number>16</number>
+              <number>24</number>
             </property>
             <item>
               <layout class="QHBoxLayout" name="horizontalLayout_22">
@@ -968,13 +968,13 @@
               <number>24</number>
             </property>
             <property name="topMargin">
-              <number>16</number>
+              <number>12</number>
             </property>
             <property name="rightMargin">
               <number>24</number>
             </property>
             <property name="bottomMargin">
-              <number>16</number>
+              <number>24</number>
             </property>
 <item>
             <layout class="QHBoxLayout" name="horizontalLayout_12">
@@ -1178,13 +1178,13 @@
               <number>24</number>
             </property>
             <property name="topMargin">
-              <number>16</number>
+              <number>12</number>
             </property>
             <property name="rightMargin">
               <number>24</number>
             </property>
             <property name="bottomMargin">
-              <number>16</number>
+              <number>24</number>
             </property>
 <item>
             <layout class="QHBoxLayout" name="horizontalLayout_12">
@@ -1464,13 +1464,13 @@
               <number>24</number>
             </property>
             <property name="topMargin">
-              <number>16</number>
+              <number>12</number>
             </property>
             <property name="rightMargin">
               <number>24</number>
             </property>
             <property name="bottomMargin">
-              <number>16</number>
+              <number>24</number>
             </property>
 
 <item>
