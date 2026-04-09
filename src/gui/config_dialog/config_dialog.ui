@@ -483,7 +483,7 @@
                         <string>Clear personalization data</string>
                       </property>
                       <property name="sizePolicy">
-                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed"/>
+                        <sizepolicy hsizetype="Expanding" vsizetype="Fixed"/>
                       </property>
                     </widget>
                   </item>
@@ -1395,7 +1395,7 @@
             <property name="minimumSize">
               <size>
                 <width>0</width>
-                <height>50</height>
+                <height>33</height>
               </size>
             </property>
             <property name="text">
