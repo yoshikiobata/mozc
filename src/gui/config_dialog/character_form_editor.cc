@@ -109,7 +109,7 @@ CharacterFormEditor::CharacterFormEditor(QWidget *parent)
   setSelectionMode(QAbstractItemView::NoSelection);
   setFocusPolicy(Qt::NoFocus);
   //setSelectionBehavior(QAbstractItemView::SelectItems);
-  setStyleSheet("QTableWidget::item:selected { background: transparent; }");
+  setStyleSheet("QTableWidget, QTableWidget::item:selected { background: transparent; }");
   verticalHeader()->hide();
 #ifdef __APPLE__
   // grid is basically hidden in mac ui.
@@ -123,8 +123,6 @@ void CharacterFormEditor::Load(const config::Config &config) {
   QStringList header;
   header << tr("Group") << tr("Composition") << tr("Conversion");
   setHorizontalHeaderLabels(header);
-
-  horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 
   std::unique_ptr<config::Config> default_config;
   const config::Config *target_config = &config;
