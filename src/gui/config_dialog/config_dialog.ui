@@ -1369,7 +1369,7 @@
  <string>color: palette(button-text);</string>
 </property>
               <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                 </sizepolicy>
               </property>
             <property name="minimumSize">
@@ -1377,6 +1377,9 @@
                 <width>0</width>
                 <height>33</height>
               </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
             </property>
             <property name="text">
               <string>Help make [ProductName] better by automatically sending usage statistics and crash reports to Google (changes will take effect after you log out and log back in)</string>
