@@ -1227,7 +1227,7 @@
                       <number>12</number>
                     </property>
                     <property name="topMargin">
-                      <number>12</number>
+                      <number>13</number>
                     </property>
                     <property name="rightMargin">
                       <number>12</number>
@@ -1237,9 +1237,6 @@
                     </property>
               <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop">
           <widget class="QCheckBox" name="incognitoModeCheckBox">
-            <property name="styleSheet">
- <string>padding: 1px 0px 0px 0px</string>
-              </property>
               <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                 </sizepolicy>
@@ -1252,7 +1249,7 @@
               <item row="0" column="1">
           <widget class="QLabel" name="incognitoModeMessage">
             <property name="styleSheet">
- <string>background-color: red;color: palette(button-text);padding: 1px 0px 2px 0px</string>
+ <string>color: palette(button-text);padding: 1px 0px 2px 0px</string>
 </property>
               <property name="sizePolicy">
                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -1386,7 +1383,7 @@
               <item row="0" column="1">
           <widget class="QLabel" name="usageStatsMessage">
             <property name="styleSheet">
- <string>background-color: red;color: palette(button-text);padding: 1px 0px 2px 0px</string>
+ <string>color: palette(button-text);padding: 1px 0px 2px 0px</string>
 </property>
               <property name="sizePolicy">
                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred"/>
