@@ -40,7 +40,7 @@
         <x>0</x>
         <y>0</y>
         <width>554</width>
-        <height>616</height>
+        <height>608</height>
       </rect>
     </property>
     <property name="sizePolicy">
@@ -52,13 +52,13 @@
     <property name="minimumSize">
       <size>
         <width>554</width>
-        <height>616</height>
+        <height>608</height>
       </size>
     </property>
     <property name="maximumSize">
       <size>
         <width>554</width>
-        <height>616</height>
+        <height>608</height>
       </size>
     </property>
     <property name="windowTitle">
@@ -68,7 +68,7 @@
         <property name="geometry">
           <rect>
             <width>554</width>
-            <height>616</height>
+            <height>608</height>
           </rect>
         </property>
           <layout class="QVBoxLayout" name="centrallayout">
@@ -448,6 +448,9 @@
                 <layout class="QGridLayout" name="gridLayout_5_item0" columnstretch="2,1">
                   <item row="0" column="0">
                     <widget class="QLabel" name="label_7">
+                      <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Preferred"/>
+                      </property>
                       <property name="text">
                         <string>Adjust conversion based on previous input</string>
                       </property>
@@ -928,8 +931,10 @@
             <property name="autoFillBackground">
               <bool>true</bool>
             </property>
-          <widget class="CharacterFormEditor" name="characterFormEditor">
-          </widget>
+              <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding"/>
+              </property>
+          <widget class="CharacterFormEditor" name="characterFormEditor"/>
           </widget>
             </item>
             </layout>
@@ -1364,21 +1369,11 @@
                 </item>
               <item row="0" column="1">
           <widget class="QLabel" name="usageStatsMessage">
-            <layout class="QVBoxLayout" name="horizontalLayout_12">
-                    <property name="topMargin">
-                      <number>1</number>
-                    </property>
-                    <property name="bottomMargin">
-                      <number>1</number>
-                    </property>
-              <item>
-          <widget class="QLabel">
             <property name="styleSheet">
- <string>color: palette(button-text);</string>
+ <string>color: palette(button-text);padding-bottom: 2px</string>
 </property>
               <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                </sizepolicy>
+                <sizepolicy hsizetype="Expanding" vsizetype="Preferred"/>
               </property>
             <property name="alignment">
              <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
@@ -1389,9 +1384,6 @@
             <property name="wordWrap">
               <bool>true</bool>
             </property>
-          </widget>
-                </item>
-          </layout>
           </widget>
         </item>
               <item row="1" column="0" colspan="2">
@@ -1774,7 +1766,7 @@
         <property name="geometry">
           <rect>
             <width>506</width>
-            <height>36</height>
+            <height>28</height>
           </rect>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -1788,9 +1780,7 @@
               </property>
               <property name="styleSheet">
                 <string notr="true">
-            QPushButton {
-              padding: 8px 8px
-            }
+            QPushButton { padding: 4px 8px }
         </string>
               </property>
               <property name="text">
@@ -1822,7 +1812,7 @@
               <property name="styleSheet">
                 <string notr="true">
             QPushButton {
-              padding: 8px 8px
+              padding: 4px 8px
             }
         </string>
               </property>
