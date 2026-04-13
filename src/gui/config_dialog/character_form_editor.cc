@@ -31,6 +31,7 @@
 
 #include <QHeaderView>
 #include <QtGui>
+#include <QSizePolicy>
 #include <cstddef>
 #include <memory>
 #include <string>
@@ -111,6 +112,7 @@ CharacterFormEditor::CharacterFormEditor(QWidget *parent)
   //setSelectionBehavior(QAbstractItemView::SelectItems);
   setStyleSheet("QTableWidget, QTableWidget::item:selected { background: transparent; }");
   verticalHeader()->hide();
+  setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 #ifdef __APPLE__
   // grid is basically hidden in mac ui.
   // Please take a look at iTunes.
