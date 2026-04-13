@@ -40,7 +40,7 @@
         <x>0</x>
         <y>0</y>
         <width>554</width>
-        <height>608</height>
+        <height>616</height>
       </rect>
     </property>
     <property name="sizePolicy">
@@ -52,13 +52,13 @@
     <property name="minimumSize">
       <size>
         <width>554</width>
-        <height>608</height>
+        <height>616</height>
       </size>
     </property>
     <property name="maximumSize">
       <size>
         <width>554</width>
-        <height>608</height>
+        <height>616</height>
       </size>
     </property>
     <property name="windowTitle">
@@ -68,7 +68,7 @@
         <property name="geometry">
           <rect>
             <width>554</width>
-            <height>608</height>
+            <height>616</height>
           </rect>
         </property>
           <layout class="QVBoxLayout" name="centrallayout">
@@ -281,6 +281,9 @@
             </item>
             <item>
               <widget class="QWidget" name="glcontainer2">
+                      <property name="role" stdset="0">
+                        <string>gridLayoutContainer</string>
+                      </property>
                 <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -428,6 +431,9 @@
             </item>
             <item>
               <widget class="QWidget" name="gridLayoutWidget_5">
+                      <property name="role" stdset="0">
+                        <string>gridLayoutContainer</string>
+                      </property>
                 <property name="autoFillBackground">
                   <bool>true</bool>
                 </property>
@@ -801,6 +807,9 @@
             </item>
             <item>
           <widget class="QWidget" name="gridLayoutWidget_9">
+                      <property name="role" stdset="0">
+                        <string>gridLayoutContainer</string>
+                      </property>
                 <property name="autoFillBackground">
                   <bool>true</bool>
                 </property>
@@ -945,15 +954,7 @@
               </layout>
             </item>
             <item>
-          <widget class="QWidget" name="formeditorcontainer">
-              <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Expanding"/>
-              </property>
-                <property name="autoFillBackground">
-                  <bool>true</bool>
-                </property>
           <widget class="CharacterFormEditor" name="characterFormEditor"/>
-        </widget>
             </item>
             </layout>
         </widget>
@@ -1125,6 +1126,9 @@
         </item>
 <item>
           <widget class="QWidget" name="gridLayoutWidget_10">
+                      <property name="role" stdset="0">
+                        <string>gridLayoutContainer</string>
+                      </property>
                 <property name="autoFillBackground">
                   <bool>true</bool>
                 </property>
@@ -1215,6 +1219,9 @@
 </item>
 <item>
        <widget class="QWidget" name="widget_12">
+                      <property name="role" stdset="0">
+                        <string>gridLayoutContainer</string>
+                      </property>
                 <property name="autoFillBackground">
                   <bool>true</bool>
                 </property>
@@ -1292,6 +1299,9 @@
 </item>
 <item>
        <widget class="QWidget" name="widget_12">
+                      <property name="role" stdset="0">
+                        <string>gridLayoutContainer</string>
+                      </property>
                 <property name="autoFillBackground">
                   <bool>true</bool>
                 </property>
@@ -1345,6 +1355,9 @@
 </item>
 <item>
        <widget class="QWidget" name="widget_12">
+                      <property name="role" stdset="0">
+                        <string>gridLayoutContainer</string>
+                      </property>
                 <property name="autoFillBackground">
                   <bool>true</bool>
                 </property>
@@ -1580,6 +1593,9 @@
         </item>
               <item>
                 <widget class="QWidget" name="miscAdministrationWidget2">
+                      <property name="role" stdset="0">
+                        <string>gridLayoutContainer</string>
+                      </property>
                 <property name="autoFillBackground">
                   <bool>true</bool>
                 </property>
@@ -1772,10 +1788,13 @@
 
         <item>
       <widget class="QWidget" name="horizontalLayoutWidget_12">
+              <property name="styleSheet">
+                <string>QPushButton { padding: 8px; }</string>
+              </property>
         <property name="geometry">
           <rect>
             <width>506</width>
-            <height>28</height>
+            <height>36</height>
           </rect>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -1787,11 +1806,6 @@
                   <verstretch>0</verstretch>
                 </sizepolicy>
               </property>
-              <property name="styleSheet">
-                <string notr="true">
-            QPushButton { padding: 4px 8px }
-        </string>
-              </property>
               <property name="text">
                 <string>Reset to defaults</string>
               </property>
@@ -1802,12 +1816,6 @@
               <property name="orientation">
                 <enum>Qt::Orientation::Horizontal</enum>
               </property>
-              <property name="sizeHint" stdset="0">
-                <size>
-                  <width>40</width>
-                  <height>20</height>
-                </size>
-              </property>
             </spacer>
           </item>
           <item>
@@ -1817,13 +1825,6 @@
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                 </sizepolicy>
-              </property>
-              <property name="styleSheet">
-                <string notr="true">
-            QPushButton {
-              padding: 4px 8px
-            }
-        </string>
               </property>
               <property name="text">
                 <string>Apply</string>
