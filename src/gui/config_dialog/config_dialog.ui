@@ -43,7 +43,7 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
         <x>0</x>
         <y>0</y>
         <width>554</width>
-        <height>616</height>
+        <height>644</height>
       </rect>
     </property>
     <property name="sizePolicy">
@@ -55,13 +55,13 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
     <property name="minimumSize">
       <size>
         <width>554</width>
-        <height>616</height>
+        <height>644</height>
       </size>
     </property>
     <property name="maximumSize">
       <size>
         <width>554</width>
-        <height>616</height>
+        <height>644</height>
       </size>
     </property>
     <property name="windowTitle">
@@ -71,7 +71,7 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
         <property name="geometry">
           <rect>
             <width>554</width>
-            <height>616</height>
+            <height>644</height>
           </rect>
         </property>
           <layout class="QVBoxLayout" name="centrallayout">
@@ -107,7 +107,7 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
           </attribute>
           <layout class="QVBoxLayout" name="root">
             <property name="spacing">
-              <number>8</number>
+              <number>12</number>
             </property>
             <property name="leftMargin">
               <number>24</number>
@@ -387,7 +387,7 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
           </attribute>
           <layout class="QVBoxLayout" name="rootDictionary">
             <property name="spacing">
-              <number>8</number>
+              <number>12</number>
             </property>
             <property name="leftMargin">
               <number>24</number>
@@ -760,7 +760,7 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
           </attribute>
           <layout class="QVBoxLayout" name="rootinputsupport">
             <property name="spacing">
-              <number>8</number>
+              <number>12</number>
             </property>
             <property name="leftMargin">
               <number>24</number>
@@ -956,7 +956,7 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
           </attribute>
           <layout class="QVBoxLayout" name="rootSugggestion">
             <property name="spacing">
-              <number>8</number>
+              <number>12</number>
             </property>
             <property name="leftMargin">
               <number>24</number>
@@ -1166,7 +1166,7 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
           </attribute>
           <layout class="QVBoxLayout" name="rootPrivacy">
             <property name="spacing">
-              <number>8</number>
+              <number>12</number>
             </property>
             <property name="leftMargin">
               <number>24</number>
@@ -1439,7 +1439,7 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
           </attribute>
           <layout class="QVBoxLayout" name="rootMisc">
             <property name="spacing">
-              <number>8</number>
+              <number>12</number>
             </property>
             <property name="leftMargin">
               <number>24</number>
@@ -1459,7 +1459,7 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
                             <widget class="QWidget" name="miscDefaultIMEWidget">
           <layout class="QVBoxLayout" name="miscDefaultIMEWidgetLayout">
             <property name="spacing">
-              <number>8</number>
+              <number>12</number>
             </property>
 
 <item>
@@ -1542,7 +1542,7 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
 <widget class="QWidget" name="miscAdministrationWidget">
           <layout class="QVBoxLayout" name="miscAdministrationWidgetLayout">
             <property name="spacing">
-              <number>8</number>
+              <number>12</number>
             </property>
 
 <item>
@@ -1620,7 +1620,7 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
           <widget class="QWidget" name="miscStartupWidget">
           <layout class="QVBoxLayout" name="miscStartupWidget2">
             <property name="spacing">
-              <number>8</number>
+              <number>12</number>
             </property>
 
 <item>
@@ -1685,7 +1685,7 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
                 <widget class="QWidget" name="miscLoggingWidget">
           <layout class="QVBoxLayout" name="miscLoggingWidget2">
             <property name="spacing">
-              <number>8</number>
+              <number>12</number>
             </property>
 
 <item>
