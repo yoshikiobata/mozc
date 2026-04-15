@@ -30,1842 +30,1823 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 <ui version="4.0">
-  <class>ConfigDialog</class>
-  <widget class="QDialog" name="ConfigDialog">
-    <property name="styleSheet">
-      <string notr="true">
+ <class>ConfigDialog</class>
+ <widget class="QDialog" name="ConfigDialog">
+  <property name="styleSheet">
+   <string notr="true">
 QWidget[role="gridLayoutContainer"] QLabel, QComboBox:!active { color: palette(button-text); }
 QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
 </string>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>554</width>
+    <height>644</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>554</width>
+    <height>644</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>554</width>
+    <height>644</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>[ProductName] Settings</string>
+  </property>
+  <widget class="QWidget" name="centralwidget" native="true">
+   <property name="geometry">
+    <rect>
+     <width>554</width>
+     <height>644</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="centrallayout">
+    <property name="spacing">
+     <number>12</number>
     </property>
-    <property name="geometry">
-      <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>554</width>
-        <height>644</height>
-      </rect>
+    <property name="leftMargin">
+     <number>16</number>
     </property>
-    <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-      </sizepolicy>
+    <property name="topMargin">
+     <number>16</number>
     </property>
-    <property name="minimumSize">
-      <size>
-        <width>554</width>
-        <height>644</height>
-      </size>
+    <property name="rightMargin">
+     <number>16</number>
     </property>
-    <property name="maximumSize">
-      <size>
-        <width>554</width>
-        <height>644</height>
-      </size>
+    <property name="bottomMargin">
+     <number>16</number>
     </property>
-    <property name="windowTitle">
-      <string>[ProductName] Settings</string>
-    </property>
-    <widget class="QWidget" name="centralwidget" native="true">
-        <property name="geometry">
-          <rect>
-            <width>554</width>
-            <height>644</height>
-          </rect>
+    <item>
+     <widget class="QTabWidget" name="configDialogTabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="basicTab">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <attribute name="title">
+        <string>General</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="root">
+        <property name="spacing">
+         <number>12</number>
         </property>
-          <layout class="QVBoxLayout" name="centrallayout">
-            <property name="spacing">
-              <number>12</number>
-            </property>
-            <property name="leftMargin">
-              <number>16</number>
-            </property>
-            <property name="topMargin">
-              <number>16</number>
-            </property>
-            <property name="rightMargin">
-              <number>16</number>
-            </property>
-            <property name="bottomMargin">
-              <number>16</number>
-            </property>
+        <property name="leftMargin">
+         <number>24</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>24</number>
+        </property>
+        <property name="bottomMargin">
+         <number>24</number>
+        </property>
         <item>
-      <widget class="QTabWidget" name="configDialogTabWidget">
-        <property name="currentIndex">
-          <number>0</number>
-        </property>
-        <widget class="QWidget" name="basicTab">
-          <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-            </sizepolicy>
+         <layout class="QHBoxLayout" name="basicsLabelLayout">
+          <property name="topMargin">
+           <number>4</number>
           </property>
-          <attribute name="title">
-            <string>General</string>
-          </attribute>
-          <layout class="QVBoxLayout" name="root">
-            <property name="spacing">
-              <number>12</number>
-            </property>
-            <property name="leftMargin">
-              <number>24</number>
-            </property>
-            <property name="topMargin">
-              <number>12</number>
-            </property>
-            <property name="rightMargin">
-              <number>24</number>
-            </property>
-            <property name="bottomMargin">
-              <number>24</number>
-            </property>
-            <item>
-              <layout class="QHBoxLayout" name="basicsLabelLayout">
-                <property name="topMargin">
-                  <number>4</number>
-                </property>
-                <item>
-                  <widget class="QLabel" name="basicsLabel">
-                    <property name="font">
-                      <font>
-                        <bold>true</bold>
-                      </font>
-                    </property>
-                      <property name="minimumSize">
-                        <size>
-                          <width>0</width>
-                          <height>20</height>
-                        </size>
-                      </property>
-                    <property name="text">
-                      <string>Basics</string>
-                    </property>
-                  </widget>
-                </item>
-              </layout>
-            </item>
-            <item>
-              <widget class="QWidget" name="glcontainer">
-                      <property name="role" stdset="0">
-                        <string>gridLayoutContainer</string>
-                      </property>
-                <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                  </sizepolicy>
-                </property>
-                <layout class="QGridLayout" name="gridLayout" columnstretch="2,1">
-                  <property name="leftMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="topMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="rightMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="bottomMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="verticalSpacing">
-                    <number>12</number>
-                  </property>
-                  <item row="0" column="1">
-                    <widget class="QComboBox" name="inputModeComboBox"/>
-                  </item>
-                  <item row="1" column="1">
-                    <widget class="QComboBox" name="punctuationsSettingComboBox"/>
-                  </item>
-                  <item row="2" column="1">
-                    <widget class="QComboBox" name="symbolsSettingComboBox">
-                      <property name="enabled">
-                        <bool>true</bool>
-                      </property>
-                    </widget>
-                  </item>
-                  <item row="4" column="1">
-                    <widget class="QComboBox" name="spaceCharacterFormComboBox">
-                      <property name="enabled">
-                        <bool>true</bool>
-                      </property>
-                    </widget>
-                  </item>
-                  <item row="0" column="0">
-                    <widget class="QLabel" name="inputModeLabel">
-                      <property name="text">
-                        <string>Input mode</string>
-                      </property>
-                    </widget>
-                  </item>
-                  <item row="1" column="0">
-                    <widget class="QLabel" name="PunctuationsSettingLabel">
-                      <property name="text">
-                        <string>Punctuation style</string>
-                      </property>
-                    </widget>
-                  </item>
-                  <item row="2" column="0">
-                    <widget class="QLabel" name="symbolsSettingLabel">
-                      <property name="text">
-                        <string>Symbol style</string>
-                      </property>
-                    </widget>
-                  </item>
-                  <item row="4" column="0">
-                    <widget class="QLabel" name="spaceInputSettingLabel">
-                      <property name="text">
-                        <string>Space input style</string>
-                      </property>
-                    </widget>
-                  </item>
-                  <item row="5" column="1">
-                    <widget class="QComboBox" name="selectionShortcutModeComboBox"/>
-                  </item>
-                  <item row="5" column="0">
-                    <widget class="QLabel" name="selectionShortcutModeLabel">
-                      <property name="text">
-                        <string>Candidate selection shortcut</string>
-                      </property>
-                    </widget>
-                  </item>
-                  <item row="6" column="0">
-                    <widget class="QLabel" name="numpadCharacterFormLabel">
-                      <property name="text">
-                        <string>Input from numpad keys</string>
-                      </property>
-                    </widget>
-                  </item>
-                  <item row="6" column="1">
-                    <widget class="QComboBox" name="numpadCharacterFormComboBox"/>
-                  </item>
-                  <item row="3" column="0">
-                    <widget class="QLabel" name="yenSignLabel">
-                      <property name="text">
-                        <string>Input from ¥ or backslash key</string>
-                      </property>
-                    </widget>
-                  </item>
-                  <item row="3" column="1">
-                    <widget class="QComboBox" name="yenSignComboBox"/>
-                  </item>
-                </layout>
-              </widget>
-            </item>
-            <item>
-              <layout class="QHBoxLayout" name="kaymapLabelLayout">
-                <property name="topMargin">
-                  <number>4</number>
-                </property>
-                <item>
-                  <widget class="QLabel" name="label_4">
-                      <property name="minimumSize">
-                        <size>
-                          <width>0</width>
-                          <height>20</height>
-                        </size>
-                      </property>
-                    <property name="font">
-                      <font>
-                        <bold>true</bold>
-                      </font>
-                    </property>
-                    <property name="text">
-                      <string>Keymap</string>
-                    </property>
-                  </widget>
-                </item>
-              </layout>
-            </item>
-            <item>
-              <widget class="QWidget" name="glcontainer2">
-                      <property name="role" stdset="0">
-                        <string>gridLayoutContainer</string>
-                      </property>
-                <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                  </sizepolicy>
-                </property>
-                <layout class="QGridLayout" name="gridLayout_2" columnstretch="2,1">
-                  <property name="leftMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="topMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="rightMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="bottomMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="verticalSpacing">
-                    <number>6</number>
-                  </property>
-                  <item row="0" column="0">
-                    <widget class="QLabel" name="keymapSettingLabel">
-                      <property name="text">
-                        <string>Keymap style</string>
-                      </property>
-                    </widget>
-                  </item>
-                  <item row="0" column="1">
-                    <widget class="QComboBox" name="keymapSettingComboBox"/>
-                  </item>
-                  <item row="1" column="1">
-                    <layout class="QVBoxLayout" name="hogehoge">
-                      <property name="spacing">
-                        <number>0</number>
-                      </property>
-                      <item>
-                        <widget class="QPushButton" name="editKeymapButton">
-                          <property name="text">
-                            <string>Customize...</string>
-                          </property>
-                        </widget>
-                      </item>
-                      <item>
-                        <spacer name="hogehog3">
-                          <property name="orientation">
-                            <enum>Qt::Orientation::Vertical</enum>
-                          </property>
-                          <property name="sizeType">
-                            <enum>QSizePolicy::Policy::Fixed</enum>
-                          </property>
-                          <property name="sizeHint" stdset="0">
-                            <size>
-                              <width>1</width>
-                              <height>6</height>
-                            </size>
-                          </property>
-                        </spacer>
-                      </item>
-                    </layout>
-                  </item>
-                  <item row="2" column="0">
-                    <widget class="QLabel" name="label_11">
-                      <property name="text">
-                        <string>Romaji table</string>
-                      </property>
-                    </widget>
-                  </item>
-                  <item row="2" column="1">
-                    <widget class="QPushButton" name="editRomanTableButton">
-                      <property name="text">
-                        <string>Customize...</string>
-                      </property>
-                    </widget>
-                  </item>
-                </layout>
-              </widget>
-            </item>
-            <item>
-              <spacer name="generaltabspacer">
-                <property name="orientation">
-                  <enum>Qt::Orientation::Vertical</enum>
-                </property>
-                <property name="sizeType">
-                  <enum>QSizePolicy::Policy::Expanding</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                  <size>
-                    <width>0</width>
-                    <height>0</height>
-                  </size>
-                </property>
-              </spacer>
-            </item>
-          </layout>
-        </widget>
-        <widget class="QWidget" name="dictionaryTab">
-          <attribute name="title">
-            <string>Dictionary</string>
-          </attribute>
-          <layout class="QVBoxLayout" name="rootDictionary">
-            <property name="spacing">
-              <number>12</number>
-            </property>
-            <property name="leftMargin">
-              <number>24</number>
-            </property>
-            <property name="topMargin">
-              <number>12</number>
-            </property>
-            <property name="rightMargin">
-              <number>24</number>
-            </property>
-            <property name="bottomMargin">
-              <number>24</number>
-            </property>
-            <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_8">
-                <property name="topMargin">
-                  <number>4</number>
-                </property>
-                <item>
-                  <widget class="QLabel" name="label">
-                    <property name="font">
-                      <font>
-                        <bold>true</bold>
-                      </font>
-                    </property>
-                      <property name="minimumSize">
-                        <size>
-                          <width>0</width>
-                          <height>20</height>
-                        </size>
-                      </property>
-                    <property name="text">
-                      <string>Personalization</string>
-                    </property>
-                  </widget>
-                </item>
-              </layout>
-            </item>
-            <item>
-              <widget class="QWidget" name="gridLayoutWidget_5">
-                      <property name="role" stdset="0">
-                        <string>gridLayoutContainer</string>
-                      </property>
-                <layout class="QGridLayout" name="gridLayout_5" columnstretch="2,1">
-                  <property name="leftMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="topMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="rightMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="bottomMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="horizontalSpacing">
-                    <number>0</number>
-                  </property>
-                  <property name="verticalSpacing">
-                    <number>12</number>
-                  </property>
-                  <item row="0" column="0">
-                    <widget class="QLabel" name="label_7">
-                      <property name="text">
-                        <string>Adjust conversion based on previous input</string>
-                      </property>
-                    </widget>
-                  </item>
-                  <item row="0" column="1">
-                    <widget class="QComboBox" name="historyLearningLevelComboBox">
-                      <property name="minimumSize">
-                        <size>
-                          <width>150</width>
-                          <height>0</height>
-                        </size>
-                      </property>
-                    </widget>
-                  </item>
-                  <item row="1" column="0" colspan="3">
-                <layout class="QHBoxLayout" name="gridLayout_5_item1">
-                  <item>
-                    <spacer name="horizontalSpacer_2">
-                      <property name="orientation">
-                        <enum>Qt::Orientation::Horizontal</enum>
-                      </property>
-                    </spacer>
-                  </item>
-                  <item>
-                    <widget class="QPushButton" name="clearUserHistoryButton">
-            <property name="minimumSize">
-              <size>
-                <width>150</width>
-                <height>0</height>
-              </size>
-            </property>
-                      <property name="text">
-                        <string>Clear personalization data</string>
-                      </property>
-                      <property name="sizePolicy">
-                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed"/>
-                      </property>
-                    </widget>
-                  </item>
-                </layout>
-                  </item>
-                </layout>
-              </widget>
-            </item>
-            <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_14">
-                <property name="topMargin">
-                  <number>4</number>
-                </property>
-                <item>
-                  <widget class="QLabel" name="label_6">
-                    <property name="font">
-                      <font>
-                        <bold>true</bold>
-                      </font>
-                    </property>
-                      <property name="minimumSize">
-                        <size>
-                          <width>0</width>
-                          <height>20</height>
-                        </size>
-                      </property>
-                    <property name="text">
-                      <string>User dictionary</string>
-                    </property>
-                  </widget>
-                </item>
-              </layout>
-            </item>
-            <item>
-              <widget class="QWidget" name="gridLayoutWidget_6">
-                      <property name="role" stdset="0">
-                        <string>gridLayoutContainer</string>
-                      </property>
-                <layout class="QGridLayout" name="gridLayout_6" columnstretch="2,1">
-                  <property name="leftMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="topMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="rightMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="bottomMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="verticalSpacing">
-                    <number>12</number>
-                  </property>
-                  <item row="0" column="0">
-                    <spacer name="horizontalSpacer">
-                      <property name="orientation">
-                        <enum>Qt::Orientation::Horizontal</enum>
-                      </property>
-                    </spacer>
-                  </item>
-                  <item row="0" column="1">
-                    <widget class="QPushButton" name="editUserDictionaryButton">
-                      <property name="sizePolicy">
-                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed"/>
-                      </property>
-                      <property name="minimumSize">
-                        <size>
-                          <width>150</width>
-                          <height>0</height>
-                        </size>
-                      </property>
-                      <property name="text">
-                        <string>Edit user dictionary...</string>
-                      </property>
-                    </widget>
-                  </item>
-                </layout>
-              </widget>
-            </item>
-            <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_24">
-                <property name="topMargin">
-                  <number>4</number>
-                </property>
-                <item>
-                  <widget class="QLabel" name="label_9">
-                    <property name="font">
-                      <font>
-                        <bold>true</bold>
-                      </font>
-                    </property>
-                      <property name="minimumSize">
-                        <size>
-                          <width>0</width>
-                          <height>20</height>
-                        </size>
-                      </property>
-                    <property name="text">
-                      <string>Usage dictionary</string>
-                    </property>
-                  </widget>
-                </item>
-              </layout>
-            </item>
-            <item>
-              <widget class="QWidget" name="gridLayoutWidget_8">
-                      <property name="role" stdset="0">
-                        <string>gridLayoutContainer</string>
-                      </property>
-                <layout class="QGridLayout" name="gridLayout_12">
-                  <property name="leftMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="topMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="rightMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="bottomMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="spacing">
-                    <number>12</number>
-                  </property>
-                  <item row="0" column="0">
-                    <widget class="QCheckBox" name="localUsageDictionaryCheckBox">
-                      <property name="text">
-                        <string>Homonym dictionary</string>
-                      </property>
-                    </widget>
-                  </item>
-                  <item row="0" column="1">
-                    <spacer name="horizontalSpacer_5">
-                      <property name="orientation">
-                        <enum>Qt::Orientation::Horizontal</enum>
-                      </property>
-                    </spacer>
-                  </item>
-                </layout>
-              </widget>
-            </item>
-            <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_22">
-                <property name="topMargin">
-                  <number>4</number>
-                </property>
-                <item>
-                  <widget class="QLabel" name="specialConversionLabel">
-                    <property name="font">
-                      <font>
-                        <bold>true</bold>
-                      </font>
-                    </property>
-                      <property name="minimumSize">
-                        <size>
-                          <width>0</width>
-                          <height>20</height>
-                        </size>
-                      </property>
-                    <property name="text">
-                      <string>Special conversions</string>
-                    </property>
-                  </widget>
-                </item>
-              </layout>
-            </item>
-            <item>
-              <widget class="QWidget" name="gridLayoutWidget_3">
-                      <property name="role" stdset="0">
-                        <string>gridLayoutContainer</string>
-                      </property>
-                <layout class="QGridLayout" name="gridLayout_3">
-                  <property name="leftMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="topMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="rightMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="bottomMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="verticalSpacing">
-                    <number>12</number>
-                  </property>
-                  <item row="0" column="0">
-                    <widget class="QCheckBox" name="singleKanjiConversionCheckBox">
-                      <property name="text">
-                        <string>Single kanji conversion</string>
-                      </property>
-                    </widget>
-                  </item>
-                  <item row="1" column="0">
-                    <widget class="QCheckBox" name="symbolConversionCheckBox">
-                      <property name="text">
-                        <string>Symbol conversion</string>
-                      </property>
-                    </widget>
-                  </item>
-                  <item row="2" column="0">
-                    <widget class="QCheckBox" name="emoticonConversionCheckBox">
-                      <property name="text">
-                        <string>Emoticon conversion</string>
-                      </property>
-                    </widget>
-                  </item>
-                  <item row="3" column="0">
-                    <widget class="QCheckBox" name="t13nConversionCheckBox">
-                      <property name="text">
-                        <string>Katakana to English conversion</string>
-                      </property>
-                    </widget>
-                  </item>
-                  <item row="4" column="0">
-                    <widget class="QCheckBox" name="zipcodeConversionCheckBox">
-                      <property name="text">
-                        <string>Postal code conversion</string>
-                      </property>
-                    </widget>
-                  </item>
-                  <item row="4" column="1">
-                    <widget class="QCheckBox" name="spellingCorrectionCheckBox">
-                      <property name="text">
-                        <string>Spelling correction</string>
-                      </property>
-                    </widget>
-                  </item>
-                  <item row="3" column="1">
-                    <widget class="QCheckBox" name="calculatorCheckBox">
-                      <property name="text">
-                        <string>Calculator</string>
-                      </property>
-                    </widget>
-                  </item>
-                  <item row="2" column="1">
-                    <widget class="QCheckBox" name="numberConversionCheckBox">
-                      <property name="text">
-                        <string>Special number conversion</string>
-                      </property>
-                    </widget>
-                  </item>
-                  <item row="1" column="1">
-                    <widget class="QCheckBox" name="dateConversionCheckBox">
-                      <property name="text">
-                        <string>Date/time conversion</string>
-                      </property>
-                    </widget>
-                  </item>
-                  <item row="0" column="1">
-                    <widget class="QCheckBox" name="emojiConversionCheckBox">
-                      <property name="text">
-                        <string>Emoji conversion</string>
-                      </property>
-                    </widget>
-                  </item>
-                </layout>
-              </widget>
-            </item>
-          </layout>
-        </widget>
-
-        <widget class="QWidget" name="inputsupport_tab">
-          <attribute name="title">
-            <string>Advanced</string>
-          </attribute>
-          <layout class="QVBoxLayout" name="rootinputsupport">
-            <property name="spacing">
-              <number>12</number>
-            </property>
-            <property name="leftMargin">
-              <number>24</number>
-            </property>
-            <property name="topMargin">
-              <number>12</number>
-            </property>
-            <property name="rightMargin">
-              <number>24</number>
-            </property>
-            <property name="bottomMargin">
-              <number>24</number>
-            </property>
-            <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_22">
-                <property name="topMargin">
-                  <number>4</number>
-                </property>
-                <item>
-                  <widget class="QLabel" name="inputassistancelabel">
-                    <property name="font">
-                      <font>
-                        <bold>true</bold>
-                      </font>
-                    </property>
-                      <property name="minimumSize">
-                        <size>
-                          <width>0</width>
-                          <height>20</height>
-                        </size>
-                      </property>
-                    <property name="text">
-                    <string>Input Assistance</string>
-                    </property>
-                  </widget>
-                </item>
-              </layout>
-            </item>
-            <item>
-          <widget class="QWidget" name="gridLayoutWidget_9">
-                      <property name="role" stdset="0">
-                        <string>gridLayoutContainer</string>
-                      </property>
-            <layout class="QGridLayout" name="gridLayout_9">
-                  <property name="leftMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="topMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="rightMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="bottomMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="verticalSpacing">
-                    <number>12</number>
-                  </property>
-              <item row="0" column="0" colspan="7">
-                <widget class="QCheckBox" name="autoSwitchCompositionMode">
-                  <property name="text">
-                    <string>Automatically switch to halfwidth</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="2" column="0" colspan="3">
-                <widget class="QLabel" name="autoCorrectionLable_3">
-                  <property name="text">
-                    <string>Shift key mode switch</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="2" column="3" colspan="4">
-                <widget class="QComboBox" name="shiftKeyModeSwitchComboBox"/>
-              </item>
-              <item row="1" column="4">
-                <widget class="QCheckBox" name="toutenCheckBox">
-                  <property name="maximumSize">
-                    <size>
-                      <width>45</width>
-                      <height>16777215</height>
-                    </size>
-                  </property>
-                  <property name="text">
-                    <string>、</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="1" column="5">
-                <widget class="QCheckBox" name="questionMarkCheckBox">
-                  <property name="maximumSize">
-                    <size>
-                      <width>45</width>
-                      <height>16777215</height>
-                    </size>
-                  </property>
-                  <property name="text">
-                    <string>?</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="1" column="0" colspan="3">
-                <widget class="QCheckBox" name="useAutoConversion">
-                  <property name="text">
-                    <string>Convert at punctuations</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="1" column="3">
-                <widget class="QCheckBox" name="kutenCheckBox">
-                  <property name="maximumSize">
-                    <size>
-                      <width>45</width>
-                      <height>16777215</height>
-                    </size>
-                  </property>
-                  <property name="text">
-                    <string>。</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="1" column="6">
-                <widget class="QCheckBox" name="exclamationMarkCheckBox">
-                  <property name="maximumSize">
-                    <size>
-                      <width>45</width>
-                      <height>16777215</height>
-                    </size>
-                  </property>
-                  <property name="text">
-                    <string>!</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="3" column="0" colspan="7">
-                <widget class="QCheckBox" name="useJapaneseLayout">
-                  <property name="enabled">
-                    <bool>true</bool>
-                  </property>
-                  <property name="text">
-                    <string>Always use Japanese keyboard layout for Japanese input</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="4" column="0" colspan="7">
-                <widget class="QCheckBox" name="useModeIndicator">
-                  <property name="enabled">
-                    <bool>true</bool>
-                  </property>
-                  <property name="text">
-                    <string>Show input mode indicator near the cursor</string>
-                  </property>
-                </widget>
-              </item>
-            </layout>
-          </widget>
-</item>
-            <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_22">
-                <property name="topMargin">
-                  <number>4</number>
-                </property>
-                <item>
-                  <widget class="QLabel" name="inputassistancelabel">
-                    <property name="font">
-                      <font>
-                        <bold>true</bold>
-                      </font>
-                    </property>
-                      <property name="minimumSize">
-                        <size>
-                          <width>0</width>
-                          <height>20</height>
-                        </size>
-                      </property>
-                    <property name="text">
-                    <string>Fullwidth/Halfwidth</string>
-                    </property>
-                  </widget>
-                </item>
-              </layout>
-            </item>
-            <item>
-          <widget class="CharacterFormEditor" name="characterFormEditor"/>
-            </item>
-            </layout>
-        </widget>
-
-        <widget class="QWidget" name="suggestionsTab">
-          <attribute name="title">
-            <string>Suggest</string>
-          </attribute>
-          <layout class="QVBoxLayout" name="rootSugggestion">
-            <property name="spacing">
-              <number>12</number>
-            </property>
-            <property name="leftMargin">
-              <number>24</number>
-            </property>
-            <property name="topMargin">
-              <number>12</number>
-            </property>
-            <property name="rightMargin">
-              <number>24</number>
-            </property>
-            <property name="bottomMargin">
-              <number>24</number>
-            </property>
-<item>
-            <layout class="QHBoxLayout" name="horizontalLayout_12">
-                <property name="topMargin">
-                  <number>4</number>
-                </property>
-                <item>
-                  <widget class="QLabel" name="label">
-                    <property name="font">
-                      <font>
-                        <bold>true</bold>
-                      </font>
-                    </property>
-                      <property name="minimumSize">
-                        <size>
-                          <width>0</width>
-                          <height>20</height>
-                        </size>
-                      </property>
-                    <property name="text">
-                    <string>Source data</string>
-                    </property>
-                  </widget>
-                </item>
-            </layout>
-        </item>
-<item>
-          <widget class="QWidget" name="gridLayoutWidget_4">
-                      <property name="role" stdset="0">
-                        <string>gridLayoutContainer</string>
-                      </property>
-            <layout class="QGridLayout" name="gridLayout_4">
-                  <property name="leftMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="topMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="rightMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="bottomMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="verticalSpacing">
-                    <number>8</number>
-                  </property>
-              <item row="0" column="0" colspan="3">
-                <widget class="QCheckBox" name="historySuggestCheckBox">
-                  <property name="text">
-                    <string>Use input history</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="1" column="2">
-                <widget class="QPushButton" name="clearUserPredictionButton">
-                  <property name="minimumSize">
-                    <size>
-                      <width>120</width>
-                      <height>0</height>
-                    </size>
-                  </property>
-                  <property name="text">
-                    <string>Clear all history</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="1" column="1">
-                <widget class="QPushButton" name="clearUnusedUserPredictionButton">
-                  <property name="minimumSize">
-                    <size>
-                      <width>120</width>
-                      <height>0</height>
-                    </size>
-                  </property>
-                  <property name="text">
-                    <string>Clear unused history</string>
-                  </property>
-                </widget>
-              </item>
-            </layout>
-          </widget>
-              </item>
-              <item>
-          <widget class="QWidget" name="gridLayoutWidget_4">
-                      <property name="role" stdset="0">
-                        <string>gridLayoutContainer</string>
-                      </property>
-            <layout class="QGridLayout" name="gridLayout_4">
-                  <property name="leftMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="topMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="rightMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="bottomMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="verticalSpacing">
-                    <number>12</number>
-                  </property>
-              <item row="0" column="0">
-                <widget class="QCheckBox" name="dictionarySuggestCheckBox">
-                  <property name="text">
-                    <string>Use system dictionary</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="1" column="0">
-                <widget class="QCheckBox" name="realtimeConversionCheckBox">
-                  <property name="text">
-                    <string>Use realtime conversion</string>
-                  </property>
-                </widget>
-              </item>
-            </layout>
-          </widget>
-</item>
-<item>
-            <layout class="QHBoxLayout" name="horizontalLayout_16">
-                <property name="topMargin">
-                  <number>4</number>
-                </property>
-                <item>
-                  <widget class="QLabel" name="label">
-                    <property name="font">
-                      <font>
-                        <bold>true</bold>
-                      </font>
-                    </property>
-                      <property name="minimumSize">
-                        <size>
-                          <width>0</width>
-                          <height>20</height>
-                        </size>
-                      </property>
-                    <property name="text">
-                    <string>Other settings</string>
-                    </property>
-                  </widget>
-                </item>
-            </layout>
-        </item>
-<item>
-          <widget class="QWidget" name="gridLayoutWidget_10">
-                      <property name="role" stdset="0">
-                        <string>gridLayoutContainer</string>
-                      </property>
-            <layout class="QGridLayout" name="gridLayout_11" columnstretch="2,1">
-                  <property name="leftMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="topMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="rightMargin">
-                    <number>12</number>
-                  </property>
-                  <property name="bottomMargin">
-                    <number>12</number>
-                  </property>
-              <item row="0" column="0">
-                <widget class="QLabel" name="defaultNUmberofSuggestionsLabel">
-                  <property name="text">
-                    <string>Maximum number of suggestions</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="0" column="1">
-                <widget class="QSpinBox" name="suggestionsSizeSpinBox"/>
-              </item>
-            </layout>
-          </widget>
-</item>
-            <item>
-              <spacer name="suggesttabspacer">
-                <property name="orientation">
-                  <enum>Qt::Orientation::Vertical</enum>
-                </property>
-                <property name="sizeType">
-                  <enum>QSizePolicy::Policy::Expanding</enum>
-                </property>
-              </spacer>
-            </item>
-            </layout>
-        </widget>
-
-
-        <widget class="QWidget" name="privacyTab">
-          <attribute name="title">
-            <string>Privacy</string>
-          </attribute>
-          <layout class="QVBoxLayout" name="rootPrivacy">
-            <property name="spacing">
-              <number>12</number>
-            </property>
-            <property name="leftMargin">
-              <number>24</number>
-            </property>
-            <property name="topMargin">
-              <number>12</number>
-            </property>
-            <property name="rightMargin">
-              <number>24</number>
-            </property>
-            <property name="bottomMargin">
-              <number>24</number>
-            </property>
-<item>
-            <layout class="QHBoxLayout" name="horizontalLayout_12">
-                <property name="topMargin">
-                  <number>4</number>
-                </property>
-                <item>
-                            <widget class="QLabel" name="secretmodelabel">
-                    <property name="font">
-                      <font>
-                        <bold>true</bold>
-                      </font>
-                    </property>
-                      <property name="minimumSize">
-                        <size>
-                          <width>0</width>
-                          <height>20</height>
-                        </size>
-                      </property>
-                    <property name="text">
-                                <string>Secret mode</string>
-                    </property>
-                  </widget>
-                </item>
-            </layout>
-</item>
-<item>
-       <widget class="QWidget" name="widget_12">
-                      <property name="role" stdset="0">
-                        <string>gridLayoutContainer</string>
-                      </property>
-            <layout class="QGridLayout" name="horizontalLayout_12">
-                    <property name="horizontalSpacing">
-                      <number>2</number>
-                    </property>
-                    <property name="leftMargin">
-                      <number>12</number>
-                    </property>
-                    <property name="topMargin">
-                      <number>13</number>
-                    </property>
-                    <property name="rightMargin">
-                      <number>12</number>
-                    </property>
-                    <property name="bottomMargin">
-                      <number>12</number>
-                    </property>
-              <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop">
-          <widget class="QCheckBox" name="incognitoModeCheckBox">
-              <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                </sizepolicy>
-              </property>
-            <property name="tristate">
-              <bool>false</bool>
-            </property>
-          </widget>
-                </item>
-              <item row="0" column="1">
-          <widget class="QLabel" name="incognitoModeMessage">
-            <property name="styleSheet">
- <string>color: palette(button-text);padding: 1px 0px 2px 0px</string>
-</property>
-              <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                </sizepolicy>
-              </property>
-            <property name="text">
-              <string>Temporarily disable conversion personalization, history-based suggestions and user dictionary</string>
-            </property>
-            <property name="wordWrap">
-              <bool>true</bool>
-            </property>
-          </widget>
-                </item>
-            </layout>
-          </widget>
-</item>
-<item>
-            <layout class="QHBoxLayout" name="horizontalLayout_12">
-                <property name="topMargin">
-                  <number>4</number>
-                </property>
-                <item>
-                            <widget class="QLabel" name="secretmodelabel">
-                    <property name="font">
-                      <font>
-                        <bold>true</bold>
-                      </font>
-                    </property>
-                      <property name="minimumSize">
-                        <size>
-                          <width>0</width>
-                          <height>20</height>
-                        </size>
-                      </property>
-                    <property name="text">
-                    <string>Presentation mode</string>
-                    </property>
-                  </widget>
-                </item>
-            </layout>
-</item>
-<item>
-       <widget class="QWidget" name="widget_12">
-                      <property name="role" stdset="0">
-                        <string>gridLayoutContainer</string>
-                      </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_12">
-                    <property name="leftMargin">
-                      <number>12</number>
-                    </property>
-                    <property name="topMargin">
-                      <number>12</number>
-                    </property>
-                    <property name="rightMargin">
-                      <number>12</number>
-                    </property>
-                    <property name="bottomMargin">
-                      <number>12</number>
-                    </property>
-            <item>
-          <widget class="QCheckBox" name="presentationModeCheckBox">
-            <property name="text">
-              <string>Temporarily disable all suggestions</string>
-            </property>
-          </widget>
-            </item>
-            </layout>
-        </widget>
-</item>
-<item>
-            <layout class="QHBoxLayout" name="horizontalLayout_12">
-                <property name="topMargin">
-                  <number>4</number>
-                </property>
-                <item>
-                            <widget class="QLabel" name="usageStatsLabel">
-                    <property name="font">
-                      <font>
-                        <bold>true</bold>
-                      </font>
-                    </property>
-                      <property name="minimumSize">
-                        <size>
-                          <width>0</width>
-                          <height>20</height>
-                        </size>
-                      </property>
-                    <property name="text">
-                    <string>Usage statistics and crash reports</string>
-                    </property>
-                  </widget>
-                </item>
-            </layout>
-</item>
-<item>
-       <widget class="QWidget" name="widget_12">
-                      <property name="role" stdset="0">
-                        <string>gridLayoutContainer</string>
-                      </property>
-              <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-                </sizepolicy>
-              </property>
-            <layout class="QGridLayout" name="horizontalLayout_12">
-                    <property name="horizontalSpacing">
-                      <number>2</number>
-                    </property>
-                    <property name="leftMargin">
-                      <number>12</number>
-                    </property>
-                    <property name="topMargin">
-                      <number>13</number>
-                    </property>
-                    <property name="rightMargin">
-                      <number>12</number>
-                    </property>
-                    <property name="bottomMargin">
-                      <number>12</number>
-                    </property>
-              <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop">
-          <widget class="QCheckBox" name="usageStatsCheckBox">
-              <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                </sizepolicy>
-              </property>
-            <property name="tristate">
-              <bool>false</bool>
-            </property>
-          </widget>
-                </item>
-              <item row="0" column="1">
-          <widget class="QLabel" name="usageStatsMessage">
-            <property name="styleSheet">
- <string>color: palette(button-text);padding: 1px 0px 2px 0px</string>
-</property>
-              <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Preferred"/>
-              </property>
-            <property name="text">
-              <string>Help make [ProductName] better by automatically sending usage statistics and crash reports to Google (changes will take effect after you log out and log back in)</string>
-            </property>
-            <property name="wordWrap">
-              <bool>true</bool>
-            </property>
-          </widget>
-        </item>
-              <item row="1" column="0" colspan="2">
-            <widget class="QWidget" name="launchAdministrationDialogButtonForUsageStatsContainer">
-            <layout class="QHBoxLayout" name="launchAdministrationDialogButtonForUsageStatsContainerLayout">
-                <item>
-                <spacer name="horizontalSpacer">
-                  <property name="orientation">
-                    <enum>Qt::Orientation::Horizontal</enum>
-                  </property>
-                </spacer>
-                </item>
-                <item>
-          <widget class="QPushButton" name="launchAdministrationDialogButtonForUsageStats">
-            <property name="minimumSize">
-              <size>
-                <width>150</width>
-                <height>0</height>
-              </size>
-            </property>
-            <property name="maximumSize">
-              <size>
-                <width>150</width>
-                <height>32</height>
-              </size>
-            </property>
-            <property name="text">
-              <string>Settings...</string>
-            </property>
-          </widget>
-        </item>
-            </layout>
-</widget>
-        </item>
-            </layout>
-          </widget>
-</item>
-              <item>
-                <spacer name="verticalSpacer_2">
-                  <property name="orientation">
-                    <enum>Qt::Orientation::Vertical</enum>
-                  </property>
-                </spacer>
-              </item>
-            </layout>
-        </widget>
-
-
-        <widget class="QWidget" name="miscTab">
-          <attribute name="title">
-            <string>Misc</string>
-          </attribute>
-          <layout class="QVBoxLayout" name="rootMisc">
-            <property name="spacing">
-              <number>12</number>
-            </property>
-            <property name="leftMargin">
-              <number>24</number>
-            </property>
-            <property name="topMargin">
-              <number>12</number>
-            </property>
-            <property name="rightMargin">
-              <number>24</number>
-            </property>
-            <property name="bottomMargin">
-              <number>24</number>
-            </property>
-
-<item>
-        
-                            <widget class="QWidget" name="miscDefaultIMEWidget">
-          <layout class="QVBoxLayout" name="miscDefaultIMEWidgetLayout">
-            <property name="spacing">
-              <number>12</number>
-            </property>
-
-<item>
-            <layout class="QHBoxLayout" name="horizontalLayout_12">
-                <property name="topMargin">
-                  <number>4</number>
-                </property>
-                <item>
-                            <widget class="QLabel" name="checkDefaultLabel">
-                    <property name="font">
-                      <font>
-                        <bold>true</bold>
-                      </font>
-                    </property>
-                      <property name="minimumSize">
-                        <size>
-                          <width>0</width>
-                          <height>20</height>
-                        </size>
-                      </property>
-                    <property name="text">
-                                <string>Default IME</string>
-                    </property>
-                  </widget>
-                </item>
-            </layout>
-        </item>
-        <item>
-           <widget class="QWidget" name="widget_4" native="true">
-                      <property name="role" stdset="0">
-                        <string>gridLayoutContainer</string>
-                      </property>
-             <layout class="QVBoxLayout" name="verticalLayout_2">
-                    <property name="spacing">
-                      <number>12</number>
-                    </property>
-                    <property name="leftMargin">
-                      <number>12</number>
-                    </property>
-                    <property name="topMargin">
-                      <number>12</number>
-                    </property>
-                    <property name="rightMargin">
-                      <number>12</number>
-                    </property>
-                    <property name="bottomMargin">
-                      <number>12</number>
-                    </property>
-                          <item>
-                            <widget class="QCheckBox" name="checkDefaultCheckBox">
-                              <property name="sizePolicy">
-                                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                                  <horstretch>0</horstretch>
-                                  <verstretch>0</verstretch>
-                                </sizepolicy>
-                              </property>
-                              <property name="text">
-                                <string>Check if [ProductName] is the default IME on startup</string>
-                              </property>
-                              <property name="tristate">
-                                <bool>false</bool>
-                              </property>
-                            </widget>
-                          </item>
-                          <item>
-                            <widget class="QCheckBox" name="IMEHotKeyDisabledCheckBox">
-                              <property name="text">
-                                <string>Disable Keyboard layout hotkey (Ctrl+Shift)</string>
-                              </property>
-                            </widget>
-                          </item>
-                        </layout>
-                      </widget>
-              </item>
-</layout>
-</widget>
-              </item>
-
-<item>
-<widget class="QWidget" name="miscAdministrationWidget">
-          <layout class="QVBoxLayout" name="miscAdministrationWidgetLayout">
-            <property name="spacing">
-              <number>12</number>
-            </property>
-
-<item>
-            <layout class="QHBoxLayout" name="horizontalLayout_12">
-                <property name="topMargin">
-                  <number>4</number>
-                </property>
-                <item>
-                            <widget class="QLabel" name="administrationLabel">
-                    <property name="font">
-                      <font>
-                        <bold>true</bold>
-                      </font>
-                    </property>
-                      <property name="minimumSize">
-                        <size>
-                          <width>0</width>
-                          <height>20</height>
-                        </size>
-                      </property>
-                    <property name="text">
-                                <string>Administration</string>
-                    </property>
-                  </widget>
-                </item>
-            </layout>
-        </item>
-              <item>
-                <widget class="QWidget" name="miscAdministrationWidget2">
-                      <property name="role" stdset="0">
-                        <string>gridLayoutContainer</string>
-                      </property>
-                        <layout class="QGridLayout" name="gridLayout_7" columnstretch="2,1">
-                          <property name="leftMargin">
-                            <number>12</number>
-                          </property>
-                          <property name="topMargin">
-                            <number>12</number>
-                          </property>
-                          <property name="rightMargin">
-                            <number>12</number>
-                          </property>
-                          <property name="bottomMargin">
-                            <number>12</number>
-                          </property>
-                          <item row="0" column="0">
-                            <widget class="QLabel" name="dictionaryPreloadingAndUACLabel">
-                              <property name="text">
-                                <string>Dictionary preloading and UAC settings</string>
-                              </property>
-                            </widget>
-                          </item>
-                          <item row="0" column="1">
-                            <widget class="QPushButton" name="launchAdministrationDialogButton">
-                              <property name="minimumSize">
-                                <size>
-                                  <width>150</width>
-                                  <height>0</height>
-                                </size>
-                              </property>
-                              <property name="text">
-                                <string>Settings...</string>
-                              </property>
-                            </widget>
-                          </item>
-                        </layout>
-                      </widget>
-              </item>
-</layout>
-</widget>
-              </item>
-
-
-<item>
-          <widget class="QWidget" name="miscStartupWidget">
-          <layout class="QVBoxLayout" name="miscStartupWidget2">
-            <property name="spacing">
-              <number>12</number>
-            </property>
-
-<item>
-            <layout class="QHBoxLayout" name="horizontalLayout_12">
-                <property name="topMargin">
-                  <number>4</number>
-                </property>
-                <item>
-                            <widget class="QLabel" name="startupLabel">
-                    <property name="font">
-                      <font>
-                        <bold>true</bold>
-                      </font>
-                    </property>
-                      <property name="minimumSize">
-                        <size>
-                          <width>0</width>
-                          <height>20</height>
-                        </size>
-                      </property>
-                    <property name="text">
-                                <string>Startup</string>
-                    </property>
-                  </widget>
-                </item>
-            </layout>
-        </item>
-                    <item>
-                      <widget class="QWidget" name="widget_12" native="true">
-                      <property name="role" stdset="0">
-                        <string>gridLayoutContainer</string>
-                      </property>
-                        <layout class="QVBoxLayout" name="verticalLayout_6">
-                          <property name="leftMargin">
-                            <number>12</number>
-                          </property>
-                          <property name="topMargin">
-                            <number>12</number>
-                          </property>
-                          <property name="rightMargin">
-                            <number>12</number>
-                          </property>
-                          <property name="bottomMargin">
-                            <number>12</number>
-                          </property>
-                          <item>
-                            <widget class="QCheckBox" name="startupCheckBox">
-                              <property name="text">
-                                <string>Start conversion engine on login</string>
-                              </property>
-                            </widget>
-                          </item>
-                        </layout>
-                      </widget>
-              </item>
-</layout>
-                      </widget>
-              </item>
-
-
-<item>
-                <widget class="QWidget" name="miscLoggingWidget">
-          <layout class="QVBoxLayout" name="miscLoggingWidget2">
-            <property name="spacing">
-              <number>12</number>
-            </property>
-
-<item>
-            <layout class="QHBoxLayout" name="horizontalLayout_12">
-                <property name="topMargin">
-                  <number>4</number>
-                </property>
-                <item>
-                            <widget class="QLabel" name="loggingLabel">
-                    <property name="font">
-                      <font>
-                        <bold>true</bold>
-                      </font>
-                    </property>
-                      <property name="minimumSize">
-                        <size>
-                          <width>0</width>
-                          <height>20</height>
-                        </size>
-                      </property>
-                    <property name="text">
-                                <string>Logging</string>
-                    </property>
-                  </widget>
-                </item>
-            </layout>
-        </item>
-        <item>
-                        <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="2,1">
-                          <property name="leftMargin">
-                            <number>12</number>
-                          </property>
-                          <property name="topMargin">
-                            <number>12</number>
-                          </property>
-                          <property name="rightMargin">
-                            <number>12</number>
-                          </property>
-                          <property name="bottomMargin">
-                            <number>12</number>
-                          </property>
-                          <item>
-                            <widget class="QLabel" name="verboseLevelLabel">
-                              <property name="text">
-                                <string>Logging level (debug only)</string>
-                              </property>
-                            </widget>
-                          </item>
-                          <item>
-                            <widget class="QComboBox" name="verboseLevelComboBox">
-                              <property name="minimumSize">
-                                <size>
-                                  <width>150</width>
-                                  <height>0</height>
-                                </size>
-                              </property>
-                            </widget>
-                          </item>
-                        </layout>
-        </item>
-                        </layout>
-</widget>
-        </item>
-
-              <item>
-                <spacer name="verticalSpacer_2">
-                  <property name="orientation">
-                    <enum>Qt::Orientation::Vertical</enum>
-                  </property>
-                </spacer>
-              </item>
-            </layout>
-        </widget>
-      </widget>
-          </item>
-
-        <item>
-      <widget class="QWidget" name="horizontalLayoutWidget_12">
-              <property name="styleSheet">
-                <string>QPushButton { padding: 8px; }</string>
-              </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
-            <widget class="QPushButton" name="resetToDefaultsButton">
-              <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                </sizepolicy>
-              </property>
-              <property name="text">
-                <string>Reset to defaults</string>
-              </property>
+           <widget class="QLabel" name="basicsLabel">
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Basics</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QWidget" name="glcontainer">
+          <property name="role" stdset="0">
+           <string>gridLayoutContainer</string>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <layout class="QGridLayout" name="gridLayout" columnstretch="2,1">
+           <property name="leftMargin">
+            <number>12</number>
+           </property>
+           <property name="topMargin">
+            <number>12</number>
+           </property>
+           <property name="rightMargin">
+            <number>12</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>12</number>
+           </property>
+           <item row="0" column="1">
+            <widget class="QComboBox" name="inputModeComboBox"/>
+           </item>
+           <item row="1" column="1">
+            <widget class="QComboBox" name="punctuationsSettingComboBox"/>
+           </item>
+           <item row="2" column="1">
+            <widget class="QComboBox" name="symbolsSettingComboBox">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
             </widget>
-          </item>
+           </item>
+           <item row="4" column="1">
+            <widget class="QComboBox" name="spaceCharacterFormComboBox">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="inputModeLabel">
+             <property name="text">
+              <string>Input mode</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="PunctuationsSettingLabel">
+             <property name="text">
+              <string>Punctuation style</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="symbolsSettingLabel">
+             <property name="text">
+              <string>Symbol style</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="spaceInputSettingLabel">
+             <property name="text">
+              <string>Space input style</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QComboBox" name="selectionShortcutModeComboBox"/>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="selectionShortcutModeLabel">
+             <property name="text">
+              <string>Candidate selection shortcut</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLabel" name="numpadCharacterFormLabel">
+             <property name="text">
+              <string>Input from numpad keys</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QComboBox" name="numpadCharacterFormComboBox"/>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="yenSignLabel">
+             <property name="text">
+              <string>Input from ¥ or backslash key</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QComboBox" name="yenSignComboBox"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="kaymapLabelLayout">
+          <property name="topMargin">
+           <number>4</number>
+          </property>
           <item>
-            <spacer name="horizontalSpacer_4">
-              <property name="orientation">
+           <widget class="QLabel" name="label_4">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Keymap</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QWidget" name="glcontainer2">
+          <property name="role" stdset="0">
+           <string>gridLayoutContainer</string>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2" columnstretch="2,1">
+           <property name="leftMargin">
+            <number>12</number>
+           </property>
+           <property name="topMargin">
+            <number>12</number>
+           </property>
+           <property name="rightMargin">
+            <number>12</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>6</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QLabel" name="keymapSettingLabel">
+             <property name="text">
+              <string>Keymap style</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QComboBox" name="keymapSettingComboBox"/>
+           </item>
+           <item row="1" column="1">
+            <layout class="QVBoxLayout" name="hogehoge">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QPushButton" name="editKeymapButton">
+               <property name="text">
+                <string>Customize...</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="hogehog3">
+               <property name="orientation">
+                <enum>Qt::Orientation::Vertical</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Policy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>1</width>
+                 <height>6</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_11">
+             <property name="text">
+              <string>Romaji table</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QPushButton" name="editRomanTableButton">
+             <property name="text">
+              <string>Customize...</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="generaltabspacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Expanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="dictionaryTab">
+       <attribute name="title">
+        <string>Dictionary</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="rootDictionary">
+        <property name="spacing">
+         <number>12</number>
+        </property>
+        <property name="leftMargin">
+         <number>24</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>24</number>
+        </property>
+        <property name="bottomMargin">
+         <number>24</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <property name="topMargin">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Personalization</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QWidget" name="gridLayoutWidget_5">
+          <property name="role" stdset="0">
+           <string>gridLayoutContainer</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_5" columnstretch="2,1">
+           <property name="leftMargin">
+            <number>12</number>
+           </property>
+           <property name="topMargin">
+            <number>12</number>
+           </property>
+           <property name="rightMargin">
+            <number>12</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
+           <property name="horizontalSpacing">
+            <number>0</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>12</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>Adjust conversion based on previous input</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QComboBox" name="historyLearningLevelComboBox">
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>0</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="3">
+            <layout class="QHBoxLayout" name="gridLayout_5_item1">
+             <item>
+              <spacer name="horizontalSpacer_2">
+               <property name="orientation">
                 <enum>Qt::Orientation::Horizontal</enum>
-              </property>
-            </spacer>
-          </item>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="clearUserHistoryButton">
+               <property name="minimumSize">
+                <size>
+                 <width>150</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Clear personalization data</string>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed"/>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_14">
+          <property name="topMargin">
+           <number>4</number>
+          </property>
           <item>
-            <widget class="QPushButton" name="applyButton">
-              <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <widget class="QLabel" name="label_6">
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>User dictionary</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QWidget" name="gridLayoutWidget_6">
+          <property name="role" stdset="0">
+           <string>gridLayoutContainer</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_6" columnstretch="2,1">
+           <property name="leftMargin">
+            <number>12</number>
+           </property>
+           <property name="topMargin">
+            <number>12</number>
+           </property>
+           <property name="rightMargin">
+            <number>12</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>12</number>
+           </property>
+           <item row="0" column="0">
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+            </spacer>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="editUserDictionaryButton">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed"/>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Edit user dictionary...</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_24">
+          <property name="topMargin">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_9">
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Usage dictionary</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QWidget" name="gridLayoutWidget_8">
+          <property name="role" stdset="0">
+           <string>gridLayoutContainer</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_12">
+           <property name="leftMargin">
+            <number>12</number>
+           </property>
+           <property name="topMargin">
+            <number>12</number>
+           </property>
+           <property name="rightMargin">
+            <number>12</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
+           <property name="spacing">
+            <number>12</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QCheckBox" name="localUsageDictionaryCheckBox">
+             <property name="text">
+              <string>Homonym dictionary</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <spacer name="horizontalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_22">
+          <property name="topMargin">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="specialConversionLabel">
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Special conversions</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QWidget" name="gridLayoutWidget_3">
+          <property name="role" stdset="0">
+           <string>gridLayoutContainer</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <property name="leftMargin">
+            <number>12</number>
+           </property>
+           <property name="topMargin">
+            <number>12</number>
+           </property>
+           <property name="rightMargin">
+            <number>12</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>12</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QCheckBox" name="singleKanjiConversionCheckBox">
+             <property name="text">
+              <string>Single kanji conversion</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QCheckBox" name="symbolConversionCheckBox">
+             <property name="text">
+              <string>Symbol conversion</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QCheckBox" name="emoticonConversionCheckBox">
+             <property name="text">
+              <string>Emoticon conversion</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QCheckBox" name="t13nConversionCheckBox">
+             <property name="text">
+              <string>Katakana to English conversion</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QCheckBox" name="zipcodeConversionCheckBox">
+             <property name="text">
+              <string>Postal code conversion</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QCheckBox" name="spellingCorrectionCheckBox">
+             <property name="text">
+              <string>Spelling correction</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QCheckBox" name="calculatorCheckBox">
+             <property name="text">
+              <string>Calculator</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QCheckBox" name="numberConversionCheckBox">
+             <property name="text">
+              <string>Special number conversion</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QCheckBox" name="dateConversionCheckBox">
+             <property name="text">
+              <string>Date/time conversion</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QCheckBox" name="emojiConversionCheckBox">
+             <property name="text">
+              <string>Emoji conversion</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="inputsupport_tab">
+       <attribute name="title">
+        <string>Advanced</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="rootinputsupport">
+        <property name="spacing">
+         <number>12</number>
+        </property>
+        <property name="leftMargin">
+         <number>24</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>24</number>
+        </property>
+        <property name="bottomMargin">
+         <number>24</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_22">
+          <property name="topMargin">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="inputassistancelabel">
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Input Assistance</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QWidget" name="gridLayoutWidget_9">
+          <property name="role" stdset="0">
+           <string>gridLayoutContainer</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_9">
+           <property name="leftMargin">
+            <number>12</number>
+           </property>
+           <property name="topMargin">
+            <number>12</number>
+           </property>
+           <property name="rightMargin">
+            <number>12</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>12</number>
+           </property>
+           <item row="0" column="0" colspan="7">
+            <widget class="QCheckBox" name="autoSwitchCompositionMode">
+             <property name="text">
+              <string>Automatically switch to halfwidth</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="3">
+            <widget class="QLabel" name="autoCorrectionLable_3">
+             <property name="text">
+              <string>Shift key mode switch</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3" colspan="4">
+            <widget class="QComboBox" name="shiftKeyModeSwitchComboBox"/>
+           </item>
+           <item row="1" column="4">
+            <widget class="QCheckBox" name="toutenCheckBox">
+             <property name="maximumSize">
+              <size>
+               <width>45</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>、</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="5">
+            <widget class="QCheckBox" name="questionMarkCheckBox">
+             <property name="maximumSize">
+              <size>
+               <width>45</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>?</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="3">
+            <widget class="QCheckBox" name="useAutoConversion">
+             <property name="text">
+              <string>Convert at punctuations</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QCheckBox" name="kutenCheckBox">
+             <property name="maximumSize">
+              <size>
+               <width>45</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>。</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="6">
+            <widget class="QCheckBox" name="exclamationMarkCheckBox">
+             <property name="maximumSize">
+              <size>
+               <width>45</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>!</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0" colspan="7">
+            <widget class="QCheckBox" name="useJapaneseLayout">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="text">
+              <string>Always use Japanese keyboard layout for Japanese input</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0" colspan="7">
+            <widget class="QCheckBox" name="useModeIndicator">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="text">
+              <string>Show input mode indicator near the cursor</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_22">
+          <property name="topMargin">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="inputassistancelabel">
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Fullwidth/Halfwidth</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="CharacterFormEditor" name="characterFormEditor"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="suggestionsTab">
+       <attribute name="title">
+        <string>Suggest</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="rootSugggestion">
+        <property name="spacing">
+         <number>12</number>
+        </property>
+        <property name="leftMargin">
+         <number>24</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>24</number>
+        </property>
+        <property name="bottomMargin">
+         <number>24</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <property name="topMargin">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Source data</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QWidget" name="gridLayoutWidget_4">
+          <property name="role" stdset="0">
+           <string>gridLayoutContainer</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <property name="leftMargin">
+            <number>12</number>
+           </property>
+           <property name="topMargin">
+            <number>12</number>
+           </property>
+           <property name="rightMargin">
+            <number>12</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>8</number>
+           </property>
+           <item row="0" column="0" colspan="3">
+            <widget class="QCheckBox" name="historySuggestCheckBox">
+             <property name="text">
+              <string>Use input history</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QPushButton" name="clearUserPredictionButton">
+             <property name="minimumSize">
+              <size>
+               <width>120</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Clear all history</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QPushButton" name="clearUnusedUserPredictionButton">
+             <property name="minimumSize">
+              <size>
+               <width>120</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Clear unused history</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="gridLayoutWidget_4">
+          <property name="role" stdset="0">
+           <string>gridLayoutContainer</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <property name="leftMargin">
+            <number>12</number>
+           </property>
+           <property name="topMargin">
+            <number>12</number>
+           </property>
+           <property name="rightMargin">
+            <number>12</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>12</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QCheckBox" name="dictionarySuggestCheckBox">
+             <property name="text">
+              <string>Use system dictionary</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QCheckBox" name="realtimeConversionCheckBox">
+             <property name="text">
+              <string>Use realtime conversion</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_16">
+          <property name="topMargin">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Other settings</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QWidget" name="gridLayoutWidget_10">
+          <property name="role" stdset="0">
+           <string>gridLayoutContainer</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_11" columnstretch="2,1">
+           <property name="leftMargin">
+            <number>12</number>
+           </property>
+           <property name="topMargin">
+            <number>12</number>
+           </property>
+           <property name="rightMargin">
+            <number>12</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QLabel" name="defaultNUmberofSuggestionsLabel">
+             <property name="text">
+              <string>Maximum number of suggestions</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="suggestionsSizeSpinBox"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="suggesttabspacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Expanding</enum>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="privacyTab">
+       <attribute name="title">
+        <string>Privacy</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="rootPrivacy">
+        <property name="spacing">
+         <number>12</number>
+        </property>
+        <property name="leftMargin">
+         <number>24</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>24</number>
+        </property>
+        <property name="bottomMargin">
+         <number>24</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <property name="topMargin">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="secretmodelabel">
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Secret mode</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_12">
+          <property name="role" stdset="0">
+           <string>gridLayoutContainer</string>
+          </property>
+          <layout class="QGridLayout" name="horizontalLayout_12">
+           <property name="horizontalSpacing">
+            <number>2</number>
+           </property>
+           <property name="leftMargin">
+            <number>12</number>
+           </property>
+           <property name="topMargin">
+            <number>13</number>
+           </property>
+           <property name="rightMargin">
+            <number>12</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
+           <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop">
+            <widget class="QCheckBox" name="incognitoModeCheckBox">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                </sizepolicy>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="incognitoModeMessage">
+             <property name="styleSheet">
+              <string>color: palette(button-text);padding: 1px 0px 2px 0px</string>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Temporarily disable conversion personalization, history-based suggestions and user dictionary</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <property name="topMargin">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="secretmodelabel">
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Presentation mode</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_12">
+          <property name="role" stdset="0">
+           <string>gridLayoutContainer</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_12">
+           <property name="leftMargin">
+            <number>12</number>
+           </property>
+           <property name="topMargin">
+            <number>12</number>
+           </property>
+           <property name="rightMargin">
+            <number>12</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
+           <item>
+            <widget class="QCheckBox" name="presentationModeCheckBox">
+             <property name="text">
+              <string>Temporarily disable all suggestions</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <property name="topMargin">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="usageStatsLabel">
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Usage statistics and crash reports</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_12">
+          <property name="role" stdset="0">
+           <string>gridLayoutContainer</string>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                </sizepolicy>
+          </property>
+          <layout class="QGridLayout" name="horizontalLayout_12">
+           <property name="horizontalSpacing">
+            <number>2</number>
+           </property>
+           <property name="leftMargin">
+            <number>12</number>
+           </property>
+           <property name="topMargin">
+            <number>13</number>
+           </property>
+           <property name="rightMargin">
+            <number>12</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
+           <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop">
+            <widget class="QCheckBox" name="usageStatsCheckBox">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                </sizepolicy>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="usageStatsMessage">
+             <property name="styleSheet">
+              <string>color: palette(button-text);padding: 1px 0px 2px 0px</string>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred"/>
+             </property>
+             <property name="text">
+              <string>Help make [ProductName] better by automatically sending usage statistics and crash reports to Google (changes will take effect after you log out and log back in)</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="2">
+            <widget class="QWidget" name="launchAdministrationDialogButtonForUsageStatsContainer">
+             <layout class="QHBoxLayout" name="launchAdministrationDialogButtonForUsageStatsContainerLayout">
+              <item>
+               <spacer name="horizontalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Orientation::Horizontal</enum>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="launchAdministrationDialogButtonForUsageStats">
+                <property name="minimumSize">
+                 <size>
+                  <width>150</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>150</width>
+                  <height>32</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Settings...</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="miscTab">
+       <attribute name="title">
+        <string>Misc</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="rootMisc">
+        <property name="spacing">
+         <number>12</number>
+        </property>
+        <property name="leftMargin">
+         <number>24</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>24</number>
+        </property>
+        <property name="bottomMargin">
+         <number>24</number>
+        </property>
+        <item>
+         <widget class="QWidget" name="miscDefaultIMEWidget">
+          <layout class="QVBoxLayout" name="miscDefaultIMEWidgetLayout">
+           <property name="spacing">
+            <number>12</number>
+           </property>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_12">
+             <property name="topMargin">
+              <number>4</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="checkDefaultLabel">
+               <property name="font">
+                <font>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Default IME</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_4" native="true">
+             <property name="role" stdset="0">
+              <string>gridLayoutContainer</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_2">
+              <property name="spacing">
+               <number>12</number>
+              </property>
+              <property name="leftMargin">
+               <number>12</number>
+              </property>
+              <property name="topMargin">
+               <number>12</number>
+              </property>
+              <property name="rightMargin">
+               <number>12</number>
+              </property>
+              <property name="bottomMargin">
+               <number>12</number>
+              </property>
+              <item>
+               <widget class="QCheckBox" name="checkDefaultCheckBox">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
-                </sizepolicy>
-              </property>
-              <property name="text">
-                <string>Apply</string>
-              </property>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Check if [ProductName] is the default IME on startup</string>
+                </property>
+                <property name="tristate">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="IMEHotKeyDisabledCheckBox">
+                <property name="text">
+                 <string>Disable Keyboard layout hotkey (Ctrl+Shift)</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </widget>
-          </item>
-        </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="miscAdministrationWidget">
+          <layout class="QVBoxLayout" name="miscAdministrationWidgetLayout">
+           <property name="spacing">
+            <number>12</number>
+           </property>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_12">
+             <property name="topMargin">
+              <number>4</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="administrationLabel">
+               <property name="font">
+                <font>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Administration</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QWidget" name="miscAdministrationWidget2">
+             <property name="role" stdset="0">
+              <string>gridLayoutContainer</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_7" columnstretch="2,1">
+              <property name="leftMargin">
+               <number>12</number>
+              </property>
+              <property name="topMargin">
+               <number>12</number>
+              </property>
+              <property name="rightMargin">
+               <number>12</number>
+              </property>
+              <property name="bottomMargin">
+               <number>12</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QLabel" name="dictionaryPreloadingAndUACLabel">
+                <property name="text">
+                 <string>Dictionary preloading and UAC settings</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QPushButton" name="launchAdministrationDialogButton">
+                <property name="minimumSize">
+                 <size>
+                  <width>150</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Settings...</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="miscStartupWidget">
+          <layout class="QVBoxLayout" name="miscStartupWidget2">
+           <property name="spacing">
+            <number>12</number>
+           </property>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_12">
+             <property name="topMargin">
+              <number>4</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="startupLabel">
+               <property name="font">
+                <font>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Startup</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_12" native="true">
+             <property name="role" stdset="0">
+              <string>gridLayoutContainer</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_6">
+              <property name="leftMargin">
+               <number>12</number>
+              </property>
+              <property name="topMargin">
+               <number>12</number>
+              </property>
+              <property name="rightMargin">
+               <number>12</number>
+              </property>
+              <property name="bottomMargin">
+               <number>12</number>
+              </property>
+              <item>
+               <widget class="QCheckBox" name="startupCheckBox">
+                <property name="text">
+                 <string>Start conversion engine on login</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="miscLoggingWidget">
+          <layout class="QVBoxLayout" name="miscLoggingWidget2">
+           <property name="spacing">
+            <number>12</number>
+           </property>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_12">
+             <property name="topMargin">
+              <number>4</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="loggingLabel">
+               <property name="font">
+                <font>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Logging</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="2,1">
+             <property name="leftMargin">
+              <number>12</number>
+             </property>
+             <property name="topMargin">
+              <number>12</number>
+             </property>
+             <property name="rightMargin">
+              <number>12</number>
+             </property>
+             <property name="bottomMargin">
+              <number>12</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="verboseLevelLabel">
+               <property name="text">
+                <string>Logging level (debug only)</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="verboseLevelComboBox">
+               <property name="minimumSize">
+                <size>
+                 <width>150</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+         </spacer>
+        </item>
+       </layout>
       </widget>
-          </item>
-    </layout>
-    </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="horizontalLayoutWidget_12">
+      <property name="styleSheet">
+       <string>QPushButton { padding: 8px; }</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QPushButton" name="resetToDefaultsButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Reset to defaults</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="applyButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Apply</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
   </widget>
-  <customwidgets>
-    <customwidget>
-      <class>CharacterFormEditor</class>
-      <extends>QTableWidget</extends>
-      <header>gui/config_dialog/character_form_editor.h</header>
-    </customwidget>
-  </customwidgets>
-  <tabstops>
-    <tabstop>configDialogTabWidget</tabstop>
-    <tabstop>inputModeComboBox</tabstop>
-    <tabstop>punctuationsSettingComboBox</tabstop>
-    <tabstop>symbolsSettingComboBox</tabstop>
-    <tabstop>yenSignComboBox</tabstop>
-    <tabstop>spaceCharacterFormComboBox</tabstop>
-    <tabstop>selectionShortcutModeComboBox</tabstop>
-    <tabstop>numpadCharacterFormComboBox</tabstop>
-    <tabstop>keymapSettingComboBox</tabstop>
-    <tabstop>editKeymapButton</tabstop>
-    <tabstop>editRomanTableButton</tabstop>
-    <tabstop>historyLearningLevelComboBox</tabstop>
-    <tabstop>clearUserHistoryButton</tabstop>
-    <tabstop>editUserDictionaryButton</tabstop>
-    <tabstop>localUsageDictionaryCheckBox</tabstop>
-    <tabstop>singleKanjiConversionCheckBox</tabstop>
-    <tabstop>symbolConversionCheckBox</tabstop>
-    <tabstop>emoticonConversionCheckBox</tabstop>
-    <tabstop>t13nConversionCheckBox</tabstop>
-    <tabstop>zipcodeConversionCheckBox</tabstop>
-    <tabstop>emojiConversionCheckBox</tabstop>
-    <tabstop>dateConversionCheckBox</tabstop>
-    <tabstop>numberConversionCheckBox</tabstop>
-    <tabstop>calculatorCheckBox</tabstop>
-    <tabstop>spellingCorrectionCheckBox</tabstop>
-    <tabstop>autoSwitchCompositionMode</tabstop>
-    <tabstop>useAutoConversion</tabstop>
-    <tabstop>kutenCheckBox</tabstop>
-    <tabstop>toutenCheckBox</tabstop>
-    <tabstop>questionMarkCheckBox</tabstop>
-    <tabstop>exclamationMarkCheckBox</tabstop>
-    <tabstop>shiftKeyModeSwitchComboBox</tabstop>
-    <tabstop>useJapaneseLayout</tabstop>
-    <tabstop>characterFormEditor</tabstop>
-    <tabstop>historySuggestCheckBox</tabstop>
-    <tabstop>clearUnusedUserPredictionButton</tabstop>
-    <tabstop>clearUserPredictionButton</tabstop>
-    <tabstop>dictionarySuggestCheckBox</tabstop>
-    <tabstop>realtimeConversionCheckBox</tabstop>
-    <tabstop>suggestionsSizeSpinBox</tabstop>
-    <tabstop>incognitoModeCheckBox</tabstop>
-    <tabstop>presentationModeCheckBox</tabstop>
-    <tabstop>usageStatsCheckBox</tabstop>
-    <tabstop>launchAdministrationDialogButtonForUsageStats</tabstop>
-    <tabstop>checkDefaultCheckBox</tabstop>
-    <tabstop>IMEHotKeyDisabledCheckBox</tabstop>
-    <tabstop>launchAdministrationDialogButton</tabstop>
-    <tabstop>startupCheckBox</tabstop>
-    <tabstop>verboseLevelComboBox</tabstop>
-    <tabstop>resetToDefaultsButton</tabstop>
-  </tabstops>
-  <resources/>
-  <connections/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CharacterFormEditor</class>
+   <extends>QTableWidget</extends>
+   <header>gui/config_dialog/character_form_editor.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>configDialogTabWidget</tabstop>
+  <tabstop>inputModeComboBox</tabstop>
+  <tabstop>punctuationsSettingComboBox</tabstop>
+  <tabstop>symbolsSettingComboBox</tabstop>
+  <tabstop>yenSignComboBox</tabstop>
+  <tabstop>spaceCharacterFormComboBox</tabstop>
+  <tabstop>selectionShortcutModeComboBox</tabstop>
+  <tabstop>numpadCharacterFormComboBox</tabstop>
+  <tabstop>keymapSettingComboBox</tabstop>
+  <tabstop>editKeymapButton</tabstop>
+  <tabstop>editRomanTableButton</tabstop>
+  <tabstop>historyLearningLevelComboBox</tabstop>
+  <tabstop>clearUserHistoryButton</tabstop>
+  <tabstop>editUserDictionaryButton</tabstop>
+  <tabstop>localUsageDictionaryCheckBox</tabstop>
+  <tabstop>singleKanjiConversionCheckBox</tabstop>
+  <tabstop>symbolConversionCheckBox</tabstop>
+  <tabstop>emoticonConversionCheckBox</tabstop>
+  <tabstop>t13nConversionCheckBox</tabstop>
+  <tabstop>zipcodeConversionCheckBox</tabstop>
+  <tabstop>emojiConversionCheckBox</tabstop>
+  <tabstop>dateConversionCheckBox</tabstop>
+  <tabstop>numberConversionCheckBox</tabstop>
+  <tabstop>calculatorCheckBox</tabstop>
+  <tabstop>spellingCorrectionCheckBox</tabstop>
+  <tabstop>autoSwitchCompositionMode</tabstop>
+  <tabstop>useAutoConversion</tabstop>
+  <tabstop>kutenCheckBox</tabstop>
+  <tabstop>toutenCheckBox</tabstop>
+  <tabstop>questionMarkCheckBox</tabstop>
+  <tabstop>exclamationMarkCheckBox</tabstop>
+  <tabstop>shiftKeyModeSwitchComboBox</tabstop>
+  <tabstop>useJapaneseLayout</tabstop>
+  <tabstop>characterFormEditor</tabstop>
+  <tabstop>historySuggestCheckBox</tabstop>
+  <tabstop>clearUnusedUserPredictionButton</tabstop>
+  <tabstop>clearUserPredictionButton</tabstop>
+  <tabstop>dictionarySuggestCheckBox</tabstop>
+  <tabstop>realtimeConversionCheckBox</tabstop>
+  <tabstop>suggestionsSizeSpinBox</tabstop>
+  <tabstop>incognitoModeCheckBox</tabstop>
+  <tabstop>presentationModeCheckBox</tabstop>
+  <tabstop>usageStatsCheckBox</tabstop>
+  <tabstop>launchAdministrationDialogButtonForUsageStats</tabstop>
+  <tabstop>checkDefaultCheckBox</tabstop>
+  <tabstop>IMEHotKeyDisabledCheckBox</tabstop>
+  <tabstop>launchAdministrationDialogButton</tabstop>
+  <tabstop>startupCheckBox</tabstop>
+  <tabstop>verboseLevelComboBox</tabstop>
+  <tabstop>resetToDefaultsButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
 </ui>
