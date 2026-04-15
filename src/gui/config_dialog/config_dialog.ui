@@ -34,8 +34,7 @@
  <widget class="QDialog" name="ConfigDialog">
   <property name="styleSheet">
    <string notr="true">
-QWidget[role="gridLayoutContainer"] QLabel, QComboBox:!active { color: palette(button-text); }
-QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
+QFrame[role="gridLayoutContainer"] QLabel, QComboBox:!active { color: palette(button-text); }
 </string>
   </property>
   <property name="geometry">
@@ -148,6 +147,9 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
         </item>
         <item>
          <widget class="QFrame" name="glcontainer">
+          <property name="role" stdset="0">
+           <string>gridLayoutContainer</string>
+          </property>
           <property name="autoFillBackground">
            <bool>true</bool>
           </property>
@@ -274,9 +276,12 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
          </layout>
         </item>
         <item>
-         <widget class="QWidget" name="glcontainer2">
+         <widget class="QFrame" name="glcontainer2">
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
+          </property>
+          <property name="autoFillBackground">
+           <bool>true</bool>
           </property>
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -421,9 +426,12 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
          </layout>
         </item>
         <item>
-         <widget class="QWidget" name="gridLayoutWidget_5">
+         <widget class="QFrame" name="gridLayoutWidget_5">
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
+          </property>
+          <property name="autoFillBackground">
+           <bool>true</bool>
           </property>
           <layout class="QGridLayout" name="gridLayout_5" columnstretch="2,1">
            <property name="leftMargin">
@@ -517,9 +525,12 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
          </layout>
         </item>
         <item>
-         <widget class="QWidget" name="gridLayoutWidget_6">
+         <widget class="QFrame" name="gridLayoutWidget_6">
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
+          </property>
+          <property name="autoFillBackground">
+           <bool>true</bool>
           </property>
           <layout class="QGridLayout" name="gridLayout_6" columnstretch="2,1">
            <property name="leftMargin">
@@ -589,9 +600,12 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
          </layout>
         </item>
         <item>
-         <widget class="QWidget" name="gridLayoutWidget_8">
+         <widget class="QFrame" name="gridLayoutWidget_8">
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
+          </property>
+          <property name="autoFillBackground">
+           <bool>true</bool>
           </property>
           <layout class="QGridLayout" name="gridLayout_12">
            <property name="leftMargin">
@@ -652,9 +666,12 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
          </layout>
         </item>
         <item>
-         <widget class="QWidget" name="gridLayoutWidget_3">
+         <widget class="QFrame" name="gridLayoutWidget_3">
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
+          </property>
+          <property name="autoFillBackground">
+           <bool>true</bool>
           </property>
           <layout class="QGridLayout" name="gridLayout_3">
            <property name="leftMargin">
@@ -793,9 +810,12 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
          </layout>
         </item>
         <item>
-         <widget class="QWidget" name="gridLayoutWidget_9">
+         <widget class="QFrame" name="gridLayoutWidget_9">
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
+          </property>
+          <property name="autoFillBackground">
+           <bool>true</bool>
           </property>
           <layout class="QGridLayout" name="gridLayout_9">
            <property name="leftMargin">
@@ -988,9 +1008,12 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
          </layout>
         </item>
         <item>
-         <widget class="QWidget" name="gridLayoutWidget_4">
+         <widget class="QFrame" name="gridLayoutWidget_4">
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
+          </property>
+          <property name="autoFillBackground">
+           <bool>true</bool>
           </property>
           <layout class="QGridLayout" name="gridLayout_4">
            <property name="leftMargin">
@@ -1045,9 +1068,12 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
          </widget>
         </item>
         <item>
-         <widget class="QWidget" name="gridLayoutWidget_4">
+         <widget class="QFrame" name="gridLayoutWidget_4">
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
+          </property>
+          <property name="autoFillBackground">
+           <bool>true</bool>
           </property>
           <layout class="QGridLayout" name="gridLayout_4">
            <property name="leftMargin">
@@ -1108,9 +1134,12 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
          </layout>
         </item>
         <item>
-         <widget class="QWidget" name="gridLayoutWidget_10">
+         <widget class="QFrame" name="gridLayoutWidget_10">
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
+          </property>
+          <property name="autoFillBackground">
+           <bool>true</bool>
           </property>
           <layout class="QGridLayout" name="gridLayout_11" columnstretch="2,1">
            <property name="leftMargin">
@@ -1196,9 +1225,12 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
          </layout>
         </item>
         <item>
-         <widget class="QWidget" name="widget_12">
+         <widget class="QFrame" name="widget_12">
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
+          </property>
+          <property name="autoFillBackground">
+           <bool>true</bool>
           </property>
           <layout class="QGridLayout" name="horizontalLayout_12">
            <property name="horizontalSpacing">
@@ -1273,9 +1305,12 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
          </layout>
         </item>
         <item>
-         <widget class="QWidget" name="widget_12">
+         <widget class="QFrame" name="widget_12">
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
+          </property>
+          <property name="autoFillBackground">
+           <bool>true</bool>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_12">
            <property name="leftMargin">
@@ -1326,9 +1361,12 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
          </layout>
         </item>
         <item>
-         <widget class="QWidget" name="widget_12">
+         <widget class="QFrame" name="widget_12">
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
+          </property>
+          <property name="autoFillBackground">
+           <bool>true</bool>
           </property>
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
@@ -1473,9 +1511,12 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
             </layout>
            </item>
            <item>
-            <widget class="QWidget" name="widget_4" native="true">
+            <widget class="QFrame" name="widget_4" native="true">
              <property name="role" stdset="0">
               <string>gridLayoutContainer</string>
+             </property>
+             <property name="autoFillBackground">
+              <bool>true</bool>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_2">
               <property name="spacing">
@@ -1554,9 +1595,12 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
             </layout>
            </item>
            <item>
-            <widget class="QWidget" name="miscAdministrationWidget2">
+            <widget class="QFrame" name="miscAdministrationWidget2">
              <property name="role" stdset="0">
               <string>gridLayoutContainer</string>
+             </property>
+             <property name="autoFillBackground">
+              <bool>true</bool>
              </property>
              <layout class="QGridLayout" name="gridLayout_7" columnstretch="2,1">
               <property name="leftMargin">
@@ -1629,9 +1673,12 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
             </layout>
            </item>
            <item>
-            <widget class="QWidget" name="widget_12" native="true">
+            <widget class="QFrame" name="widget_12" native="true">
              <property name="role" stdset="0">
               <string>gridLayoutContainer</string>
+             </property>
+             <property name="autoFillBackground">
+              <bool>true</bool>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
               <property name="leftMargin">
@@ -1691,37 +1738,45 @@ QWidget[role="gridLayoutContainer"] { background-color: palette(window); }
             </layout>
            </item>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="2,1">
-             <property name="leftMargin">
-              <number>12</number>
+            <widget class="QFrame" name="widget_12" native="true">
+             <property name="role" stdset="0">
+              <string>gridLayoutContainer</string>
              </property>
-             <property name="topMargin">
-              <number>12</number>
+             <property name="autoFillBackground">
+              <bool>true</bool>
              </property>
-             <property name="rightMargin">
-              <number>12</number>
-             </property>
-             <property name="bottomMargin">
-              <number>12</number>
-             </property>
-             <item>
-              <widget class="QLabel" name="verboseLevelLabel">
-               <property name="text">
-                <string>Logging level (debug only)</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="verboseLevelComboBox">
-               <property name="minimumSize">
-                <size>
-                 <width>150</width>
-                 <height>0</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-            </layout>
+             <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="2,1">
+              <property name="leftMargin">
+               <number>12</number>
+              </property>
+              <property name="topMargin">
+               <number>12</number>
+              </property>
+              <property name="rightMargin">
+               <number>12</number>
+              </property>
+              <property name="bottomMargin">
+               <number>12</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="verboseLevelLabel">
+                <property name="text">
+                 <string>Logging level (debug only)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="verboseLevelComboBox">
+                <property name="minimumSize">
+                 <size>
+                  <width>150</width>
+                  <height>0</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
            </item>
           </layout>
          </widget>
