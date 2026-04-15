@@ -1416,7 +1416,7 @@ QFrame[role="gridLayoutContainer"] QLabel, QComboBox:!active { color: palette(bu
             </widget>
            </item>
            <item row="1" column="0" colspan="2">
-            <widget class="QWidget" name="launchAdministrationDialogButtonForUsageStatsContainer">
+            <widget class="QFrame" name="launchAdministrationDialogButtonForUsageStatsContainer">
              <layout class="QHBoxLayout" name="launchAdministrationDialogButtonForUsageStatsContainerLayout">
               <item>
                <spacer name="horizontalSpacer">
