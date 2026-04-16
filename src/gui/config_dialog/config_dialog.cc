@@ -815,12 +815,41 @@ bool ConfigDialog::eventFilter(QObject *obj, QEvent *event) {
     if (obj == usageStatsMessage) {
 #ifndef CHANNEL_DEV
       usageStatsCheckBox->toggle();
+      // TODO apply!
 #endif  // CHANNEL_DEV
     } else if (obj == incognitoModeMessage) {
       incognitoModeCheckBox->toggle();
+      // TODO apply!
+    }
+  } else if(event->type() == QEvent::MouseButtonPress) {
+    QWidget *clicked = QApplication::widgetAt(
+        static_cast<QMouseEvent*>(event)->globalPosition().toPoint());
+
+    if (!clicked || clicked->focusPolicy() == Qt::NoFocus) {
+        if (QWidget *w = QApplication::focusWidget()) {
+            w->clearFocus();
+        }
+    }
+  } else if (event->type() == QEvent::KeyPress) {
+    auto *keyEvent = static_cast<QKeyEvent*>(event);
+    if (keyEvent->key() == Qt::Key_Escape) {
+        if (QWidget *w = QApplication::focusWidget()) {
+            w->clearFocus();
+        }
     }
   }
   return QObject::eventFilter(obj, event);
+}
+
+void ConfigDialog::showEvent(QShowEvent *event)
+{
+    QDialog::showEvent(event);
+
+    QTimer::singleShot(0, this, [this]() {
+        if (QWidget *fw = QApplication::focusWidget()) {
+            fw->clearFocus();
+        }
+    });
 }
 
 }  // namespace gui
