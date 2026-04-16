@@ -1480,7 +1480,7 @@ QFrame[role="gridLayoutContainer"] QLabel, QComboBox:!active { color: palette(bu
          <number>24</number>
         </property>
         <item>
-         <widget class="QWidget" name="miscDefaultIMEWidget">
+         <widget class="QFrame" name="miscDefaultIMEWidget">
           <layout class="QVBoxLayout" name="miscDefaultIMEWidgetLayout">
            <property name="spacing">
             <number>12</number>
@@ -1793,7 +1793,7 @@ QFrame[role="gridLayoutContainer"] QLabel, QComboBox:!active { color: palette(bu
      </widget>
     </item>
     <item>
-     <widget class="QWidget" name="horizontalLayoutWidget_12">
+     <widget class="QFrame" name="horizontalLayoutWidget_12">
       <property name="styleSheet">
        <string>QPushButton { padding: 8px; }</string>
       </property>
