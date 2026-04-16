@@ -79,6 +79,7 @@ class ConfigDialog : public QDialog, private Ui::ConfigDialog {
 
  protected:
   bool eventFilter(QObject *obj, QEvent *event) override;
+  void showEvent(QShowEvent *event) override;
 
  private:
   bool GetConfig(config::Config *config);
