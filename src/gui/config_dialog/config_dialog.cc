@@ -39,6 +39,11 @@
 #include <sstream>
 #include <string>
 
+#include <QFrame>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QStringList>
+
 #include "absl/log/check.h"
 #include "absl/log/log.h"
 #include "base/config_file_stream.h"
@@ -554,6 +559,16 @@ void ConfigDialog::ConvertFromProto(const config::Config &config) {
   SET_COMBOBOX(yenSignComboBox, YenSignCharacter, yen_sign_character);
 
   characterFormEditor->Load(config);
+  // TODO add header and items to scrollarea
+  QStringList texts = {"Group", "Composition", "Conversion"};
+  for (int i = 0; i < texts.size(); ++i) {
+      QFrame *frame = new QFrame();
+      frame->setFrameShape(QFrame::StyledPanel);
+      QHBoxLayout *hLayout = new QHBoxLayout(frame);
+      QLabel *label = new QLabel(texts[i]);
+      hLayout->addWidget(label);
+      characterFormEditorContainer->addWidget(frame, 1, i);
+  }
 
 #ifdef __APPLE__
   startupCheckBox->setChecked(MacUtil::CheckPrelauncherLoginItemStatus());
