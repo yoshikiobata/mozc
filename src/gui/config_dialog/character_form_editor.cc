@@ -103,17 +103,12 @@ CharacterFormEditor::CharacterFormEditor(QWidget *parent)
   delegate_->SetItemList(item_list);
   setEditTriggers(QAbstractItemView::AllEditTriggers);
   setItemDelegate(delegate_.get());
-  setToolTip(tr("Character form editor"));
   setColumnCount(3);
-  setAlternatingRowColors(true);
-  setSelectionMode(QAbstractItemView::SingleSelection);
-  setSelectionBehavior(QAbstractItemView::SelectItems);
+  setSelectionMode(QAbstractItemView::NoSelection);
+  setFocusPolicy(Qt::NoFocus);
+  setStyleSheet("QTableWidget { background-color: palette(window); } QTableWidget::item:selected { background: transparent; }");
   verticalHeader()->hide();
-#ifdef __APPLE__
-  // grid is basically hidden in mac ui.
-  // Please take a look at iTunes.
   setShowGrid(false);
-#endif  // __APPLE__
 }
 
 void CharacterFormEditor::Load(const config::Config &config) {
@@ -160,12 +155,10 @@ void CharacterFormEditor::Load(const config::Config &config) {
     setItem(row, 1, item_preedit);
     setItem(row, 2, item_conversion);
     const int height = rowHeight(row);
-    setRowHeight(row, static_cast<int>(height * 0.7));
+    setRowHeight(row, height);
   }
 
-  setColumnWidth(0, static_cast<int>(width() * 0.3));
-  setColumnWidth(1, static_cast<int>(width() * 0.3));
-  setColumnWidth(2, static_cast<int>(width() * 0.3));
+  horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }
 
 void CharacterFormEditor::Save(config::Config *config) {
