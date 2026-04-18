@@ -30,16 +30,20 @@
 #ifndef MOZC_GUI_CONFIG_DIALOG_CHARACTER_FORM_EDITOR_H_
 #define MOZC_GUI_CONFIG_DIALOG_CHARACTER_FORM_EDITOR_H_
 
-#include <QTableWidget>
-#include <memory>
+#include <QComboBox>
+#include <QGridLayout>
+#include <QLabel>
+#include <QScrollArea>
+#include <QString>
+#include <QWidget>
+#include <vector>
 
-#include "gui/config_dialog/combobox_delegate.h"
 #include "protocol/config.pb.h"
 
 namespace mozc {
 namespace gui {
 
-class CharacterFormEditor : public QTableWidget {
+class CharacterFormEditor : public QScrollArea {
   Q_OBJECT
  public:
   explicit CharacterFormEditor(QWidget *parent = nullptr);
@@ -48,7 +52,18 @@ class CharacterFormEditor : public QTableWidget {
   void Save(config::Config *config);
 
  private:
-  std::unique_ptr<ComboBoxDelegate> delegate_;
+  struct RowWidgets {
+    QString group_key;
+    QLabel *group_label = nullptr;
+    QComboBox *preedit_combo = nullptr;
+    QComboBox *conversion_combo = nullptr;
+  };
+
+  void ClearRows();
+
+  QWidget *container_ = nullptr;
+  QGridLayout *grid_layout_ = nullptr;
+  std::vector<RowWidgets> rows_;
 };
 
 }  // namespace gui

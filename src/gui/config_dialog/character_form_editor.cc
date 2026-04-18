@@ -29,15 +29,19 @@
 
 #include "gui/config_dialog/character_form_editor.h"
 
-#include <QHeaderView>
+#include <QComboBox>
+#include <QFrame>
+#include <QGridLayout>
+#include <QLabel>
+#include <QLayoutItem>
+#include <QPalette>
+#include <QStringList>
 #include <QtGui>
-#include <cstddef>
 #include <memory>
 #include <string>
 
 #include "absl/strings/string_view.h"
 #include "config/config_handler.h"
-#include "gui/config_dialog/combobox_delegate.h"
 
 namespace mozc {
 namespace gui {
@@ -83,39 +87,37 @@ QString GroupToString(absl::string_view str) {
   return QString::fromUtf8(str.data(), static_cast<int>(str.size()));
 }
 
-std::string StringToGroup(const QString &str) {
-  if (str == QObject::tr("Katakana")) {
-    // return "ア";
-    return "ア";
-  } else if (str == QObject::tr("Numbers")) {
-    return "0";
-  } else if (str == QObject::tr("Alphabets")) {
-    return "A";
-  }
-  return str.toStdString();
+QComboBox *CreateFormComboBox(QWidget *parent) {
+  auto *combo_box = new QComboBox(parent);
+  combo_box->addItems(
+      QStringList() << QObject::tr("Fullwidth") << QObject::tr("Halfwidth")
+                    << QObject::tr("Remember"));
+  combo_box->setSizeAdjustPolicy(QComboBox::AdjustToContents);
+  return combo_box;
 }
 }  // namespace
 
 CharacterFormEditor::CharacterFormEditor(QWidget *parent)
-    : QTableWidget(parent), delegate_(std::make_unique<ComboBoxDelegate>()) {
-  QStringList item_list;
-  item_list << tr("Fullwidth") << tr("Halfwidth") << tr("Remember");
-  delegate_->SetItemList(item_list);
-  setEditTriggers(QAbstractItemView::AllEditTriggers);
-  setItemDelegate(delegate_.get());
-  setColumnCount(3);
-  setSelectionMode(QAbstractItemView::NoSelection);
-  setFocusPolicy(Qt::NoFocus);
-  setStyleSheet("QTableWidget { background-color: palette(window); } QTableWidget::item:selected { background: transparent; }");
-  verticalHeader()->hide();
-  setShowGrid(false);
+    : QScrollArea(parent),
+      container_(new QWidget(this)),
+      grid_layout_(new QGridLayout(container_)) {
+  setWidget(container_);
+  setWidgetResizable(true);
+  setFrameShape(QFrame::NoFrame);
+  setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+  setBackgroundRole(QPalette::Window);
+  setAutoFillBackground(true);
+
+  grid_layout_->setContentsMargins(0, 0, 0, 0);
+  grid_layout_->setHorizontalSpacing(12);
+  grid_layout_->setVerticalSpacing(8);
+  grid_layout_->setColumnStretch(0, 1);
+  grid_layout_->setColumnStretch(1, 1);
+  grid_layout_->setColumnStretch(2, 1);
 }
 
 void CharacterFormEditor::Load(const config::Config &config) {
-  clear();
-  QStringList header;
-  header << tr("Group") << tr("Composition") << tr("Conversion");
-  setHorizontalHeaderLabels(header);
+  ClearRows();
 
   std::unique_ptr<config::Config> default_config;
   const config::Config *target_config = &config;
@@ -127,60 +129,75 @@ void CharacterFormEditor::Load(const config::Config &config) {
     target_config = default_config.get();
   }
 
-  setRowCount(0);
-  setRowCount(target_config->character_form_rules_size());
-
-  for (size_t row = 0; row < target_config->character_form_rules_size();
-       ++row) {
-    const config::Config::CharacterFormRule &rule =
-        target_config->character_form_rules(row);
-    const QString group = GroupToString(rule.group());
-    const QString preedit = FormToString(rule.preedit_character_form());
-    const QString conversion = FormToString(rule.conversion_character_form());
-
-    QTableWidgetItem *item_group = new QTableWidgetItem(group);
-    item_group->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-    QTableWidgetItem *item_preedit = new QTableWidgetItem(preedit);
-    item_preedit->setTextAlignment(Qt::AlignCenter);
-    QTableWidgetItem *item_conversion = new QTableWidgetItem(conversion);
-    item_conversion->setTextAlignment(Qt::AlignCenter);
-
-    // Preedit Katakan is always FULLWIDTH
-    // This item should not be editable
-    if (group == QObject::tr("Katakana")) {
-      item_preedit->setFlags(Qt::NoItemFlags);  // disable flag
-    }
-
-    setItem(row, 0, item_group);
-    setItem(row, 1, item_preedit);
-    setItem(row, 2, item_conversion);
-    const int height = rowHeight(row);
-    setRowHeight(row, height);
+  const QStringList headers = {tr("Group"), tr("Composition"),
+                               tr("Conversion")};
+  for (int column = 0; column < headers.size(); ++column) {
+    auto *header_label = new QLabel(headers[column], container_);
+    QFont font = header_label->font();
+    font.setBold(true);
+    header_label->setFont(font);
+    grid_layout_->addWidget(header_label, 0, column);
   }
 
-  horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+  rows_.reserve(target_config->character_form_rules_size());
+  for (int row = 0; row < target_config->character_form_rules_size(); ++row) {
+    const config::Config::CharacterFormRule &rule =
+        target_config->character_form_rules(row);
+    RowWidgets row_widgets;
+    row_widgets.group_key = QString::fromUtf8(rule.group().data(),
+                                              static_cast<int>(rule.group().size()));
+    row_widgets.group_label = new QLabel(GroupToString(rule.group()), container_);
+    row_widgets.preedit_combo = CreateFormComboBox(container_);
+    row_widgets.conversion_combo = CreateFormComboBox(container_);
+
+    row_widgets.preedit_combo->setCurrentText(
+        FormToString(rule.preedit_character_form()));
+    row_widgets.conversion_combo->setCurrentText(
+        FormToString(rule.conversion_character_form()));
+
+    if (row_widgets.group_key == QString::fromUtf8("ア")) {
+      row_widgets.preedit_combo->setEnabled(false);
+    }
+
+    const int layout_row = row + 1;
+    grid_layout_->addWidget(row_widgets.group_label, layout_row, 0);
+    grid_layout_->addWidget(row_widgets.preedit_combo, layout_row, 1);
+    grid_layout_->addWidget(row_widgets.conversion_combo, layout_row, 2);
+    rows_.push_back(row_widgets);
+  }
+  grid_layout_->setRowStretch(grid_layout_->rowCount(), 1);
 }
 
 void CharacterFormEditor::Save(config::Config *config) {
-  if (rowCount() == 0) {
+  if (rows_.empty()) {
     return;
   }
 
   config->clear_character_form_rules();
-  for (int row = 0; row < rowCount(); ++row) {
-    if (item(row, 0)->text().isEmpty()) {
+  for (const RowWidgets &row : rows_) {
+    if (row.group_key.isEmpty()) {
       continue;
     }
-    const std::string group = StringToGroup(item(row, 0)->text());
+
     config::Config::CharacterForm preedit_form =
-        StringToForm(item(row, 1)->text());
+        StringToForm(row.preedit_combo->currentText());
     config::Config::CharacterForm conversion_form =
-        StringToForm(item(row, 2)->text());
+        StringToForm(row.conversion_combo->currentText());
     config::Config::CharacterFormRule *rule =
         config->add_character_form_rules();
-    rule->set_group(group);
+    rule->set_group(row.group_key.toStdString());
     rule->set_preedit_character_form(preedit_form);
     rule->set_conversion_character_form(conversion_form);
+  }
+}
+
+void CharacterFormEditor::ClearRows() {
+  rows_.clear();
+  while (QLayoutItem *item = grid_layout_->takeAt(0)) {
+    if (QWidget *widget = item->widget()) {
+      delete widget;
+    }
+    delete item;
   }
 }
 }  // namespace gui

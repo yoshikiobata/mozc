@@ -178,18 +178,10 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
             <widget class="QComboBox" name="punctuationsSettingComboBox"/>
            </item>
            <item row="2" column="1">
-            <widget class="QComboBox" name="symbolsSettingComboBox">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
-            </widget>
+            <widget class="QComboBox" name="symbolsSettingComboBox"/>
            </item>
            <item row="4" column="1">
-            <widget class="QComboBox" name="spaceCharacterFormComboBox">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
-            </widget>
+            <widget class="QComboBox" name="spaceCharacterFormComboBox"/>
            </item>
            <item row="0" column="0">
             <widget class="QLabel" name="inputModeLabel">
@@ -937,9 +929,6 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
            </item>
            <item row="3" column="0" colspan="7">
             <widget class="QCheckBox" name="useJapaneseLayout">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
              <property name="text">
               <string>Always use Japanese keyboard layout for Japanese input</string>
              </property>
@@ -947,9 +936,6 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
            </item>
            <item row="4" column="0" colspan="7">
             <widget class="QCheckBox" name="useModeIndicator">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
              <property name="text">
               <string>Show input mode indicator near the cursor</string>
              </property>

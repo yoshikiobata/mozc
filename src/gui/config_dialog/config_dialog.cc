@@ -225,16 +225,16 @@ ConfigDialog::ConfigDialog()
                    SIGNAL(clicked()), this, SLOT(LaunchAdministrationDialog()));
 
   // Event handlers to enable 'Apply' button.
-  Connect(findChildren<QPushButton *>(), SIGNAL(clicked()), this,
-          SLOT(EnableApplyButton()));
-  Connect(findChildren<QCheckBox *>(), SIGNAL(clicked()), this,
-          SLOT(EnableApplyButton()));
-  Connect(findChildren<QComboBox *>(), SIGNAL(activated(int)), this,
-          SLOT(EnableApplyButton()));
-  Connect(findChildren<QSpinBox *>(), SIGNAL(editingFinished()), this,
-          SLOT(EnableApplyButton()));
+  //Connect(findChildren<QPushButton *>(), SIGNAL(clicked()), this,
+  //        SLOT(EnableApplyButton()));
+  //Connect(findChildren<QCheckBox *>(), SIGNAL(clicked()), this,
+  //        SLOT(EnableApplyButton()));
+  //Connect(findChildren<QComboBox *>(), SIGNAL(activated(int)), this,
+  //        SLOT(EnableApplyButton()));
+  //Connect(findChildren<QSpinBox *>(), SIGNAL(editingFinished()), this,
+  //        SLOT(EnableApplyButton()));
   // 'Apply' button is disabled on launching.
-  DisableApplyButton();
+  //DisableApplyButton();
 
   // When clicking these messages, CheckBoxs corresponding
   // to them should be toggled.
@@ -815,9 +815,11 @@ bool ConfigDialog::eventFilter(QObject *obj, QEvent *event) {
     if (obj == usageStatsMessage) {
 #ifndef CHANNEL_DEV
       usageStatsCheckBox->toggle();
+      // TODO apply!
 #endif  // CHANNEL_DEV
     } else if (obj == incognitoModeMessage) {
       incognitoModeCheckBox->toggle();
+      // TODO apply!
     }
   }
   return QObject::eventFilter(obj, event);
