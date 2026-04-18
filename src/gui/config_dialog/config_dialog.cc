@@ -192,15 +192,7 @@ ConfigDialog::ConfigDialog()
   useModeIndicator->hide();
 #endif  // !_WIN32
 
-  // Reset texts explicitly for translations.
-  configDialogButtonBox->button(QDialogButtonBox::Ok)->setText(tr("  Ok  "));
-  configDialogButtonBox->button(QDialogButtonBox::Cancel)
-      ->setText(tr("Cancel"));
-  configDialogButtonBox->button(QDialogButtonBox::Apply)->setText(tr("Apply"));
-
   // signal/slot
-  QObject::connect(configDialogButtonBox, SIGNAL(clicked(QAbstractButton *)),
-                   this, SLOT(clicked(QAbstractButton *)));
   QObject::connect(clearUserHistoryButton, SIGNAL(clicked()), this,
                    SLOT(ClearUserHistory()));
   QObject::connect(clearUserPredictionButton, SIGNAL(clicked()), this,
@@ -213,6 +205,8 @@ ConfigDialog::ConfigDialog()
                    SLOT(EditKeymap()));
   QObject::connect(resetToDefaultsButton, SIGNAL(clicked()), this,
                    SLOT(ResetToDefaults()));
+  QObject::connect(applyButton, SIGNAL(clicked()), this,
+                   SLOT(Apply()));
   QObject::connect(editRomanTableButton, SIGNAL(clicked()), this,
                    SLOT(EditRomanTable()));
   QObject::connect(inputModeComboBox, SIGNAL(currentIndexChanged(int)), this,
@@ -240,7 +234,7 @@ ConfigDialog::ConfigDialog()
   Connect(findChildren<QSpinBox *>(), SIGNAL(editingFinished()), this,
           SLOT(EnableApplyButton()));
   // 'Apply' button is disabled on launching.
-  configDialogButtonBox->button(QDialogButtonBox::Apply)->setEnabled(false);
+  DisableApplyButton();
 
   // When clicking these messages, CheckBoxs corresponding
   // to them should be toggled.
@@ -251,7 +245,6 @@ ConfigDialog::ConfigDialog()
 
 #ifndef _WIN32
   checkDefaultCheckBox->setVisible(false);
-  checkDefaultLine->setVisible(false);
   checkDefaultLabel->setVisible(false);
 #endif  // !_WIN32
 
@@ -274,8 +267,7 @@ ConfigDialog::ConfigDialog()
   launchAdministrationDialogButton->setEnabled(false);
   launchAdministrationDialogButton->setVisible(false);
   launchAdministrationDialogButtonForUsageStats->setEnabled(false);
-  launchAdministrationDialogButtonForUsageStats->setVisible(false);
-  administrationLine->setVisible(false);
+  launchAdministrationDialogButtonForUsageStatsContainer->setVisible(false);
   administrationLabel->setVisible(false);
   dictionaryPreloadingAndUACLabel->setVisible(false);
 #endif  // _WIN32
@@ -284,8 +276,6 @@ ConfigDialog::ConfigDialog()
   // On Linux, disable all fields for UsageStats
   usageStatsLabel->setEnabled(false);
   usageStatsLabel->setVisible(false);
-  usageStatsLine->setEnabled(false);
-  usageStatsLine->setVisible(false);
   usageStatsMessage->setEnabled(false);
   usageStatsMessage->setVisible(false);
   usageStatsCheckBox->setEnabled(false);
@@ -664,24 +654,6 @@ void ConfigDialog::ConvertToProto(config::Config *config) const {
 #undef GET_COMBOBOX
 #undef GET_CHECKBOX
 
-void ConfigDialog::clicked(QAbstractButton *button) {
-  switch (configDialogButtonBox->buttonRole(button)) {
-    case QDialogButtonBox::AcceptRole:
-      if (Update()) {
-        QWidget::close();
-      }
-      break;
-    case QDialogButtonBox::ApplyRole:
-      Update();
-      break;
-    case QDialogButtonBox::RejectRole:
-      QWidget::close();
-      break;
-    default:
-      break;
-  }
-}
-
 void ConfigDialog::ClearUserHistory() {
   if (QMessageBox::Ok !=
       QMessageBox::question(
@@ -798,6 +770,10 @@ void ConfigDialog::SelectSuggestionSetting(int state) {
   }
 }
 
+void ConfigDialog::Apply() {
+  Update();
+}
+
 void ConfigDialog::ResetToDefaults() {
   const QString message =
       tr("When you reset %1 settings, any changes "
@@ -826,7 +802,11 @@ void ConfigDialog::LaunchAdministrationDialog() {
 }
 
 void ConfigDialog::EnableApplyButton() {
-  configDialogButtonBox->button(QDialogButtonBox::Apply)->setEnabled(true);
+  applyButton->setEnabled(true);
+}
+
+void ConfigDialog::DisableApplyButton() {
+  applyButton->setEnabled(false);
 }
 
 // Catch MouseButtonRelease event to toggle the CheckBoxes
