@@ -30,12 +30,9 @@
 #include "gui/config_dialog/character_form_editor.h"
 
 #include <QComboBox>
-#include <QFrame>
-#include <QGridLayout>
-#include <QLabel>
-#include <QLayoutItem>
-#include <QPalette>
+#include <QHeaderView>
 #include <QStringList>
+#include <QTableWidgetItem>
 #include <QtGui>
 #include <memory>
 #include <string>
@@ -98,26 +95,22 @@ QComboBox *CreateFormComboBox(QWidget *parent) {
 }  // namespace
 
 CharacterFormEditor::CharacterFormEditor(QWidget *parent)
-    : QScrollArea(parent),
-      container_(new QWidget(this)),
-      grid_layout_(new QGridLayout(container_)) {
-  setWidget(container_);
-  setWidgetResizable(true);
-  setFrameShape(QFrame::NoFrame);
-  setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-  setBackgroundRole(QPalette::Window);
-  setAutoFillBackground(true);
-
-  grid_layout_->setContentsMargins(0, 0, 0, 0);
-  grid_layout_->setHorizontalSpacing(12);
-  grid_layout_->setVerticalSpacing(8);
-  grid_layout_->setColumnStretch(0, 1);
-  grid_layout_->setColumnStretch(1, 1);
-  grid_layout_->setColumnStretch(2, 1);
+    : QTableWidget(parent) {
+  setColumnCount(3);
+  setSelectionMode(QAbstractItemView::NoSelection);
+  setFocusPolicy(Qt::NoFocus);
+  setEditTriggers(QAbstractItemView::NoEditTriggers);
+  verticalHeader()->hide();
+  horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+  setShowGrid(false);
+  setStyleSheet(
+      "QTableWidget { background-color: palette(window); } "
+      "QTableWidget::item:selected { background: transparent; }");
 }
 
 void CharacterFormEditor::Load(const config::Config &config) {
-  ClearRows();
+  clearContents();
+  rows_.clear();
 
   std::unique_ptr<config::Config> default_config;
   const config::Config *target_config = &config;
@@ -131,14 +124,9 @@ void CharacterFormEditor::Load(const config::Config &config) {
 
   const QStringList headers = {tr("Group"), tr("Composition"),
                                tr("Conversion")};
-  for (int column = 0; column < headers.size(); ++column) {
-    auto *header_label = new QLabel(headers[column], container_);
-    QFont font = header_label->font();
-    font.setBold(true);
-    header_label->setFont(font);
-    grid_layout_->addWidget(header_label, 0, column);
-  }
+  setHorizontalHeaderLabels(headers);
 
+  setRowCount(target_config->character_form_rules_size());
   rows_.reserve(target_config->character_form_rules_size());
   for (int row = 0; row < target_config->character_form_rules_size(); ++row) {
     const config::Config::CharacterFormRule &rule =
@@ -146,9 +134,8 @@ void CharacterFormEditor::Load(const config::Config &config) {
     RowWidgets row_widgets;
     row_widgets.group_key = QString::fromUtf8(rule.group().data(),
                                               static_cast<int>(rule.group().size()));
-    row_widgets.group_label = new QLabel(GroupToString(rule.group()), container_);
-    row_widgets.preedit_combo = CreateFormComboBox(container_);
-    row_widgets.conversion_combo = CreateFormComboBox(container_);
+    row_widgets.preedit_combo = CreateFormComboBox(this);
+    row_widgets.conversion_combo = CreateFormComboBox(this);
 
     row_widgets.preedit_combo->setCurrentText(
         FormToString(rule.preedit_character_form()));
@@ -159,13 +146,15 @@ void CharacterFormEditor::Load(const config::Config &config) {
       row_widgets.preedit_combo->setEnabled(false);
     }
 
-    const int layout_row = row + 1;
-    grid_layout_->addWidget(row_widgets.group_label, layout_row, 0);
-    grid_layout_->addWidget(row_widgets.preedit_combo, layout_row, 1);
-    grid_layout_->addWidget(row_widgets.conversion_combo, layout_row, 2);
+    auto *group_item = new QTableWidgetItem(GroupToString(rule.group()));
+    group_item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    setItem(row, 0, group_item);
+    setCellWidget(row, 1, row_widgets.preedit_combo);
+    setCellWidget(row, 2, row_widgets.conversion_combo);
     rows_.push_back(row_widgets);
   }
-  grid_layout_->setRowStretch(grid_layout_->rowCount(), 1);
+  resizeRowsToContents();
 }
 
 void CharacterFormEditor::Save(config::Config *config) {
@@ -188,16 +177,6 @@ void CharacterFormEditor::Save(config::Config *config) {
     rule->set_group(row.group_key.toStdString());
     rule->set_preedit_character_form(preedit_form);
     rule->set_conversion_character_form(conversion_form);
-  }
-}
-
-void CharacterFormEditor::ClearRows() {
-  rows_.clear();
-  while (QLayoutItem *item = grid_layout_->takeAt(0)) {
-    if (QWidget *widget = item->widget()) {
-      delete widget;
-    }
-    delete item;
   }
 }
 }  // namespace gui
