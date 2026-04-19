@@ -105,6 +105,7 @@ CharacterFormEditor::CharacterFormEditor(QWidget *parent)
   setShowGrid(false);
   setStyleSheet(
       "QTableWidget { background-color: palette(window); } "
+      "QTableWidget::item { padding: 8px; }"
       "QTableWidget::item:selected { background: transparent; }");
 }
 
@@ -142,10 +143,6 @@ void CharacterFormEditor::Load(const config::Config &config) {
     row_widgets.conversion_combo->setCurrentText(
         FormToString(rule.conversion_character_form()));
 
-    if (row_widgets.group_key == QString::fromUtf8("ア")) {
-      row_widgets.preedit_combo->setEnabled(false);
-    }
-
     auto *group_item = new QTableWidgetItem(GroupToString(rule.group()));
     group_item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 
@@ -153,6 +150,11 @@ void CharacterFormEditor::Load(const config::Config &config) {
     setCellWidget(row, 1, row_widgets.preedit_combo);
     setCellWidget(row, 2, row_widgets.conversion_combo);
     rows_.push_back(row_widgets);
+
+    if (row_widgets.group_key == QString::fromUtf8("ア")) {
+      row_widgets.preedit_combo->setEnabled(false);
+      //item(row, 1)->setFlags(item(row, 1)->flags() & ~Qt::ItemIsEnabled);
+    }
   }
   resizeRowsToContents();
 }
