@@ -102,15 +102,11 @@ CharacterFormEditor::CharacterFormEditor(QWidget *parent)
       container_(new QWidget(this)),
       grid_layout_(new QGridLayout(container_)) {
   setWidget(container_);
-  container_->setObjectName("characterFormEditorContents");
   setWidgetResizable(true);
   setFrameShape(QFrame::NoFrame);
   setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
   setBackgroundRole(QPalette::Window);
   setAutoFillBackground(true);
-  setStyleSheet(
-      "QScrollArea { background-color: palette(light); } "
-      "QWidget#characterFormEditorContents { background-color: palette(light); }");
 
   grid_layout_->setContentsMargins(0, 0, 0, 0);
   grid_layout_->setHorizontalSpacing(12);
