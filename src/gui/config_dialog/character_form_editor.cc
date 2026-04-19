@@ -30,9 +30,12 @@
 #include "gui/config_dialog/character_form_editor.h"
 
 #include <QComboBox>
+#include <QHBoxLayout>
 #include <QHeaderView>
+#include <QLabel>
 #include <QStringList>
-#include <QTableWidgetItem>
+#include <QVBoxLayout>
+#include <QWidget>
 #include <QtGui>
 #include <memory>
 #include <string>
@@ -84,13 +87,33 @@ QString GroupToString(absl::string_view str) {
   return QString::fromUtf8(str.data(), static_cast<int>(str.size()));
 }
 
-QComboBox *CreateFormComboBox(QWidget *parent) {
+QHBoxLayout *CreateFormComboBox(QWidget *parent, QComboBox **combo_box_out) {
   auto *combo_box = new QComboBox(parent);
   combo_box->addItems(
       QStringList() << QObject::tr("Fullwidth") << QObject::tr("Halfwidth")
                     << QObject::tr("Remember"));
   combo_box->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-  return combo_box;
+
+  auto *layout = new QHBoxLayout();
+  layout->setContentsMargins(8, 8, 8, 8);
+  layout->addWidget(combo_box);
+
+  if (combo_box_out != nullptr) {
+    *combo_box_out = combo_box;
+  }
+
+  return layout;
+}
+
+QWidget *CreateGroupCell(QWidget *parent, const QString &text) {
+  auto *container = new QWidget(parent);
+  auto *layout = new QVBoxLayout(container);
+  layout->setContentsMargins(8, 8, 8, 8);
+
+  auto *label = new QLabel(text, container);
+  layout->addWidget(label);
+
+  return container;
 }
 }  // namespace
 
@@ -105,7 +128,6 @@ CharacterFormEditor::CharacterFormEditor(QWidget *parent)
   setShowGrid(false);
   setStyleSheet(
       "QTableWidget { background-color: palette(window); } "
-      "QTableWidget::item { padding: 8px; }"
       "QTableWidget::item:selected { background: transparent; }");
 }
 
@@ -133,22 +155,24 @@ void CharacterFormEditor::Load(const config::Config &config) {
     const config::Config::CharacterFormRule &rule =
         target_config->character_form_rules(row);
     RowWidgets row_widgets;
+    auto *group_container = CreateGroupCell(this, GroupToString(rule.group()));
+    auto *preedit_container = new QWidget(this);
+    auto *conversion_container = new QWidget(this);
     row_widgets.group_key = QString::fromUtf8(rule.group().data(),
                                               static_cast<int>(rule.group().size()));
-    row_widgets.preedit_combo = CreateFormComboBox(this);
-    row_widgets.conversion_combo = CreateFormComboBox(this);
+    preedit_container->setLayout(
+        CreateFormComboBox(preedit_container, &row_widgets.preedit_combo));
+    conversion_container->setLayout(
+        CreateFormComboBox(conversion_container, &row_widgets.conversion_combo));
 
     row_widgets.preedit_combo->setCurrentText(
         FormToString(rule.preedit_character_form()));
     row_widgets.conversion_combo->setCurrentText(
         FormToString(rule.conversion_character_form()));
 
-    auto *group_item = new QTableWidgetItem(GroupToString(rule.group()));
-    group_item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-
-    setItem(row, 0, group_item);
-    setCellWidget(row, 1, row_widgets.preedit_combo);
-    setCellWidget(row, 2, row_widgets.conversion_combo);
+    setCellWidget(row, 0, group_container);
+    setCellWidget(row, 1, preedit_container);
+    setCellWidget(row, 2, conversion_container);
     rows_.push_back(row_widgets);
 
     if (row_widgets.group_key == QString::fromUtf8("ア")) {
