@@ -165,6 +165,10 @@ void CharacterFormEditor::Load(const config::Config &config) {
         CreateFormComboBox(preedit_container, &row_widgets.preedit_combo));
     conversion_container->setLayout(
         CreateFormComboBox(conversion_container, &row_widgets.conversion_combo));
+    QObject::connect(row_widgets.preedit_combo, SIGNAL(activated(int)), this,
+                     SIGNAL(ItemModified()));
+    QObject::connect(row_widgets.conversion_combo, SIGNAL(activated(int)), this,
+                     SIGNAL(ItemModified()));
 
     row_widgets.preedit_combo->setCurrentText(
         FormToString(rule.preedit_character_form()));
