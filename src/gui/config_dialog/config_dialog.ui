@@ -75,7 +75,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
      <height>644</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="centrallayout">
+  <layout class="QVBoxLayout" name="dialogRootLayout">
     <property name="spacing">
      <number>12</number>
     </property>
@@ -106,7 +106,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
        <attribute name="title">
         <string>General</string>
        </attribute>
-       <layout class="QVBoxLayout" name="root">
+       <layout class="QVBoxLayout" name="generalTabLayout">
         <property name="spacing">
          <number>12</number>
         </property>
@@ -148,14 +148,14 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </layout>
         </item>
         <item>
-         <widget class="QFrame" name="glcontainer">
+         <widget class="QFrame" name="generalSettingsFrame">
           <property name="autoFillBackground">
            <bool>true</bool>
           </property>
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
           </property>
-          <layout class="QGridLayout" name="gridLayout" columnstretch="2,1">
+          <layout class="QGridLayout" name="generalSettingsLayout" columnstretch="2,1">
            <property name="leftMargin">
             <number>12</number>
            </property>
@@ -245,12 +245,12 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </widget>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="kaymapLabelLayout">
+         <layout class="QHBoxLayout" name="keymapSectionHeaderLayout">
           <property name="topMargin">
            <number>4</number>
           </property>
           <item>
-           <widget class="QLabel" name="label_4">
+           <widget class="QLabel" name="keymapSectionLabel">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -270,7 +270,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </layout>
         </item>
         <item>
-         <widget class="QFrame" name="glcontainer2">
+         <widget class="QFrame" name="keymapSettingsFrame">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -283,7 +283,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
           </property>
-          <layout class="QGridLayout" name="gridLayout_2" columnstretch="2,1">
+          <layout class="QGridLayout" name="keymapSettingsLayout" columnstretch="2,1">
            <property name="leftMargin">
             <number>12</number>
            </property>
@@ -310,7 +310,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
             <widget class="QComboBox" name="keymapSettingComboBox"/>
            </item>
            <item row="1" column="1">
-            <layout class="QVBoxLayout" name="hogehoge">
+            <layout class="QVBoxLayout" name="keymapCustomizeButtonLayout">
              <property name="spacing">
               <number>0</number>
              </property>
@@ -322,7 +322,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
               </widget>
              </item>
              <item>
-              <spacer name="hogehog3">
+              <spacer name="keymapCustomizeButtonSpacer">
                <property name="orientation">
                 <enum>Qt::Orientation::Vertical</enum>
                </property>
@@ -340,7 +340,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
             </layout>
            </item>
            <item row="2" column="0">
-            <widget class="QLabel" name="label_11">
+            <widget class="QLabel" name="romanTableLabel">
              <property name="text">
               <string>Romaji table</string>
              </property>
@@ -378,7 +378,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
        <attribute name="title">
         <string>Dictionary</string>
        </attribute>
-       <layout class="QVBoxLayout" name="rootDictionary">
+       <layout class="QVBoxLayout" name="dictionaryTabLayout">
         <property name="spacing">
          <number>12</number>
         </property>
@@ -395,12 +395,12 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          <number>24</number>
         </property>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <layout class="QHBoxLayout" name="personalizationSectionHeaderLayout">
           <property name="topMargin">
            <number>4</number>
           </property>
           <item>
-           <widget class="QLabel" name="label">
+           <widget class="QLabel" name="personalizationSectionLabel">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -420,14 +420,14 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </layout>
         </item>
         <item>
-         <widget class="QFrame" name="gridLayoutWidget_5">
+         <widget class="QFrame" name="personalizationSettingsFrame">
           <property name="autoFillBackground">
            <bool>true</bool>
           </property>
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
           </property>
-          <layout class="QGridLayout" name="gridLayout_5" columnstretch="2,1,0">
+          <layout class="QGridLayout" name="personalizationSettingsLayout" columnstretch="2,1,0">
            <property name="leftMargin">
             <number>12</number>
            </property>
@@ -447,7 +447,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
             <number>12</number>
            </property>
            <item row="0" column="0">
-            <widget class="QLabel" name="label_7">
+            <widget class="QLabel" name="historyLearningLevelLabel">
              <property name="text">
               <string>Adjust conversion based on previous input</string>
              </property>
@@ -464,7 +464,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
             </widget>
            </item>
            <item row="1" column="0" colspan="3">
-            <layout class="QHBoxLayout" name="gridLayout_5_item1">
+            <layout class="QHBoxLayout" name="clearHistoryButtonLayout">
              <item>
               <spacer name="horizontalSpacer_2">
                <property name="orientation">
@@ -503,12 +503,12 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </widget>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_14">
+         <layout class="QHBoxLayout" name="userDictionarySectionHeaderLayout">
           <property name="topMargin">
            <number>4</number>
           </property>
           <item>
-           <widget class="QLabel" name="label_6">
+           <widget class="QLabel" name="userDictionarySectionLabel">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -528,14 +528,14 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </layout>
         </item>
         <item>
-         <widget class="QFrame" name="gridLayoutWidget_6">
+         <widget class="QFrame" name="userDictionaryActionsFrame">
           <property name="autoFillBackground">
            <bool>true</bool>
           </property>
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
           </property>
-          <layout class="QGridLayout" name="gridLayout_6" columnstretch="2,1">
+          <layout class="QGridLayout" name="userDictionaryActionsLayout" columnstretch="2,1">
            <property name="leftMargin">
             <number>12</number>
            </property>
@@ -552,7 +552,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
             <number>12</number>
            </property>
            <item row="0" column="0">
-            <spacer name="horizontalSpacer">
+            <spacer name="userDictionaryActionsLeadingSpacer">
              <property name="orientation">
               <enum>Qt::Orientation::Horizontal</enum>
              </property>
@@ -587,12 +587,12 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </widget>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_24">
+         <layout class="QHBoxLayout" name="usageDictionarySectionHeaderLayout">
           <property name="topMargin">
            <number>4</number>
           </property>
           <item>
-           <widget class="QLabel" name="label_9">
+           <widget class="QLabel" name="usageDictionarySectionLabel">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -612,14 +612,14 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </layout>
         </item>
         <item>
-         <widget class="QFrame" name="gridLayoutWidget_8">
+         <widget class="QFrame" name="usageDictionarySettingsFrame">
           <property name="autoFillBackground">
            <bool>true</bool>
           </property>
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
           </property>
-          <layout class="QGridLayout" name="gridLayout_12">
+          <layout class="QGridLayout" name="usageDictionarySettingsLayout">
            <property name="leftMargin">
             <number>12</number>
            </property>
@@ -659,7 +659,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </widget>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_22">
+         <layout class="QHBoxLayout" name="specialConversionSectionHeaderLayout">
           <property name="topMargin">
            <number>4</number>
           </property>
@@ -684,14 +684,14 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </layout>
         </item>
         <item>
-         <widget class="QFrame" name="gridLayoutWidget_3">
+         <widget class="QFrame" name="specialConversionFrame">
           <property name="autoFillBackground">
            <bool>true</bool>
           </property>
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
           </property>
-          <layout class="QGridLayout" name="gridLayout_3">
+          <layout class="QGridLayout" name="specialConversionLayout">
            <property name="leftMargin">
             <number>12</number>
            </property>
@@ -782,11 +782,11 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="inputsupport_tab">
+      <widget class="QWidget" name="advancedTab">
        <attribute name="title">
         <string>Advanced</string>
        </attribute>
-       <layout class="QVBoxLayout" name="rootinputsupport">
+       <layout class="QVBoxLayout" name="advancedTabLayout">
         <property name="spacing">
          <number>12</number>
         </property>
@@ -803,12 +803,12 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          <number>24</number>
         </property>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_22">
+         <layout class="QHBoxLayout" name="inputAssistanceSectionHeaderLayout">
           <property name="topMargin">
            <number>4</number>
           </property>
           <item>
-           <widget class="QLabel" name="inputassistancelabel">
+           <widget class="QLabel" name="inputAssistanceSectionLabel">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -828,14 +828,14 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </layout>
         </item>
         <item>
-         <widget class="QFrame" name="gridLayoutWidget_9">
+         <widget class="QFrame" name="inputAssistanceSettingsFrame">
           <property name="autoFillBackground">
            <bool>true</bool>
           </property>
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
           </property>
-          <layout class="QGridLayout" name="gridLayout_9">
+          <layout class="QGridLayout" name="inputAssistanceSettingsLayout">
            <property name="leftMargin">
             <number>12</number>
            </property>
@@ -859,7 +859,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
             </widget>
            </item>
            <item row="2" column="0" colspan="3">
-            <widget class="QLabel" name="autoCorrectionLable_3">
+            <widget class="QLabel" name="shiftKeyModeSwitchLabel">
              <property name="text">
               <string>Shift key mode switch</string>
              </property>
@@ -945,12 +945,12 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </widget>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_22">
+         <layout class="QHBoxLayout" name="characterFormSectionHeaderLayout">
           <property name="topMargin">
            <number>4</number>
           </property>
           <item>
-           <widget class="QLabel" name="inputassistancelabel">
+           <widget class="QLabel" name="characterFormSectionLabel">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -978,7 +978,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
        <attribute name="title">
         <string>Suggest</string>
        </attribute>
-       <layout class="QVBoxLayout" name="rootSugggestion">
+       <layout class="QVBoxLayout" name="suggestionTabLayout">
         <property name="spacing">
          <number>12</number>
         </property>
@@ -995,12 +995,12 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          <number>24</number>
         </property>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_12">
+         <layout class="QHBoxLayout" name="suggestionSourceSectionHeaderLayout">
           <property name="topMargin">
            <number>4</number>
           </property>
           <item>
-           <widget class="QLabel" name="label">
+           <widget class="QLabel" name="suggestionSourceSectionLabel">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -1020,14 +1020,14 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </layout>
         </item>
         <item>
-         <widget class="QFrame" name="gridLayoutWidget_4">
+         <widget class="QFrame" name="historySuggestionSettingsFrame">
           <property name="autoFillBackground">
            <bool>true</bool>
           </property>
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
           </property>
-          <layout class="QGridLayout" name="gridLayout_4">
+          <layout class="QGridLayout" name="historySuggestionSettingsLayout">
            <property name="leftMargin">
             <number>12</number>
            </property>
@@ -1080,14 +1080,14 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </widget>
         </item>
         <item>
-         <widget class="QFrame" name="gridLayoutWidget_4">
+         <widget class="QFrame" name="suggestionBehaviorSettingsFrame">
           <property name="autoFillBackground">
            <bool>true</bool>
           </property>
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
           </property>
-          <layout class="QGridLayout" name="gridLayout_4">
+          <layout class="QGridLayout" name="suggestionBehaviorSettingsLayout">
            <property name="leftMargin">
             <number>12</number>
            </property>
@@ -1121,12 +1121,12 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </widget>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_16">
+         <layout class="QHBoxLayout" name="suggestionOtherSettingsHeaderLayout">
           <property name="topMargin">
            <number>4</number>
           </property>
           <item>
-           <widget class="QLabel" name="label">
+           <widget class="QLabel" name="suggestionOtherSettingsLabel">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -1146,14 +1146,14 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </layout>
         </item>
         <item>
-         <widget class="QFrame" name="gridLayoutWidget_10">
+         <widget class="QFrame" name="suggestionOtherSettingsFrame">
           <property name="autoFillBackground">
            <bool>true</bool>
           </property>
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
           </property>
-          <layout class="QGridLayout" name="gridLayout_11" columnstretch="2,1">
+          <layout class="QGridLayout" name="suggestionOtherSettingsLayout" columnstretch="2,1">
            <property name="leftMargin">
             <number>12</number>
            </property>
@@ -1167,7 +1167,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
             <number>12</number>
            </property>
            <item row="0" column="0">
-            <widget class="QLabel" name="defaultNUmberofSuggestionsLabel">
+            <widget class="QLabel" name="maxSuggestionsLabel">
              <property name="text">
               <string>Maximum number of suggestions</string>
              </property>
@@ -1201,7 +1201,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
        <attribute name="title">
         <string>Privacy</string>
        </attribute>
-       <layout class="QVBoxLayout" name="rootPrivacy">
+       <layout class="QVBoxLayout" name="privacyTabLayout">
         <property name="spacing">
          <number>12</number>
         </property>
@@ -1218,12 +1218,12 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          <number>24</number>
         </property>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_12">
+         <layout class="QHBoxLayout" name="incognitoModeSectionHeaderLayout">
           <property name="topMargin">
            <number>4</number>
           </property>
           <item>
-           <widget class="QLabel" name="secretmodelabel">
+           <widget class="QLabel" name="incognitoModeSectionLabel">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -1243,14 +1243,14 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </layout>
         </item>
         <item>
-         <widget class="QFrame" name="widget_12">
+         <widget class="QFrame" name="incognitoModeFrame">
           <property name="autoFillBackground">
            <bool>true</bool>
           </property>
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
           </property>
-          <layout class="QGridLayout" name="horizontalLayout_12">
+          <layout class="QGridLayout" name="incognitoModeLayout">
            <property name="leftMargin">
             <number>12</number>
            </property>
@@ -1302,12 +1302,12 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </widget>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_12">
+         <layout class="QHBoxLayout" name="presentationModeSectionHeaderLayout">
           <property name="topMargin">
            <number>4</number>
           </property>
           <item>
-           <widget class="QLabel" name="secretmodelabel">
+           <widget class="QLabel" name="presentationModeSectionLabel">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -1327,14 +1327,14 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </layout>
         </item>
         <item>
-         <widget class="QFrame" name="widget_12">
+         <widget class="QFrame" name="presentationModeFrame">
           <property name="autoFillBackground">
            <bool>true</bool>
           </property>
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
           </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <layout class="QHBoxLayout" name="presentationModeLayout">
            <property name="leftMargin">
             <number>12</number>
            </property>
@@ -1358,7 +1358,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </widget>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_12">
+         <layout class="QHBoxLayout" name="usageStatsSectionHeaderLayout">
           <property name="topMargin">
            <number>4</number>
           </property>
@@ -1383,7 +1383,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </layout>
         </item>
         <item>
-         <widget class="QFrame" name="widget_12">
+         <widget class="QFrame" name="usageStatsFrame">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
             <horstretch>0</horstretch>
@@ -1396,7 +1396,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
           </property>
-          <layout class="QGridLayout" name="horizontalLayout_12">
+          <layout class="QGridLayout" name="usageStatsLayout">
            <property name="leftMargin">
             <number>12</number>
            </property>
@@ -1448,7 +1448,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
             <widget class="QFrame" name="launchAdministrationDialogButtonForUsageStatsContainer">
              <layout class="QHBoxLayout" name="launchAdministrationDialogButtonForUsageStatsContainerLayout">
               <item>
-               <spacer name="horizontalSpacer">
+               <spacer name="usageStatsSettingsButtonSpacer">
                 <property name="orientation">
                  <enum>Qt::Orientation::Horizontal</enum>
                 </property>
@@ -1486,7 +1486,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </widget>
         </item>
         <item>
-         <spacer name="verticalSpacer_2">
+         <spacer name="privacyTabBottomSpacer">
           <property name="orientation">
            <enum>Qt::Orientation::Vertical</enum>
           </property>
@@ -1504,7 +1504,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
        <attribute name="title">
         <string>Misc</string>
        </attribute>
-       <layout class="QVBoxLayout" name="rootMisc">
+       <layout class="QVBoxLayout" name="miscTabLayout">
         <property name="spacing">
          <number>12</number>
         </property>
@@ -1527,7 +1527,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
             <number>12</number>
            </property>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_12">
+            <layout class="QHBoxLayout" name="defaultImeSectionHeaderLayout">
              <property name="topMargin">
               <number>4</number>
              </property>
@@ -1552,14 +1552,14 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
             </layout>
            </item>
            <item>
-            <widget class="QFrame" name="widget_4">
+            <widget class="QFrame" name="defaultImeOptionsFrame">
              <property name="autoFillBackground">
               <bool>true</bool>
              </property>
              <property name="role" stdset="0">
               <string>gridLayoutContainer</string>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_2">
+             <layout class="QVBoxLayout" name="defaultImeOptionsLayout">
               <property name="spacing">
                <number>12</number>
               </property>
@@ -1611,7 +1611,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
             <number>12</number>
            </property>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_12">
+            <layout class="QHBoxLayout" name="administrationSectionHeaderLayout">
              <property name="topMargin">
               <number>4</number>
              </property>
@@ -1636,14 +1636,14 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
             </layout>
            </item>
            <item>
-            <widget class="QFrame" name="miscAdministrationWidget2">
+            <widget class="QFrame" name="administrationSettingsFrame">
              <property name="autoFillBackground">
               <bool>true</bool>
              </property>
              <property name="role" stdset="0">
               <string>gridLayoutContainer</string>
              </property>
-             <layout class="QGridLayout" name="gridLayout_7" columnstretch="2,1">
+             <layout class="QGridLayout" name="administrationSettingsLayout" columnstretch="2,1">
               <property name="leftMargin">
                <number>12</number>
               </property>
@@ -1684,12 +1684,12 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
         </item>
         <item>
          <widget class="QFrame" name="miscStartupWidget">
-          <layout class="QVBoxLayout" name="miscStartupWidget2">
+          <layout class="QVBoxLayout" name="startupSectionLayout">
            <property name="spacing">
             <number>12</number>
            </property>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_12">
+            <layout class="QHBoxLayout" name="startupSectionHeaderLayout">
              <property name="topMargin">
               <number>4</number>
              </property>
@@ -1714,14 +1714,14 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
             </layout>
            </item>
            <item>
-            <widget class="QFrame" name="widget_12">
+            <widget class="QFrame" name="startupSettingsFrame">
              <property name="autoFillBackground">
               <bool>true</bool>
              </property>
              <property name="role" stdset="0">
               <string>gridLayoutContainer</string>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_6">
+             <layout class="QVBoxLayout" name="startupSettingsLayout">
               <property name="leftMargin">
                <number>12</number>
               </property>
@@ -1749,12 +1749,12 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
         </item>
         <item>
          <widget class="QFrame" name="miscLoggingWidget">
-          <layout class="QVBoxLayout" name="miscLoggingWidget2">
+          <layout class="QVBoxLayout" name="loggingSectionLayout">
            <property name="spacing">
             <number>12</number>
            </property>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_12">
+            <layout class="QHBoxLayout" name="loggingSectionHeaderLayout">
              <property name="topMargin">
               <number>4</number>
              </property>
@@ -1779,14 +1779,14 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
             </layout>
            </item>
            <item>
-            <widget class="QFrame" name="widget_12">
+            <widget class="QFrame" name="loggingSettingsFrame">
              <property name="autoFillBackground">
               <bool>true</bool>
              </property>
              <property name="role" stdset="0">
               <string>gridLayoutContainer</string>
              </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="2,1">
+             <layout class="QHBoxLayout" name="loggingSettingsLayout" stretch="2,1">
               <property name="leftMargin">
                <number>12</number>
               </property>
@@ -1823,7 +1823,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </widget>
         </item>
         <item>
-         <spacer name="verticalSpacer_2">
+         <spacer name="miscTabBottomSpacer">
           <property name="orientation">
            <enum>Qt::Orientation::Vertical</enum>
           </property>
@@ -1840,11 +1840,11 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
      </widget>
     </item>
     <item>
-     <widget class="QFrame" name="horizontalLayoutWidget_12">
+     <widget class="QFrame" name="dialogButtonFrame">
       <property name="styleSheet">
        <string>QPushButton { padding: 8px; }</string>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <layout class="QHBoxLayout" name="dialogButtonLayout">
        <property name="leftMargin">
         <number>0</number>
        </property>
