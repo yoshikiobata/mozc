@@ -48,6 +48,9 @@ class CharacterFormEditor : public QTableWidget {
   void Load(const config::Config &config);
   void Save(config::Config *config);
 
+ signals:
+  void ItemModified();
+
  private:
   struct RowWidgets {
     QString group_key;
