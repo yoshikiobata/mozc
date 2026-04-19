@@ -171,14 +171,17 @@ void CharacterFormEditor::Load(const config::Config &config) {
     row_widgets.conversion_combo->setCurrentText(
         FormToString(rule.conversion_character_form()));
 
+    auto *preedit_item = new QTableWidgetItem();
+    preedit_item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
     setCellWidget(row, 0, group_container);
+    setItem(row, 1, preedit_item);
     setCellWidget(row, 1, preedit_container);
     setCellWidget(row, 2, conversion_container);
     rows_.push_back(row_widgets);
 
     if (row_widgets.group_key == QString::fromUtf8("ア")) {
+      preedit_item->setFlags(Qt::NoItemFlags);
       row_widgets.preedit_combo->setEnabled(false);
-      //item(row, 1)->setFlags(item(row, 1)->flags() & ~Qt::ItemIsEnabled);
     }
   }
   resizeRowsToContents();
