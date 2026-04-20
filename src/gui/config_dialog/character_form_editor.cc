@@ -111,6 +111,7 @@ QWidget *CreateGroupCell(QWidget *parent, const QString &text) {
   layout->setContentsMargins(8, 8, 8, 8);
 
   auto *label = new QLabel(text, container);
+  label.setStyleSheet("color: palette(button-text);")
   layout->addWidget(label);
 
   return container;
@@ -128,7 +129,7 @@ CharacterFormEditor::CharacterFormEditor(QWidget *parent)
   setShowGrid(false);
   setStyleSheet(
       "QTableWidget { background-color: palette(window); } "
-      "QHeaderView::section { padding-top: 4px; padding-bottom: 4px; } "
+      "QHeaderView::section { padding-top: 2px; padding-bottom: 2px; } "
       "QTableWidget::item:selected { background: transparent; }");
 }
 
@@ -175,18 +176,17 @@ void CharacterFormEditor::Load(const config::Config &config) {
     row_widgets.conversion_combo->setCurrentText(
         FormToString(rule.conversion_character_form()));
 
-    auto *preedit_item = new QTableWidgetItem();
-    preedit_item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
     setCellWidget(row, 0, group_container);
-    setItem(row, 1, preedit_item);
-    setCellWidget(row, 1, preedit_container);
+    if (row_widgets.group_key == QString::fromUtf8("ア")) {
+      auto *preedit_item = new QTableWidgetItem(FormToString(rule.preedit_character_form()));
+      preedit_item->setTextAlignment(Qt::AlignCenter);
+      preedit_item->setFlags(Qt::NoItemFlags);
+      setItem(row, 1, preedit_item);
+    } else {
+      setCellWidget(row, 1, preedit_container);
+    }
     setCellWidget(row, 2, conversion_container);
     rows_.push_back(row_widgets);
-
-    if (row_widgets.group_key == QString::fromUtf8("ア")) {
-      preedit_item->setFlags(Qt::NoItemFlags);
-      row_widgets.preedit_combo->setEnabled(false);
-    }
   }
   resizeRowsToContents();
 }
