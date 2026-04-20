@@ -205,8 +205,6 @@ ConfigDialog::ConfigDialog()
                    SLOT(EditKeymap()));
   QObject::connect(resetToDefaultsButton, SIGNAL(clicked()), this,
                    SLOT(ResetToDefaults()));
-  QObject::connect(applyButton, SIGNAL(clicked()), this,
-                   SLOT(Apply()));
   QObject::connect(editRomanTableButton, SIGNAL(clicked()), this,
                    SLOT(EditRomanTable()));
   QObject::connect(inputModeComboBox, SIGNAL(currentIndexChanged(int)), this,
@@ -224,20 +222,14 @@ ConfigDialog::ConfigDialog()
   QObject::connect(launchAdministrationDialogButtonForUsageStats,
                    SIGNAL(clicked()), this, SLOT(LaunchAdministrationDialog()));
   QObject::connect(characterFormEditor, SIGNAL(ItemModified()), this,
-                   SLOT(EnableApplyButton()));
+                   SLOT(Apply()));
 
-  // Event handlers to enable 'Apply' button.
-  Connect(findChildren<QPushButton *>(), SIGNAL(clicked()), this,
-          SLOT(EnableApplyButton()));
-  Connect(findChildren<QCheckBox *>(), SIGNAL(clicked()), this,
-          SLOT(EnableApplyButton()));
+  // Event handlers to apply settings immediately after a user edit.
+  Connect(findChildren<QCheckBox *>(), SIGNAL(clicked()), this, SLOT(Apply()));
   Connect(findChildren<QComboBox *>(), SIGNAL(activated(int)), this,
-          SLOT(EnableApplyButton()));
+          SLOT(Apply()));
   Connect(findChildren<QSpinBox *>(), SIGNAL(editingFinished()), this,
-          SLOT(EnableApplyButton()));
-  
-  // 'Apply' button is disabled on launching.
-  DisableApplyButton();
+          SLOT(Apply()));
 
   // When clicking these messages, CheckBoxs corresponding
   // to them should be toggled.
@@ -741,6 +733,7 @@ void ConfigDialog::EditKeymap() {
     custom_keymap_table_ = output;
     // set keymapSettingComboBox to "Custom keymap"
     keymapSettingComboBox->setCurrentIndex(0);
+    Apply();
   }
 }
 
@@ -748,6 +741,7 @@ void ConfigDialog::EditRomanTable() {
   std::string output;
   if (gui::RomanTableEditorDialog::Show(this, custom_roman_table_, &output)) {
     custom_roman_table_ = output;
+    Apply();
   }
 }
 
@@ -795,6 +789,7 @@ void ConfigDialog::ResetToDefaults() {
     // TODO(taku): remove the dependency to config::ConfigHandler
     // nice to have GET_DEFAULT_CONFIG command
     ConvertFromProto(config::ConfigHandler::DefaultConfig());
+    Apply();
   }
 }
 
@@ -804,25 +799,17 @@ void ConfigDialog::LaunchAdministrationDialog() {
 #endif  // _WIN32
 }
 
-void ConfigDialog::EnableApplyButton() {
-  applyButton->setEnabled(true);
-}
-
-void ConfigDialog::DisableApplyButton() {
-  applyButton->setEnabled(false);
-}
-
 // Catch MouseButtonRelease event to toggle the CheckBoxes
 bool ConfigDialog::eventFilter(QObject *obj, QEvent *event) {
   if (event->type() == QEvent::MouseButtonRelease) {
     if (obj == usageStatsMessage) {
 #ifndef CHANNEL_DEV
       usageStatsCheckBox->toggle();
-      // TODO apply!
+      Apply();
 #endif  // CHANNEL_DEV
     } else if (obj == incognitoModeMessage) {
       incognitoModeCheckBox->toggle();
-      // TODO apply!
+      Apply();
     }
   }
   return QObject::eventFilter(obj, event);
