@@ -111,7 +111,7 @@ QWidget *CreateGroupCell(QWidget *parent, const QString &text) {
   layout->setContentsMargins(8, 8, 8, 8);
 
   auto *label = new QLabel(text, container);
-  label.setStyleSheet("color: palette(button-text);")
+  label->setStyleSheet("color: palette(button-text);");
   layout->addWidget(label);
 
   return container;
@@ -128,8 +128,8 @@ CharacterFormEditor::CharacterFormEditor(QWidget *parent)
   horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
   setShowGrid(false);
   setStyleSheet(
-      "QTableWidget { background-color: palette(window); } "
-      "QHeaderView::section { padding-top: 2px; padding-bottom: 2px; } "
+      "QTableWidget { background-color: palette(window); }"
+      "QHeaderView::section { padding-top: 2px; padding-bottom: 2px; }"
       "QTableWidget::item:selected { background: transparent; }");
 }
 
