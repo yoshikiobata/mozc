@@ -74,8 +74,6 @@ class ConfigDialog : public QDialog, private Ui::ConfigDialog {
   virtual void SelectAutoConversionSetting(int state);
   virtual void SelectSuggestionSetting(int state);
   virtual void LaunchAdministrationDialog();
-  virtual void EnableApplyButton();
-  virtual void DisableApplyButton();
 
  protected:
   bool eventFilter(QObject *obj, QEvent *event) override;
