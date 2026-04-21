@@ -30,10 +30,7 @@
 #ifndef MOZC_GUI_CONFIG_DIALOG_CHARACTER_FORM_EDITOR_H_
 #define MOZC_GUI_CONFIG_DIALOG_CHARACTER_FORM_EDITOR_H_
 
-#include <QComboBox>
 #include <QTableWidget>
-#include <QString>
-#include <vector>
 
 #include "protocol/config.pb.h"
 

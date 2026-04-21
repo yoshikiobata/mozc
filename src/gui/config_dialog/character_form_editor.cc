@@ -206,10 +206,11 @@ void CharacterFormEditor::Save(config::Config *config) {
 
   config->clear_character_form_rules();
   for (int row = 0; row < rowCount(); ++row) {
-    auto group = cellWidget(row, 0)->findChild<QLabel *>("group_label")->text().toStdString();
-    if (group.isEmpty()) {
+    auto groupText = cellWidget(row, 0)->findChild<QLabel *>("group_label")->text();
+    if (groupText.isEmpty()) {
       continue;
     }
+    const std::string group = StringToGroup(groupText);
 
     config::Config::CharacterForm preedit_form =
         StringToForm(cellWidget(row, 1)->findChild<QComboBox *>("preedit_combo")->currentText());
