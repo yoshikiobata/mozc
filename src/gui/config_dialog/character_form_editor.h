@@ -50,14 +50,6 @@ class CharacterFormEditor : public QTableWidget {
 
  signals:
   void ItemModified();
-
- private:
-  struct RowWidgets {
-    QString group_key;
-    QComboBox *preedit_combo = nullptr;
-    QComboBox *conversion_combo = nullptr;
-  };
-  std::vector<RowWidgets> rows_;
 };
 
 }  // namespace gui
