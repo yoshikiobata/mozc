@@ -118,6 +118,7 @@ QWidget *CreateGroupCell(QWidget *parent, const QString &text) {
   layout->setContentsMargins(8, 8, 8, 8);
 
   auto *label = new QLabel(text, container);
+  label->setObjectName("group_label");
   label->setStyleSheet("color: palette(button-text);");
   layout->addWidget(label);
 
@@ -136,7 +137,7 @@ CharacterFormEditor::CharacterFormEditor(QWidget *parent)
   setShowGrid(false);
   setStyleSheet(
       "QTableWidget { background-color: palette(window); }"
-      "QHeaderView::section { padding-top: 2px; padding-bottom: 2px; }"
+      "QHeaderView::section { padding: 2px; }"
       "QTableWidget::item:selected { background: transparent; }");
 }
 
@@ -205,11 +206,11 @@ void CharacterFormEditor::Save(config::Config *config) {
 
   config->clear_character_form_rules();
   for (int row = 0; row < rowCount(); ++row) {
-    if (item(row, 0)->text().isEmpty()) {
+    auto group = cellWidget(row, 0)->findChild<QLabel *>("group_label")->text().toStdString();
+    if (group.isEmpty()) {
       continue;
     }
 
-    const std::string group = StringToGroup(item(row, 0)->text());
     config::Config::CharacterForm preedit_form =
         StringToForm(cellWidget(row, 1)->findChild<QComboBox *>("preedit_combo")->currentText());
     config::Config::CharacterForm conversion_form =
