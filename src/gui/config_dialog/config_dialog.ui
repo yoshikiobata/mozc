@@ -37,7 +37,7 @@
     <x>0</x>
     <y>0</y>
     <width>554</width>
-    <height>596</height>
+    <height>594</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -49,13 +49,13 @@
   <property name="minimumSize">
    <size>
     <width>554</width>
-    <height>596</height>
+    <height>594</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>554</width>
-    <height>596</height>
+    <height>594</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -72,7 +72,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
      <x>0</x>
      <y>0</y>
      <width>554</width>
-     <height>596</height>
+     <height>594</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="dialogRootLayout">
@@ -83,7 +83,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
      <number>16</number>
     </property>
     <property name="topMargin">
-     <number>16</number>
+     <number>14</number>
     </property>
     <property name="rightMargin">
      <number>16</number>
@@ -870,12 +870,6 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
            </item>
            <item row="1" column="4">
             <widget class="QCheckBox" name="toutenCheckBox">
-             <property name="maximumSize">
-              <size>
-               <width>45</width>
-               <height>16777215</height>
-              </size>
-             </property>
              <property name="text">
               <string>、</string>
              </property>
@@ -883,12 +877,6 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
            </item>
            <item row="1" column="5">
             <widget class="QCheckBox" name="questionMarkCheckBox">
-             <property name="maximumSize">
-              <size>
-               <width>45</width>
-               <height>16777215</height>
-              </size>
-             </property>
              <property name="text">
               <string>?</string>
              </property>
@@ -903,12 +891,6 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
            </item>
            <item row="1" column="3">
             <widget class="QCheckBox" name="kutenCheckBox">
-             <property name="maximumSize">
-              <size>
-               <width>45</width>
-               <height>16777215</height>
-              </size>
-             </property>
              <property name="text">
               <string>。</string>
              </property>
@@ -916,12 +898,6 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
            </item>
            <item row="1" column="6">
             <widget class="QCheckBox" name="exclamationMarkCheckBox">
-             <property name="maximumSize">
-              <size>
-               <width>45</width>
-               <height>16777215</height>
-              </size>
-             </property>
              <property name="text">
               <string>!</string>
              </property>
