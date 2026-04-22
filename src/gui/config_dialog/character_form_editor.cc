@@ -30,6 +30,7 @@
 #include "gui/config_dialog/character_form_editor.h"
 
 #include <QComboBox>
+#include <QFrame>
 #include <QHBoxLayout>
 #include <QHeaderView>
 #include <QLabel>
@@ -135,6 +136,7 @@ CharacterFormEditor::CharacterFormEditor(QWidget *parent)
   verticalHeader()->hide();
   horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
   setShowGrid(false);
+  setFrameShape(QFrame::NoFrame);
   setStyleSheet(
       "QTableWidget { background-color: palette(window); }"
       "QHeaderView::section { padding: 2px; }"
