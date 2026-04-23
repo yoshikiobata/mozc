@@ -15,7 +15,7 @@ concurrency:
 jobs:
   build:
     # https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-24.04-arm
     timeout-minutes: 60
 
     steps:
@@ -41,7 +41,7 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-artifact@v6
         with:
-          name: mozc.zip
+          name: mozc-arm64.zip
           path: src/bazel-bin/unix/mozc.zip
           if-no-files-found: warn
 
