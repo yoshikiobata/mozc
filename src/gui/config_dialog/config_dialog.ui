@@ -964,22 +964,6 @@ QFrame[role="gridLayoutContainer"] QLabel, QComboBox:!active { color: palette(bu
         <item>
          <widget class="CharacterFormEditor" name="characterFormEditor"/>
         </item>
-        <item>
-         <spacer name="advancedTabBottomSpacer">
-          <property name="orientation">
-           <enum>Qt::Orientation::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Policy::Expanding</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="suggestionsTab">
