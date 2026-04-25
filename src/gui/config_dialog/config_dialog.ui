@@ -1296,7 +1296,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
               </sizepolicy>
              </property>
              <property name="styleSheet">
-              <string>color: palette(button-text);padding: 1px 0px 2px 0px</string>
+              <string>padding: 1px 0px 2px 0px</string>
              </property>
              <property name="text">
               <string>Temporarily disable conversion personalization, history-based suggestions and user dictionary</string>
@@ -1442,7 +1442,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
               </sizepolicy>
              </property>
              <property name="styleSheet">
-              <string>color: palette(button-text);padding: 1px 0px 2px 0px</string>
+              <string>padding: 1px 0px 2px 0px</string>
              </property>
              <property name="text">
               <string>Help make [ProductName] better by automatically sending usage statistics and crash reports to Google (changes will take effect after you log out and log back in)</string>
