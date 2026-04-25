@@ -1255,10 +1255,10 @@ QFrame[role="gridLayoutContainer"] QLabel, QComboBox:!active { color: palette(bu
            <property name="bottomMargin">
             <number>12</number>
            </property>
-           <property name="horizontalSpacing">
-            <number>2</number>
+           <property name="verticalSpacing">
+            <number>4</number>
            </property>
-           <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop">
+           <item row="0" column="0">
             <widget class="QCheckBox" name="incognitoModeCheckBox">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -1266,12 +1266,15 @@ QFrame[role="gridLayoutContainer"] QLabel, QComboBox:!active { color: palette(bu
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
+             <property name="text">
+              <string>Use secret mode</string>
+             </property>
              <property name="tristate">
               <bool>false</bool>
              </property>
             </widget>
            </item>
-           <item row="0" column="1">
+           <item row="1" column="0">
             <widget class="QLabel" name="incognitoModeMessage">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -1280,7 +1283,7 @@ QFrame[role="gridLayoutContainer"] QLabel, QComboBox:!active { color: palette(bu
               </sizepolicy>
              </property>
              <property name="styleSheet">
-              <string>padding: 1px 0px 2px 0px</string>
+              <string>padding: 0px 0px 0px 19px</string>
              </property>
              <property name="text">
               <string>Temporarily disable conversion personalization, history-based suggestions and user dictionary</string>
@@ -1326,7 +1329,7 @@ QFrame[role="gridLayoutContainer"] QLabel, QComboBox:!active { color: palette(bu
           <property name="role" stdset="0">
            <string>gridLayoutContainer</string>
           </property>
-          <layout class="QHBoxLayout" name="presentationModeLayout">
+          <layout class="QGridLayout" name="presentationModeLayout">
            <property name="leftMargin">
             <number>12</number>
            </property>
@@ -1339,10 +1342,29 @@ QFrame[role="gridLayoutContainer"] QLabel, QComboBox:!active { color: palette(bu
            <property name="bottomMargin">
             <number>12</number>
            </property>
-           <item>
+           <property name="verticalSpacing">
+            <number>6</number>
+           </property>
+           <item row="0" column="0">
             <widget class="QCheckBox" name="presentationModeCheckBox">
              <property name="text">
+              <string>Use presentation mode</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="presentationModeMessage">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
               <string>Temporarily disable all suggestions</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -1415,7 +1437,7 @@ QFrame[role="gridLayoutContainer"] QLabel, QComboBox:!active { color: palette(bu
               <property name="horizontalSpacing">
                <number>2</number>
               </property>
-              <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop">
+              <item row="0" column="0">
                <widget class="QCheckBox" name="usageStatsCheckBox">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -1423,25 +1445,25 @@ QFrame[role="gridLayoutContainer"] QLabel, QComboBox:!active { color: palette(bu
                   <verstretch>0</verstretch>
                  </sizepolicy>
                 </property>
+                <property name="text">
+                 <string>Help make [ProductName] better</string>
+                </property>
                 <property name="tristate">
                  <bool>false</bool>
                 </property>
                </widget>
               </item>
-              <item row="0" column="1">
+              <item row="1" column="0">
                <widget class="QLabel" name="usageStatsMessage">
-                <property name="styleSheet">
-                 <string>padding: 1px 0px 2px 0px</string>
-                </property>
                 <property name="text">
-                 <string>Help make [ProductName] better by automatically sending usage statistics and crash reports to Google (changes will take effect after you log out and log back in)</string>
+                 <string>Usage statistics and crash reports are automatically sent to Google (changes will take effect after you log out and log back in)</string>
                 </property>
                 <property name="wordWrap">
                  <bool>true</bool>
                 </property>
                </widget>
               </item>
-              <item row="1" column="0" colspan="2">
+              <item row="2" column="0">
                <widget class="QFrame" name="launchAdministrationDialogButtonForUsageStatsContainer">
                 <layout class="QHBoxLayout" name="launchAdministrationDialogButtonForUsageStatsContainerLayout">
                  <item>
