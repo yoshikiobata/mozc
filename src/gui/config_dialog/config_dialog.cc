@@ -30,7 +30,9 @@
 // Qt component of configure dialog for Mozc
 #include "gui/config_dialog/config_dialog.h"
 
+#include <QApplication>
 #include <QMessageBox>
+#include <QStyle>
 #include <algorithm>
 #include <cstdint>
 #include <istream>
@@ -46,6 +48,7 @@
 #include "config/config_handler.h"
 #include "config/stats_config_util.h"
 #include "gui/base/util.h"
+#include "gui/config_dialog/aligned_wrapped_check_box_row.h"
 #include "gui/config_dialog/keymap_editor.h"
 #include "gui/config_dialog/roman_table_editor.h"
 #include "protocol/config.pb.h"
@@ -231,13 +234,6 @@ ConfigDialog::ConfigDialog()
   Connect(findChildren<QSpinBox *>(), SIGNAL(editingFinished()), this,
           SLOT(Apply()));
 
-  // When clicking these messages, CheckBoxs corresponding
-  // to them should be toggled.
-  // We cannot use connect/slot as QLabel doesn't define
-  // clicked slot by default.
-  usageStatsMessage->installEventFilter(this);
-  incognitoModeMessage->installEventFilter(this);
-
 #ifndef _WIN32
   checkDefaultCheckBox->setVisible(false);
   checkDefaultLabel->setVisible(false);
@@ -256,8 +252,6 @@ ConfigDialog::ConfigDialog()
 
   usageStatsCheckBox->setDisabled(true);
   usageStatsCheckBox->setVisible(false);
-  usageStatsMessage->setDisabled(true);
-  usageStatsMessage->setVisible(false);
 #else   // _WIN32
   launchAdministrationDialogButton->setEnabled(false);
   launchAdministrationDialogButton->setVisible(false);
@@ -271,8 +265,6 @@ ConfigDialog::ConfigDialog()
   // On Linux, disable all fields for UsageStats
   usageStatsLabel->setEnabled(false);
   usageStatsLabel->setVisible(false);
-  usageStatsMessage->setEnabled(false);
-  usageStatsMessage->setVisible(false);
   usageStatsCheckBox->setEnabled(false);
   usageStatsCheckBox->setVisible(false);
 #endif  // __linux__
@@ -797,22 +789,6 @@ void ConfigDialog::LaunchAdministrationDialog() {
 #ifdef _WIN32
   client_->LaunchTool("administration_dialog", "");
 #endif  // _WIN32
-}
-
-// Catch MouseButtonRelease event to toggle the CheckBoxes
-bool ConfigDialog::eventFilter(QObject *obj, QEvent *event) {
-  if (event->type() == QEvent::MouseButtonRelease) {
-    if (obj == usageStatsMessage) {
-#ifndef CHANNEL_DEV
-      usageStatsCheckBox->toggle();
-      Apply();
-#endif  // CHANNEL_DEV
-    } else if (obj == incognitoModeMessage) {
-      incognitoModeCheckBox->toggle();
-      Apply();
-    }
-  }
-  return QObject::eventFilter(obj, event);
 }
 
 }  // namespace gui

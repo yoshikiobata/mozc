@@ -45,6 +45,14 @@ load(
 package(default_visibility = ["//gui:__subpackages__"])
 
 mozc_qt_moc(
+    name = "moc_aligned_wrapped_check_box_row",
+    srcs = [
+        "aligned_wrapped_check_box_row.h",
+    ],
+    outs = ["moc_aligned_wrapped_check_box_row.cc"],
+)
+
+mozc_qt_moc(
     name = "moc_character_form_editor",
     srcs = [
         "character_form_editor.h",
@@ -161,6 +169,7 @@ mozc_cc_qt_library(
 mozc_cc_qt_library(
     name = "config_dialog",
     srcs = [
+        "aligned_wrapped_check_box_row.cc",
         "character_form_editor.cc",
         "config_dialog.cc",
         "config_dialog_libmain.cc",
@@ -169,6 +178,7 @@ mozc_cc_qt_library(
         "keybinding_editor_delegate.cc",
         "keymap_editor.cc",
         "roman_table_editor.cc",
+        ":moc_aligned_wrapped_check_box_row",
         ":moc_character_form_editor",
         ":moc_config_dialog",
         ":moc_generic_table_editor",
@@ -179,6 +189,7 @@ mozc_cc_qt_library(
         ":qrc_config_dialog",
     ],
     hdrs = [
+        "aligned_wrapped_check_box_row.h",
         "character_form_editor.h",
         "config_dialog.h",
         "generic_table_editor.h",
