@@ -75,6 +75,9 @@ class ConfigDialog : public QDialog, private Ui::ConfigDialog {
   virtual void SelectSuggestionSetting(int state);
   virtual void LaunchAdministrationDialog();
 
+ protected:
+  bool eventFilter(QObject *obj, QEvent *event) override;
+
  private:
   bool GetConfig(config::Config *config);
   bool SetConfig(const config::Config &config);
