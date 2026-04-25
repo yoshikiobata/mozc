@@ -1255,9 +1255,6 @@ QFrame[role="gridLayoutContainer"] QLabel, QComboBox:!active { color: palette(bu
            <property name="bottomMargin">
             <number>12</number>
            </property>
-           <property name="verticalSpacing">
-            <number>4</number>
-           </property>
            <item row="0" column="0">
             <widget class="QCheckBox" name="incognitoModeCheckBox">
              <property name="sizePolicy">
@@ -1283,7 +1280,7 @@ QFrame[role="gridLayoutContainer"] QLabel, QComboBox:!active { color: palette(bu
               </sizepolicy>
              </property>
              <property name="styleSheet">
-              <string>padding: 0px 0px 0px 19px</string>
+              <string>padding: 0px 0px 2px 16px</string>
              </property>
              <property name="text">
               <string>Temporarily disable conversion personalization, history-based suggestions and user dictionary</string>
@@ -1342,9 +1339,6 @@ QFrame[role="gridLayoutContainer"] QLabel, QComboBox:!active { color: palette(bu
            <property name="bottomMargin">
             <number>12</number>
            </property>
-           <property name="verticalSpacing">
-            <number>6</number>
-           </property>
            <item row="0" column="0">
             <widget class="QCheckBox" name="presentationModeCheckBox">
              <property name="text">
@@ -1359,6 +1353,9 @@ QFrame[role="gridLayoutContainer"] QLabel, QComboBox:!active { color: palette(bu
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string>padding: 0px 0px 2px 16px</string>
              </property>
              <property name="text">
               <string>Temporarily disable all suggestions</string>
@@ -1455,15 +1452,24 @@ QFrame[role="gridLayoutContainer"] QLabel, QComboBox:!active { color: palette(bu
               </item>
               <item row="1" column="0">
                <widget class="QLabel" name="usageStatsMessage">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
                 <property name="text">
                  <string>Usage statistics and crash reports are automatically sent to Google (changes will take effect after you log out and log back in)</string>
+                </property>
+                <property name="styleSheet">
+                 <string>padding: 0px 0px 2px 16px</string>
                 </property>
                 <property name="wordWrap">
                  <bool>true</bool>
                 </property>
                </widget>
               </item>
-              <item row="2" column="0">
+              <item row="2" column="0" colspan="2">
                <widget class="QFrame" name="launchAdministrationDialogButtonForUsageStatsContainer">
                 <layout class="QHBoxLayout" name="launchAdministrationDialogButtonForUsageStatsContainerLayout">
                  <item>
