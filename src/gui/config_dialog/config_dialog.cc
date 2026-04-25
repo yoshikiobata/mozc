@@ -263,10 +263,7 @@ ConfigDialog::ConfigDialog()
 
 #ifdef __linux__
   // On Linux, disable all fields for UsageStats
-  usageStatsLabel->setEnabled(false);
-  usageStatsLabel->setVisible(false);
-  usageStatsCheckBox->setEnabled(false);
-  usageStatsCheckBox->setVisible(false);
+  usageStatsContainer->setVisible(false);
 #endif  // __linux__
 
   GuiUtil::ReplaceWidgetLabels(this);

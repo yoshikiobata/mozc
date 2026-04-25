@@ -1209,7 +1209,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
        <attribute name="title">
         <string>Privacy</string>
        </attribute>
-       <layout class="QVBoxLayout" name="privacyTabLayout" stretch="0,0,0,0,0,0,1">
+       <layout class="QVBoxLayout" name="privacyTabLayout" stretch="0,0,0,0,0,1">
         <property name="spacing">
          <number>12</number>
         </property>
@@ -1275,14 +1275,14 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
             <number>2</number>
            </property>
            <item row="0" column="0" colspan="2">
-            <widget class="AlignedWrappedCheckBoxRow" name="incognitoModeCheckBox">
+            <widget class="AlignedWrappedCheckBoxRow" name="incognitoModeCheckBox" native="true">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
-             <property name="text">
+             <property name="text" stdset="0">
               <string>Temporarily disable conversion personalization, history-based suggestions and user dictionary</string>
              </property>
             </widget>
@@ -1347,106 +1347,120 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </widget>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="usageStatsSectionHeaderLayout">
-          <property name="topMargin">
-           <number>4</number>
-          </property>
-          <item>
-           <widget class="QLabel" name="usageStatsLabel">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>20</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>Usage statistics and crash reports</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <widget class="QFrame" name="usageStatsFrame">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="autoFillBackground">
-           <bool>true</bool>
-          </property>
-          <property name="role" stdset="0">
-           <string>gridLayoutContainer</string>
-          </property>
-          <layout class="QGridLayout" name="usageStatsLayout">
-           <property name="leftMargin">
+         <widget class="QFrame" name="usageStatsContainer">
+          <layout class="QVBoxLayout" name="usageStatsSectionHeaderLayout">
+           <property name="spacing">
             <number>12</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
            </property>
            <property name="topMargin">
-            <number>13</number>
+            <number>4</number>
            </property>
            <property name="rightMargin">
-            <number>12</number>
+            <number>0</number>
            </property>
            <property name="bottomMargin">
-            <number>12</number>
+            <number>0</number>
            </property>
-           <property name="horizontalSpacing">
-            <number>2</number>
-           </property>
-           <item row="0" column="0" colspan="2">
-            <widget class="AlignedWrappedCheckBoxRow" name="usageStatsCheckBox">
+           <item>
+            <widget class="QLabel" name="usageStatsLabel">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Usage statistics and crash reports</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="usageStatsFrame">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
-             <property name="text">
-              <string>Help make [ProductName] better by automatically sending usage statistics and crash reports to Google (changes will take effect after you log out and log back in)</string>
+             <property name="autoFillBackground">
+              <bool>true</bool>
              </property>
-            </widget>
-           </item>
-           <item row="1" column="0" colspan="2">
-            <widget class="QFrame" name="launchAdministrationDialogButtonForUsageStatsContainer">
-             <layout class="QHBoxLayout" name="launchAdministrationDialogButtonForUsageStatsContainerLayout">
-              <item>
-               <spacer name="usageStatsSettingsButtonSpacer">
-                <property name="orientation">
-                 <enum>Qt::Orientation::Horizontal</enum>
+             <property name="role" stdset="0">
+              <string>gridLayoutContainer</string>
+             </property>
+             <layout class="QGridLayout" name="usageStatsLayout">
+              <property name="leftMargin">
+               <number>12</number>
+              </property>
+              <property name="topMargin">
+               <number>13</number>
+              </property>
+              <property name="rightMargin">
+               <number>12</number>
+              </property>
+              <property name="bottomMargin">
+               <number>12</number>
+              </property>
+              <property name="horizontalSpacing">
+               <number>2</number>
+              </property>
+              <item row="0" column="0" colspan="2">
+               <widget class="AlignedWrappedCheckBoxRow" name="usageStatsCheckBox" native="true">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
                 </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
+                <property name="text" stdset="0">
+                 <string>Help make [ProductName] better by automatically sending usage statistics and crash reports to Google (changes will take effect after you log out and log back in)</string>
                 </property>
-               </spacer>
+               </widget>
               </item>
-              <item>
-               <widget class="QPushButton" name="launchAdministrationDialogButtonForUsageStats">
-                <property name="minimumSize">
-                 <size>
-                  <width>150</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>150</width>
-                  <height>32</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string>Settings...</string>
-                </property>
+              <item row="1" column="0" colspan="2">
+               <widget class="QFrame" name="launchAdministrationDialogButtonForUsageStatsContainer">
+                <layout class="QHBoxLayout" name="launchAdministrationDialogButtonForUsageStatsContainerLayout">
+                 <item>
+                  <spacer name="usageStatsSettingsButtonSpacer">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="launchAdministrationDialogButtonForUsageStats">
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>32</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Settings...</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
              </layout>
