@@ -106,7 +106,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
        <attribute name="title">
         <string>General</string>
        </attribute>
-       <layout class="QVBoxLayout" name="generalTabLayout">
+       <layout class="QVBoxLayout" name="generalTabLayout" stretch="0,0,0,0,1">
         <property name="spacing">
          <number>12</number>
         </property>
@@ -119,13 +119,10 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
         <property name="rightMargin">
          <number>24</number>
         </property>
-       <property name="bottomMargin">
-        <number>24</number>
-       </property>
-       <property name="stretch">
-        <string>0,0,0,1</string>
-       </property>
-       <item>
+        <property name="bottomMargin">
+         <number>24</number>
+        </property>
+        <item>
          <layout class="QHBoxLayout" name="basicsLabelLayout">
           <property name="topMargin">
            <number>4</number>
@@ -686,8 +683,8 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
           </item>
          </layout>
         </item>
-       <item>
-        <widget class="QFrame" name="specialConversionFrame">
+        <item>
+         <widget class="QFrame" name="specialConversionFrame">
           <property name="autoFillBackground">
            <bool>true</bool>
           </property>
@@ -781,31 +778,31 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
             </widget>
            </item>
           </layout>
-        </widget>
-       </item>
-       <item>
-        <spacer name="dictionaryTabBottomSpacer">
-         <property name="orientation">
-          <enum>Qt::Orientation::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Policy::Expanding</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </widget>
+         </widget>
+        </item>
+        <item>
+         <spacer name="dictionaryTabBottomSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Expanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
       <widget class="QWidget" name="advancedTab">
        <attribute name="title">
         <string>Advanced</string>
        </attribute>
-       <layout class="QVBoxLayout" name="advancedTabLayout">
+       <layout class="QVBoxLayout" name="advancedTabLayout" stretch="0,0,0,0,1">
         <property name="spacing">
          <number>12</number>
         </property>
@@ -818,13 +815,10 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
         <property name="rightMargin">
          <number>24</number>
         </property>
-       <property name="bottomMargin">
-        <number>24</number>
-       </property>
-       <property name="stretch">
-        <string>0,0,0,0,1</string>
-       </property>
-       <item>
+        <property name="bottomMargin">
+         <number>24</number>
+        </property>
+        <item>
          <layout class="QHBoxLayout" name="inputAssistanceSectionHeaderLayout">
           <property name="topMargin">
            <number>4</number>
@@ -967,32 +961,32 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
           </item>
          </layout>
         </item>
-       <item>
-        <widget class="CharacterFormEditor" name="characterFormEditor"/>
-       </item>
-       <item>
-        <spacer name="advancedTabBottomSpacer">
-         <property name="orientation">
-          <enum>Qt::Orientation::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Policy::Expanding</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </widget>
+        <item>
+         <widget class="CharacterFormEditor" name="characterFormEditor"/>
+        </item>
+        <item>
+         <spacer name="advancedTabBottomSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Expanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
       <widget class="QWidget" name="suggestionsTab">
        <attribute name="title">
         <string>Suggest</string>
        </attribute>
-       <layout class="QVBoxLayout" name="suggestionTabLayout">
+       <layout class="QVBoxLayout" name="suggestionTabLayout" stretch="0,0,0,0,0,1">
         <property name="spacing">
          <number>12</number>
         </property>
@@ -1005,13 +999,10 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
         <property name="rightMargin">
          <number>24</number>
         </property>
-       <property name="bottomMargin">
-        <number>24</number>
-       </property>
-       <property name="stretch">
-        <string>0,0,0,0,1</string>
-       </property>
-       <item>
+        <property name="bottomMargin">
+         <number>24</number>
+        </property>
+        <item>
          <layout class="QHBoxLayout" name="suggestionSourceSectionHeaderLayout">
           <property name="topMargin">
            <number>4</number>
@@ -1218,7 +1209,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
        <attribute name="title">
         <string>Privacy</string>
        </attribute>
-       <layout class="QVBoxLayout" name="privacyTabLayout">
+       <layout class="QVBoxLayout" name="privacyTabLayout" stretch="0,0,0,0,0,0,1">
         <property name="spacing">
          <number>12</number>
         </property>
@@ -1231,13 +1222,10 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
         <property name="rightMargin">
          <number>24</number>
         </property>
-       <property name="bottomMargin">
-        <number>24</number>
-       </property>
-       <property name="stretch">
-        <string>0,0,0,0,0,0,0,0,1</string>
-       </property>
-       <item>
+        <property name="bottomMargin">
+         <number>24</number>
+        </property>
+        <item>
          <layout class="QHBoxLayout" name="incognitoModeSectionHeaderLayout">
           <property name="topMargin">
            <number>4</number>
@@ -1506,16 +1494,16 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </widget>
         </item>
         <item>
-        <spacer name="privacyTabBottomSpacer">
-         <property name="orientation">
-          <enum>Qt::Orientation::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Policy::Expanding</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>0</width>
+         <spacer name="privacyTabBottomSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Expanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
             <height>0</height>
            </size>
           </property>
@@ -1527,7 +1515,7 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
        <attribute name="title">
         <string>Misc</string>
        </attribute>
-       <layout class="QVBoxLayout" name="miscTabLayout">
+       <layout class="QVBoxLayout" name="miscTabLayout" stretch="0,0,0,0,0,1">
         <property name="spacing">
          <number>12</number>
         </property>
@@ -1540,13 +1528,10 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
         <property name="rightMargin">
          <number>24</number>
         </property>
-       <property name="bottomMargin">
-        <number>24</number>
-       </property>
-       <property name="stretch">
-        <string>0,0,0,0,0,1</string>
-       </property>
-       <item>
+        <property name="bottomMargin">
+         <number>24</number>
+        </property>
+        <item>
          <widget class="QFrame" name="miscDefaultIMEWidget">
           <layout class="QVBoxLayout" name="miscDefaultIMEWidgetLayout">
            <property name="spacing">
@@ -1902,17 +1887,17 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
               </property>
               <item row="0" column="1">
                <widget class="QPushButton" name="resetToDefaultsButton">
-                <property name="minimumSize">
-                 <size>
-                  <width>150</width>
-                  <height>0</height>
-                 </size>
-                </property>
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>150</width>
+                  <height>0</height>
+                 </size>
                 </property>
                 <property name="text">
                  <string>Reset to defaults</string>
@@ -1926,16 +1911,16 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
          </widget>
         </item>
         <item>
-        <spacer name="miscTabBottomSpacer">
-         <property name="orientation">
-          <enum>Qt::Orientation::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Policy::Expanding</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>0</width>
+         <spacer name="miscTabBottomSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Expanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
             <height>0</height>
            </size>
           </property>
