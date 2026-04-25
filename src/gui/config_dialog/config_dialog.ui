@@ -63,7 +63,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">
-QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: palette(button-text); }
+QFrame[role="gridLayoutContainer"] QLabel, QComboBox:!active { color: palette(button-text); }
 </string>
   </property>
   <widget class="QWidget" name="centralwidget" native="true">
@@ -1274,16 +1274,35 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
            <property name="horizontalSpacing">
             <number>2</number>
            </property>
-           <item row="0" column="0" colspan="2">
-            <widget class="AlignedWrappedCheckBoxRow" name="incognitoModeCheckBox" native="true">
+           <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop">
+            <widget class="QCheckBox" name="incognitoModeCheckBox">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="incognitoModeMessage">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
-             <property name="text" stdset="0">
+             <property name="styleSheet">
+              <string>padding: 1px 0px 2px 0px</string>
+             </property>
+             <property name="text">
               <string>Temporarily disable conversion personalization, history-based suggestions and user dictionary</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -1412,16 +1431,29 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
               <property name="horizontalSpacing">
                <number>2</number>
               </property>
-              <item row="0" column="0" colspan="2">
-               <widget class="AlignedWrappedCheckBoxRow" name="usageStatsCheckBox" native="true">
+              <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop">
+               <widget class="QCheckBox" name="usageStatsCheckBox">
                 <property name="sizePolicy">
-                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
                 </property>
-                <property name="text" stdset="0">
+                <property name="tristate">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLabel" name="usageStatsMessage">
+                <property name="styleSheet">
+                 <string>padding: 1px 0px 2px 0px</string>
+                </property>
+                <property name="text">
                  <string>Help make [ProductName] better by automatically sending usage statistics and crash reports to Google (changes will take effect after you log out and log back in)</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>
@@ -1914,11 +1946,6 @@ QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: 
    <class>CharacterFormEditor</class>
    <extends>QTableWidget</extends>
    <header>gui/config_dialog/character_form_editor.h</header>
-  </customwidget>
-  <customwidget>
-   <class>AlignedWrappedCheckBoxRow</class>
-   <extends>QWidget</extends>
-   <header>gui/config_dialog/aligned_wrapped_check_box_row.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>
