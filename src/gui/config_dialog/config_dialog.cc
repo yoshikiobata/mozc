@@ -116,10 +116,22 @@ ConfigDialog::ConfigDialog()
 
 #if defined(__linux__)
   // The last "misc" tab has no valid configs on Linux
-  constexpr int kMiscTabIndex = 6;
-  configDialogTabWidget->removeTab(kMiscTabIndex);
+  configDialogStackedWidget->removeWidget(miscTab);
+  miscTab->hide();
 #endif  // __linux__
 #endif  // NDEBUG
+
+  contentsListWidget->addItem(tr("General"));
+  contentsListWidget->addItem(tr("Dictionary"));
+  contentsListWidget->addItem(tr("Advanced"));
+  contentsListWidget->addItem(tr("Suggest"));
+  contentsListWidget->addItem(tr("Privacy"));
+#if !(defined(NDEBUG) && defined(__linux__))
+  contentsListWidget->addItem(tr("Misc"));
+#endif
+  QObject::connect(contentsListWidget, SIGNAL(currentRowChanged(int)),
+                   configDialogStackedWidget, SLOT(setCurrentIndex(int)));
+  contentsListWidget->setCurrentRow(0);
 
   suggestionsSizeSpinBox->setRange(1, 9);
 
