@@ -113,22 +113,13 @@ ConfigDialog::ConfigDialog()
 #ifdef NDEBUG
   // disable logging options
   miscLoggingWidget->setVisible(false);
-
-#if defined(__linux__)
-  // The last "misc" tab has no valid configs on Linux
-  configDialogStackedWidget->removeWidget(miscTab);
-  miscTab->hide();
-#endif  // __linux__
 #endif  // NDEBUG
 
-  contentsListWidget->addItem(tr("General"));
-  contentsListWidget->addItem(tr("Dictionary"));
-  contentsListWidget->addItem(tr("Advanced"));
-  contentsListWidget->addItem(tr("Suggest"));
-  contentsListWidget->addItem(tr("Privacy"));
-#if !(defined(NDEBUG) && defined(__linux__))
-  contentsListWidget->addItem(tr("Misc"));
-#endif
+  const QStringList naviationItems = {tr("General"), tr("Dictionary"), tr("Advanced"), tr("Suggest"), tr("Privacy"), tr("Misc")};
+  
+  for (auto idx = 0; idx < naviationItems.size(); ++idx) {
+  contentsListWidget->addItem(naviationItems[idx]);
+  }
   QObject::connect(contentsListWidget, SIGNAL(currentRowChanged(int)),
                    configDialogStackedWidget, SLOT(setCurrentIndex(int)));
   contentsListWidget->setCurrentRow(0);

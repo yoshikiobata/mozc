@@ -71,8 +71,23 @@ QFrame[role="gridLayoutContainer"] { background-color: palette(light); }
    <property name="spacing">
     <number>12</number>
    </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
    <item>
     <widget class="QListWidget" name="contentsListWidget">
+  <property name="styleSheet">
+   <string>background-color: palette(light);</string>
+  </property>
      <property name="minimumSize">
       <size>
        <width>128</width>
