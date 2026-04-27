@@ -101,6 +101,14 @@ mozc_qt_moc(
 )
 
 mozc_qt_moc(
+    name = "moc_navigation_item",
+    srcs = [
+        "navigation_item.h",
+    ],
+    outs = ["moc_navigation_item.cc"],
+)
+
+mozc_qt_moc(
     name = "moc_roman_table_editor",
     srcs = [
         "roman_table_editor.h",
@@ -168,6 +176,7 @@ mozc_cc_qt_library(
         "keybinding_editor.cc",
         "keybinding_editor_delegate.cc",
         "keymap_editor.cc",
+        "navigation_item.cc",
         "roman_table_editor.cc",
         ":moc_character_form_editor",
         ":moc_config_dialog",
@@ -175,6 +184,7 @@ mozc_cc_qt_library(
         ":moc_keybinding_editor",
         ":moc_keybinding_editor_delegate",
         ":moc_keymap_editor",
+        ":moc_navigation_item",
         ":moc_roman_table_editor",
         ":qrc_config_dialog",
     ],
@@ -185,6 +195,7 @@ mozc_cc_qt_library(
         "keybinding_editor.h",
         "keybinding_editor_delegate.h",
         "keymap_editor.h",
+        "navigation_item.h",
         "roman_table_editor.h",
         ":uic_config_dialog",
         ":uic_generic_table_editor",

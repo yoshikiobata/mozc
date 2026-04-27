@@ -47,6 +47,7 @@
 #include "config/stats_config_util.h"
 #include "gui/base/util.h"
 #include "gui/config_dialog/keymap_editor.h"
+#include "gui/config_dialog/navigation_item.h"
 #include "gui/config_dialog/roman_table_editor.h"
 #include "protocol/config.pb.h"
 #include "session/keymap.h"
@@ -116,14 +117,22 @@ ConfigDialog::ConfigDialog()
 #endif  // NDEBUG
 
 #if defined(__linux__)
-  contentsListFrame->setStyleSheet("background-color: palette(midlight);");
+  contentsListWidget->setStyleSheet("background-color: palette(midlight);");
 #else  // __linux__
-  contentsListFrame->setStyleSheet("background-color: palette(light);");
+  contentsListWidget->setStyleSheet("background-color: palette(light);");
 #endif
   const QStringList naviationItems = {tr("General"), tr("Dictionary"), tr("Advanced"), tr("Suggest"), tr("Privacy"), tr("Misc")};
-  for (auto idx = 0; idx < naviationItems.size(); ++idx) {
-  contentsListWidget->addItem(naviationItems[idx]);
+  //for (auto idx = 0; idx < naviationItems.size(); ++idx) {
+  for (const auto& title : naviationItems) {
+    //auto title = naviationItems[idx];
+    auto *item = new QListWidgetItem(contentsListWidget);
+    auto *widget = new NavigationItem(title, contentsListWidget);
+    item->setSizeHint(widget->sizeHint());
+    contentsListWidget->addItem(item);
+    contentsListWidget->setItemWidget(item, widget);
   }
+  setStyleSheet(
+      "QListWidget::item:selected { background-color: palette(dark); }");
   QObject::connect(contentsListWidget, SIGNAL(currentRowChanged(int)),
                    configDialogStackedWidget, SLOT(setCurrentIndex(int)));
   contentsListWidget->setCurrentRow(0);
