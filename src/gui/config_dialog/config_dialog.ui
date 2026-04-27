@@ -63,55 +63,79 @@
   </property>
   <property name="styleSheet">
    <string notr="true">
-QFrame[role="gridLayoutContainer"] QLabel, QComboBox:!active { color: palette(button-text); }
-QFrame[role="gridLayoutContainer"] { background-color: palette(light); }
+QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: palette(button-text); }
+QFrame[role=&quot;gridLayoutContainer&quot;] { background-color: palette(midlight); }
 </string>
   </property>
   <layout class="QHBoxLayout" name="contentsLayout">
    <property name="spacing">
     <number>12</number>
    </property>
-       <property name="leftMargin">
-        <number>0</number>
-       </property>
-       <property name="topMargin">
-        <number>0</number>
-       </property>
-       <property name="rightMargin">
-        <number>0</number>
-       </property>
-       <property name="bottomMargin">
-        <number>0</number>
-       </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
    <item>
-    <widget class="QListWidget" name="contentsListWidget">
-  <property name="styleSheet">
-   <string>background-color: palette(light);</string>
-  </property>
-     <property name="minimumSize">
-      <size>
-       <width>128</width>
-       <height>0</height>
-      </size>
+    <widget class="QFrame" name="contentsListFrame">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
-     <property name="maximumSize">
-      <size>
-       <width>160</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="editTriggers">
-      <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
-     </property>
-     <property name="selectionMode">
-      <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
-     </property>
-     <property name="selectionBehavior">
-      <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
-     </property>
-     <property name="uniformItemSizes">
-      <bool>true</bool>
-     </property>
+     <layout class="QHBoxLayout" name="contentsListLayout">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>24</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>24</number>
+      </property>
+      <item>
+       <widget class="QListWidget" name="contentsListWidget">
+        <property name="minimumSize">
+         <size>
+          <width>128</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>160</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::NoFrame</enum>
+        </property>
+        <property name="editTriggers">
+         <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+        </property>
+        <property name="uniformItemSizes">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
    <item>

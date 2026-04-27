@@ -115,8 +115,12 @@ ConfigDialog::ConfigDialog()
   miscLoggingWidget->setVisible(false);
 #endif  // NDEBUG
 
+#if defined(__linux__)
+  contentsListFrame->setStyleSheet("background-color: palette(midlight);");
+#else  // __linux__
+  contentsListFrame->setStyleSheet("background-color: palette(light);");
+#endif
   const QStringList naviationItems = {tr("General"), tr("Dictionary"), tr("Advanced"), tr("Suggest"), tr("Privacy"), tr("Misc")};
-  
   for (auto idx = 0; idx < naviationItems.size(); ++idx) {
   contentsListWidget->addItem(naviationItems[idx]);
   }
