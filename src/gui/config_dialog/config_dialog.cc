@@ -117,9 +117,11 @@ ConfigDialog::ConfigDialog()
 #endif  // NDEBUG
 
 #if defined(__linux__)
-  contentsListWidget->setStyleSheet("background-color: palette(midlight);");
+  contentsListWidget->setStyleSheet("background-color: palette(window);");
+  //contentsListWidget->setStyleSheet("background-color: palette(midlight);");
 #else  // __linux__
-  contentsListWidget->setStyleSheet("background-color: palette(light);");
+  contentsListWidget->setStyleSheet("background-color: palette(window);");
+  //contentsListWidget->setStyleSheet("background-color: palette(light);");
 #endif
   const QStringList naviationItems = {tr("General"), tr("Dictionary"), tr("Advanced"), tr("Suggest"), tr("Privacy"), tr("Misc")};
   //for (auto idx = 0; idx < naviationItems.size(); ++idx) {
@@ -131,11 +133,13 @@ ConfigDialog::ConfigDialog()
     contentsListWidget->addItem(item);
     contentsListWidget->setItemWidget(item, widget);
   }
+  configDialogStackedWidget->setStyleSheet("background-color: palette(midlight);");
   setStyleSheet(
-      "QListWidget::item:selected { background-color: palette(dark); }");
+      "QListWidget::item:selected { background-color: palette(midlight); }");
   QObject::connect(contentsListWidget, SIGNAL(currentRowChanged(int)),
                    configDialogStackedWidget, SLOT(setCurrentIndex(int)));
   contentsListWidget->setCurrentRow(0);
+  contentsListWidget->setFocusPolicy(Qt::NoFocus);
 
   suggestionsSizeSpinBox->setRange(1, 9);
 
