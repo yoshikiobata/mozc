@@ -34,8 +34,8 @@
   <property name="styleSheet">
    <string notr="true">
 QFrame[role=&quot;gridLayoutContainer&quot;] QLabel, QComboBox:!active { color: palette(button-text); }
-QFrame[role=&quot;gridLayoutContainer&quot;] { background-color: palette(base); }
-QListWidget { background-color: palette(base); }
+QFrame[role=&quot;gridLayoutContainer&quot;] { background-color: palette(window); }
+QListWidget { background-color: palette(window); }
 QListWidget::item:selected { background-color: palette(light); }
 QStackedWidget { background-color: palette(light); }
 </string>
