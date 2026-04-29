@@ -117,22 +117,19 @@ ConfigDialog::ConfigDialog()
 #endif  // NDEBUG
 
   const QStringList naviationItems = {tr("General"), tr("Dictionary"), tr("Advanced"), tr("Suggest"), tr("Privacy"), tr("Misc")};
-  //for (auto idx = 0; idx < naviationItems.size(); ++idx) {
   for (const auto& title : naviationItems) {
-    //auto title = naviationItems[idx];
     auto *item = new QListWidgetItem(contentsListWidget);
     auto *widget = new NavigationItem(title, contentsListWidget);
     item->setSizeHint(widget->sizeHint());
     contentsListWidget->addItem(item);
     contentsListWidget->setItemWidget(item, widget);
   }
-  //configDialogStackedWidget->setStyleSheet("QStackedWidget#configDialogStackedWidget {background-color: palette(midlight);}");
-  //setStyleSheet(
-  //    "QListWidget::item:selected { background-color: palette(midlight); }");
   QObject::connect(contentsListWidget, SIGNAL(currentRowChanged(int)),
                    configDialogStackedWidget, SLOT(setCurrentIndex(int)));
   contentsListWidget->setCurrentRow(0);
   contentsListWidget->setFocusPolicy(Qt::NoFocus);
+
+  ApplyStyleSheet();
 
   suggestionsSizeSpinBox->setRange(1, 9);
 
@@ -798,6 +795,16 @@ void ConfigDialog::LaunchAdministrationDialog() {
 #ifdef _WIN32
   client_->LaunchTool("administration_dialog", "");
 #endif  // _WIN32
+}
+
+void ConfigDialog::ApplyStyleSheet() {
+  setStyleSheet(
+      "QFrame[role=gridLayoutContainer] QLabel, QComboBox:!active { color: palette(button-text); }"
+      "QFrame[role=gridLayoutContainer] { background-color: palette(window); }"
+      "QListWidget { background-color: palette(window); }"
+      "QListWidget::item:selected { background-color: palette(light); }"
+      "QStackedWidget { background-color: palette(light); }"
+  );
 }
 
 }  // namespace gui
