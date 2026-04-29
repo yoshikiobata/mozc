@@ -31,6 +31,7 @@
 #include "gui/config_dialog/config_dialog.h"
 
 #include <QMessageBox>
+#include <QPalette>
 #include <algorithm>
 #include <cstdint>
 #include <istream>
@@ -798,13 +799,36 @@ void ConfigDialog::LaunchAdministrationDialog() {
 }
 
 void ConfigDialog::ApplyStyleSheet() {
-  setStyleSheet(
+  auto isDark = palette().color(QPalette::Window).lightness() < 128;
+
+  if (isDark) {
+    setStyleSheet(
       "QFrame[role=gridLayoutContainer] QLabel, QComboBox:!active { color: palette(button-text); }"
-      "QFrame[role=gridLayoutContainer] { background-color: palette(window); }"
-      "QListWidget { background-color: palette(window); }"
-      "QListWidget::item:selected { background-color: palette(light); }"
-      "QStackedWidget { background-color: palette(light); }"
-  );
+      "QFrame[role=gridLayoutContainer] { background-color: #2A2A2A; }"
+      "QListWidget { background-color: #2A2A2A; }"
+      "QTableWidget { background-color: #2A2A2A; }"
+      "QListWidget::item:selected { background-color: #393939; }"
+      "QStackedWidget { background-color: #393939; }"
+    );
+  } else {
+    setStyleSheet(
+      "QFrame[role=gridLayoutContainer] QLabel, QComboBox:!active { color: palette(button-text); }"
+      "QFrame[role=gridLayoutContainer] { background-color: #ECECEC; }"
+      "QListWidget { background-color: #ECECEC; }"
+      "QTableWidget { background-color: #ECECEC; }"
+      "QListWidget::item:selected { background-color: #FAFAFA; }"
+      "QStackedWidget { background-color: #FAFAFA; }"
+    );
+  }
+}
+
+bool ConfigDialog::event(QEvent *event)
+{
+    if (event->type() == QEvent::ApplicationPaletteChange ||
+        event->type() == QEvent::PaletteChange) {
+        ApplyStyleSheet();
+    }
+    return QWidget::event(event);
 }
 
 }  // namespace gui

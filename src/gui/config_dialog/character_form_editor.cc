@@ -138,7 +138,7 @@ CharacterFormEditor::CharacterFormEditor(QWidget *parent)
   setShowGrid(false);
   setFrameShape(QFrame::NoFrame);
   setStyleSheet(
-      "QTableWidget { background-color: palette(window); }"
+      //"QTableWidget { background-color: palette(window); }"
       "QHeaderView::section { padding: 2px; }"
       "QTableWidget::item:selected { background: transparent; }");
 }

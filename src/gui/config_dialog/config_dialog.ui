@@ -145,9 +145,6 @@
        </item>
        <item>
         <widget class="QFrame" name="generalSettingsFrame">
-         <property name="frameShape">
-          <enum>QFrame::Shape::StyledPanel</enum>
-         </property>
          <property name="role" stdset="0">
           <string>gridLayoutContainer</string>
          </property>
@@ -272,9 +269,6 @@
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
-         </property>
-         <property name="autoFillBackground">
-          <bool>false</bool>
          </property>
          <property name="role" stdset="0">
           <string>gridLayoutContainer</string>
@@ -414,9 +408,6 @@
        </item>
        <item>
         <widget class="QFrame" name="personalizationSettingsFrame">
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
          <property name="role" stdset="0">
           <string>gridLayoutContainer</string>
          </property>
@@ -522,9 +513,6 @@
        </item>
        <item>
         <widget class="QFrame" name="userDictionaryActionsFrame">
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
          <property name="role" stdset="0">
           <string>gridLayoutContainer</string>
          </property>
@@ -606,9 +594,6 @@
        </item>
        <item>
         <widget class="QFrame" name="usageDictionarySettingsFrame">
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
          <property name="role" stdset="0">
           <string>gridLayoutContainer</string>
          </property>
@@ -678,9 +663,6 @@
        </item>
        <item>
         <widget class="QFrame" name="specialConversionFrame">
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
          <property name="role" stdset="0">
           <string>gridLayoutContainer</string>
          </property>
@@ -835,9 +817,6 @@
        </item>
        <item>
         <widget class="QFrame" name="inputAssistanceSettingsFrame">
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
          <property name="role" stdset="0">
           <string>gridLayoutContainer</string>
          </property>
@@ -1000,9 +979,6 @@
        </item>
        <item>
         <widget class="QFrame" name="historySuggestionSettingsFrame">
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
          <property name="role" stdset="0">
           <string>gridLayoutContainer</string>
          </property>
@@ -1060,9 +1036,6 @@
        </item>
        <item>
         <widget class="QFrame" name="suggestionBehaviorSettingsFrame">
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
          <property name="role" stdset="0">
           <string>gridLayoutContainer</string>
          </property>
@@ -1126,9 +1099,6 @@
        </item>
        <item>
         <widget class="QFrame" name="suggestionOtherSettingsFrame">
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
          <property name="role" stdset="0">
           <string>gridLayoutContainer</string>
          </property>
@@ -1220,9 +1190,6 @@
        </item>
        <item>
         <widget class="QFrame" name="incognitoModeFrame">
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
          <property name="role" stdset="0">
           <string>gridLayoutContainer</string>
          </property>
@@ -1304,9 +1271,6 @@
        </item>
        <item>
         <widget class="QFrame" name="presentationModeFrame">
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
          <property name="role" stdset="0">
           <string>gridLayoutContainer</string>
          </property>
@@ -1395,9 +1359,6 @@
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
-            </property>
-            <property name="autoFillBackground">
-             <bool>false</bool>
             </property>
             <property name="role" stdset="0">
              <string>gridLayoutContainer</string>
@@ -1565,9 +1526,6 @@
           </item>
           <item>
            <widget class="QFrame" name="defaultImeOptionsFrame">
-            <property name="autoFillBackground">
-             <bool>false</bool>
-            </property>
             <property name="role" stdset="0">
              <string>gridLayoutContainer</string>
             </property>
@@ -1649,9 +1607,6 @@
           </item>
           <item>
            <widget class="QFrame" name="administrationSettingsFrame">
-            <property name="autoFillBackground">
-             <bool>false</bool>
-            </property>
             <property name="role" stdset="0">
              <string>gridLayoutContainer</string>
             </property>
@@ -1727,9 +1682,6 @@
           </item>
           <item>
            <widget class="QFrame" name="startupSettingsFrame">
-            <property name="autoFillBackground">
-             <bool>false</bool>
-            </property>
             <property name="role" stdset="0">
              <string>gridLayoutContainer</string>
             </property>
@@ -1792,9 +1744,6 @@
           </item>
           <item>
            <widget class="QFrame" name="loggingSettingsFrame">
-            <property name="autoFillBackground">
-             <bool>false</bool>
-            </property>
             <property name="role" stdset="0">
              <string>gridLayoutContainer</string>
             </property>
@@ -1867,9 +1816,6 @@
           </item>
           <item>
            <widget class="QFrame" name="resetSettingsFrame">
-            <property name="autoFillBackground">
-             <bool>false</bool>
-            </property>
             <property name="role" stdset="0">
              <string>gridLayoutContainer</string>
             </property>

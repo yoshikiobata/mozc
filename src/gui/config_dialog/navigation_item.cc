@@ -12,12 +12,12 @@ namespace gui {
 NavigationItem::NavigationItem(const QString &title, QWidget *parent)
         : QWidget(parent) {
   QLabel *titleLabel = new QLabel(title);
-  titleLabel->setStyleSheet("background-color: transparent;");
+  titleLabel->setStyleSheet("background-color: transparent;padding-bottom: 2px");
 
   QHBoxLayout *mainLayout = new QHBoxLayout(this);
   mainLayout->addWidget(titleLabel);
-  mainLayout->setSpacing(16);
-  mainLayout->setContentsMargins(24, 24, 24, 24);
+  //mainLayout->setSpacing(16);
+  mainLayout->setContentsMargins(16, 24, 16, 24);
 }
 }  // namespace gui
 }  // namespace mozc
