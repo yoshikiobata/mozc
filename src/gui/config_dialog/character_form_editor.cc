@@ -29,15 +29,20 @@
 
 #include "gui/config_dialog/character_form_editor.h"
 
+#include <QComboBox>
+#include <QFrame>
+#include <QHBoxLayout>
 #include <QHeaderView>
+#include <QLabel>
+#include <QStringList>
+#include <QVBoxLayout>
+#include <QWidget>
 #include <QtGui>
-#include <cstddef>
 #include <memory>
 #include <string>
 
 #include "absl/strings/string_view.h"
 #include "config/config_handler.h"
-#include "gui/config_dialog/combobox_delegate.h"
 
 namespace mozc {
 namespace gui {
@@ -72,7 +77,6 @@ config::Config::CharacterForm StringToForm(const QString &str) {
 }
 
 QString GroupToString(absl::string_view str) {
-  // if (str == "ア") {
   if (str == "ア") {
     return QObject::tr("Katakana");
   } else if (str == "0") {
@@ -94,28 +98,53 @@ std::string StringToGroup(const QString &str) {
   }
   return str.toStdString();
 }
+
+QComboBox *CreateFormComboBox(QWidget *parent, QStringList strings) {
+  auto *combo_box = new QComboBox(parent);
+  combo_box->addItems(strings);
+  combo_box->setSizeAdjustPolicy(QComboBox::AdjustToContents);
+  return combo_box;
+}
+
+QHBoxLayout *CreateFormLayout(QWidget *parent, QComboBox *combo_box) {
+  auto *layout = new QHBoxLayout();
+  layout->setContentsMargins(8, 8, 8, 8);
+  layout->addWidget(combo_box);
+  return layout;
+}
+
+QWidget *CreateGroupCell(QWidget *parent, const QString &text) {
+  auto *container = new QWidget(parent);
+  auto *layout = new QVBoxLayout(container);
+  layout->setContentsMargins(8, 8, 8, 8);
+
+  auto *label = new QLabel(text, container);
+  label->setObjectName("group_label");
+  label->setStyleSheet("color: palette(button-text);");
+  layout->addWidget(label);
+
+  return container;
+}
 }  // namespace
 
 CharacterFormEditor::CharacterFormEditor(QWidget *parent)
-    : QTableWidget(parent), delegate_(std::make_unique<ComboBoxDelegate>()) {
-  QStringList item_list;
-  item_list << tr("Fullwidth") << tr("Halfwidth") << tr("Remember");
-  delegate_->SetItemList(item_list);
-  setEditTriggers(QAbstractItemView::AllEditTriggers);
-  setItemDelegate(delegate_.get());
+    : QTableWidget(parent) {
   setColumnCount(3);
   setSelectionMode(QAbstractItemView::NoSelection);
   setFocusPolicy(Qt::NoFocus);
-  setStyleSheet("QTableWidget { background-color: palette(window); } QTableWidget::item:selected { background: transparent; }");
+  setEditTriggers(QAbstractItemView::NoEditTriggers);
   verticalHeader()->hide();
+  horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
   setShowGrid(false);
+  setFrameShape(QFrame::NoFrame);
+  setStyleSheet(
+      //"QTableWidget { background-color: palette(window); }"
+      "QHeaderView::section { padding: 2px; }"
+      "QTableWidget::item:selected { background: transparent; }");
 }
 
 void CharacterFormEditor::Load(const config::Config &config) {
-  clear();
-  QStringList header;
-  header << tr("Group") << tr("Composition") << tr("Conversion");
-  setHorizontalHeaderLabels(header);
+  clearContents();
 
   std::unique_ptr<config::Config> default_config;
   const config::Config *target_config = &config;
@@ -127,38 +156,49 @@ void CharacterFormEditor::Load(const config::Config &config) {
     target_config = default_config.get();
   }
 
-  setRowCount(0);
-  setRowCount(target_config->character_form_rules_size());
+  const QStringList headers = {tr("Group"), tr("Composition"),
+                               tr("Conversion")};
+  setHorizontalHeaderLabels(headers);
 
-  for (size_t row = 0; row < target_config->character_form_rules_size();
-       ++row) {
+  auto strings = QStringList() << QObject::tr("Fullwidth") << QObject::tr("Halfwidth") << QObject::tr("Remember");
+  setRowCount(target_config->character_form_rules_size());
+  for (int row = 0; row < target_config->character_form_rules_size(); ++row) {
     const config::Config::CharacterFormRule &rule =
         target_config->character_form_rules(row);
-    const QString group = GroupToString(rule.group());
-    const QString preedit = FormToString(rule.preedit_character_form());
-    const QString conversion = FormToString(rule.conversion_character_form());
+    auto group = GroupToString(rule.group());
+    auto *group_container = CreateGroupCell(this, group);
 
-    QTableWidgetItem *item_group = new QTableWidgetItem(group);
-    item_group->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-    QTableWidgetItem *item_preedit = new QTableWidgetItem(preedit);
-    item_preedit->setTextAlignment(Qt::AlignCenter);
-    QTableWidgetItem *item_conversion = new QTableWidgetItem(conversion);
-    item_conversion->setTextAlignment(Qt::AlignCenter);
+    auto *preedit_container = new QWidget(this);
+    auto *preedit_combo = CreateFormComboBox(preedit_container, strings);
+    preedit_combo->setObjectName("preedit_combo");
+    preedit_container->setLayout(
+        CreateFormLayout(preedit_container, preedit_combo));
 
+    auto *conversion_container = new QWidget(this);
+    auto *conversion_combo = CreateFormComboBox(conversion_container, strings);
+    conversion_combo->setObjectName("conversion_combo");
+    conversion_container->setLayout(
+        CreateFormLayout(conversion_container, conversion_combo));
+    QObject::connect(preedit_combo, SIGNAL(activated(int)), this,
+                     SIGNAL(ItemModified()));
+    QObject::connect(conversion_combo, SIGNAL(activated(int)), this,
+                     SIGNAL(ItemModified()));
+
+    preedit_combo->setCurrentText(
+        FormToString(rule.preedit_character_form()));
+    conversion_combo->setCurrentText(
+        FormToString(rule.conversion_character_form()));
+
+    setCellWidget(row, 0, group_container);
+    setCellWidget(row, 1, preedit_container);
+    setCellWidget(row, 2, conversion_container);
     // Preedit Katakan is always FULLWIDTH
     // This item should not be editable
     if (group == QObject::tr("Katakana")) {
-      item_preedit->setFlags(Qt::NoItemFlags);  // disable flag
+      preedit_combo->setEnabled(false);
     }
-
-    setItem(row, 0, item_group);
-    setItem(row, 1, item_preedit);
-    setItem(row, 2, item_conversion);
-    const int height = rowHeight(row);
-    setRowHeight(row, height);
   }
-
-  horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+  resizeRowsToContents();
 }
 
 void CharacterFormEditor::Save(config::Config *config) {
@@ -168,14 +208,16 @@ void CharacterFormEditor::Save(config::Config *config) {
 
   config->clear_character_form_rules();
   for (int row = 0; row < rowCount(); ++row) {
-    if (item(row, 0)->text().isEmpty()) {
+    auto groupText = cellWidget(row, 0)->findChild<QLabel *>("group_label")->text();
+    if (groupText.isEmpty()) {
       continue;
     }
-    const std::string group = StringToGroup(item(row, 0)->text());
+    const std::string group = StringToGroup(groupText);
+
     config::Config::CharacterForm preedit_form =
-        StringToForm(item(row, 1)->text());
+        StringToForm(cellWidget(row, 1)->findChild<QComboBox *>("preedit_combo")->currentText());
     config::Config::CharacterForm conversion_form =
-        StringToForm(item(row, 2)->text());
+        StringToForm(cellWidget(row, 2)->findChild<QComboBox *>("conversion_combo")->currentText());
     config::Config::CharacterFormRule *rule =
         config->add_character_form_rules();
     rule->set_group(group);

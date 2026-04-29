@@ -31,9 +31,7 @@
 #define MOZC_GUI_CONFIG_DIALOG_CHARACTER_FORM_EDITOR_H_
 
 #include <QTableWidget>
-#include <memory>
 
-#include "gui/config_dialog/combobox_delegate.h"
 #include "protocol/config.pb.h"
 
 namespace mozc {
@@ -47,8 +45,8 @@ class CharacterFormEditor : public QTableWidget {
   void Load(const config::Config &config);
   void Save(config::Config *config);
 
- private:
-  std::unique_ptr<ComboBoxDelegate> delegate_;
+ signals:
+  void ItemModified();
 };
 
 }  // namespace gui

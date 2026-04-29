@@ -62,23 +62,22 @@ class ConfigDialog : public QDialog, private Ui::ConfigDialog {
   // by the moc tool and |QObject::connect| against these methods results in
   // failure. See b/5935351 about how we found this issue.
  protected slots:
+  virtual void Apply();
+  virtual void ApplyStyleSheet();
   virtual void ClearUserHistory();
   virtual void ClearUserPrediction();
   virtual void ClearUnusedUserPrediction();
   virtual void EditUserDictionary();
   virtual void EditKeymap();
   virtual void EditRomanTable();
-  virtual void Apply();
   virtual void ResetToDefaults();
   virtual void SelectInputModeSetting(int index);
   virtual void SelectAutoConversionSetting(int state);
   virtual void SelectSuggestionSetting(int state);
   virtual void LaunchAdministrationDialog();
-  virtual void EnableApplyButton();
-  virtual void DisableApplyButton();
 
  protected:
-  bool eventFilter(QObject *obj, QEvent *event) override;
+  bool event(QEvent *event) override;
 
  private:
   bool GetConfig(config::Config *config);

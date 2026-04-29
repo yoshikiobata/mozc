@@ -31,6 +31,7 @@
 #include "gui/config_dialog/config_dialog.h"
 
 #include <QMessageBox>
+#include <QPalette>
 #include <algorithm>
 #include <cstdint>
 #include <istream>
@@ -113,13 +114,14 @@ ConfigDialog::ConfigDialog()
 #ifdef NDEBUG
   // disable logging options
   miscLoggingWidget->setVisible(false);
-
-#if defined(__linux__)
-  // The last "misc" tab has no valid configs on Linux
-  constexpr int kMiscTabIndex = 6;
-  configDialogTabWidget->removeTab(kMiscTabIndex);
-#endif  // __linux__
 #endif  // NDEBUG
+
+  QObject::connect(contentsListWidget, SIGNAL(currentRowChanged(int)),
+                   configDialogStackedWidget, SLOT(setCurrentIndex(int)));
+  contentsListWidget->setCurrentRow(0);
+  contentsListWidget->setFocusPolicy(Qt::NoFocus);
+
+  ApplyStyleSheet();
 
   suggestionsSizeSpinBox->setRange(1, 9);
 
@@ -205,8 +207,6 @@ ConfigDialog::ConfigDialog()
                    SLOT(EditKeymap()));
   QObject::connect(resetToDefaultsButton, SIGNAL(clicked()), this,
                    SLOT(ResetToDefaults()));
-  QObject::connect(applyButton, SIGNAL(clicked()), this,
-                   SLOT(Apply()));
   QObject::connect(editRomanTableButton, SIGNAL(clicked()), this,
                    SLOT(EditRomanTable()));
   QObject::connect(inputModeComboBox, SIGNAL(currentIndexChanged(int)), this,
@@ -223,25 +223,15 @@ ConfigDialog::ConfigDialog()
                    SLOT(LaunchAdministrationDialog()));
   QObject::connect(launchAdministrationDialogButtonForUsageStats,
                    SIGNAL(clicked()), this, SLOT(LaunchAdministrationDialog()));
+  QObject::connect(characterFormEditor, SIGNAL(ItemModified()), this,
+                   SLOT(Apply()));
 
-  // Event handlers to enable 'Apply' button.
-  Connect(findChildren<QPushButton *>(), SIGNAL(clicked()), this,
-          SLOT(EnableApplyButton()));
-  Connect(findChildren<QCheckBox *>(), SIGNAL(clicked()), this,
-          SLOT(EnableApplyButton()));
+  // Event handlers to apply settings immediately after a user edit.
+  Connect(findChildren<QCheckBox *>(), SIGNAL(clicked()), this, SLOT(Apply()));
   Connect(findChildren<QComboBox *>(), SIGNAL(activated(int)), this,
-          SLOT(EnableApplyButton()));
+          SLOT(Apply()));
   Connect(findChildren<QSpinBox *>(), SIGNAL(editingFinished()), this,
-          SLOT(EnableApplyButton()));
-  // 'Apply' button is disabled on launching.
-  DisableApplyButton();
-
-  // When clicking these messages, CheckBoxs corresponding
-  // to them should be toggled.
-  // We cannot use connect/slot as QLabel doesn't define
-  // clicked slot by default.
-  usageStatsMessage->installEventFilter(this);
-  incognitoModeMessage->installEventFilter(this);
+          SLOT(Apply()));
 
 #ifndef _WIN32
   checkDefaultCheckBox->setVisible(false);
@@ -274,12 +264,7 @@ ConfigDialog::ConfigDialog()
 
 #ifdef __linux__
   // On Linux, disable all fields for UsageStats
-  usageStatsLabel->setEnabled(false);
-  usageStatsLabel->setVisible(false);
-  usageStatsMessage->setEnabled(false);
-  usageStatsMessage->setVisible(false);
-  usageStatsCheckBox->setEnabled(false);
-  usageStatsCheckBox->setVisible(false);
+  usageStatsContainer->setVisible(false);
 #endif  // __linux__
 
   GuiUtil::ReplaceWidgetLabels(this);
@@ -738,6 +723,7 @@ void ConfigDialog::EditKeymap() {
     custom_keymap_table_ = output;
     // set keymapSettingComboBox to "Custom keymap"
     keymapSettingComboBox->setCurrentIndex(0);
+    Apply();
   }
 }
 
@@ -745,6 +731,7 @@ void ConfigDialog::EditRomanTable() {
   std::string output;
   if (gui::RomanTableEditorDialog::Show(this, custom_roman_table_, &output)) {
     custom_roman_table_ = output;
+    Apply();
   }
 }
 
@@ -792,6 +779,7 @@ void ConfigDialog::ResetToDefaults() {
     // TODO(taku): remove the dependency to config::ConfigHandler
     // nice to have GET_DEFAULT_CONFIG command
     ConvertFromProto(config::ConfigHandler::DefaultConfig());
+    Apply();
   }
 }
 
@@ -801,26 +789,37 @@ void ConfigDialog::LaunchAdministrationDialog() {
 #endif  // _WIN32
 }
 
-void ConfigDialog::EnableApplyButton() {
-  applyButton->setEnabled(true);
-}
+void ConfigDialog::ApplyStyleSheet() {
+  auto isDark = palette().color(QPalette::Window).lightness() < 128;
 
-void ConfigDialog::DisableApplyButton() {
-  applyButton->setEnabled(false);
-}
-
-// Catch MouseButtonRelease event to toggle the CheckBoxes
-bool ConfigDialog::eventFilter(QObject *obj, QEvent *event) {
-  if (event->type() == QEvent::MouseButtonRelease) {
-    if (obj == usageStatsMessage) {
-#ifndef CHANNEL_DEV
-      usageStatsCheckBox->toggle();
-#endif  // CHANNEL_DEV
-    } else if (obj == incognitoModeMessage) {
-      incognitoModeCheckBox->toggle();
-    }
+  if (isDark) {
+    setStyleSheet(
+      "QListWidget::item:selected, QFrame[role=gridLayoutContainer] QLabel, QComboBox:!active { color: palette(button-text); }"
+      "QFrame[role=gridLayoutContainer] { background-color: #323232; }"
+      "QListWidget { background-color: #323232; }"
+      "QTableWidget { background-color: #323232; }"
+      "QListWidget::item:selected { background-color: #3E3E3E; }"
+      "QStackedWidget { background-color: #3E3E3E; }"
+    );
+  } else {
+    setStyleSheet(
+      "QListWidget::item:selected, QFrame[role=gridLayoutContainer] QLabel, QComboBox:!active { color: palette(button-text); }"
+      "QFrame[role=gridLayoutContainer] { background-color: #ECECEC; }"
+      "QListWidget { background-color: #ECECEC; }"
+      "QTableWidget { background-color: #ECECEC; }"
+      "QListWidget::item:selected { background-color: #F8F8F8; }"
+      "QStackedWidget { background-color: #F8F8F8; }"
+    );
   }
-  return QObject::eventFilter(obj, event);
+}
+
+bool ConfigDialog::event(QEvent *event)
+{
+    if (event->type() == QEvent::ApplicationPaletteChange ||
+        event->type() == QEvent::PaletteChange) {
+        ApplyStyleSheet();
+    }
+    return QWidget::event(event);
 }
 
 }  // namespace gui
