@@ -104,7 +104,7 @@ ConfigDialog::ConfigDialog()
       initial_use_keyboard_to_change_preedit_method_(false),
       initial_use_mode_indicator_(true) {
   setupUi(this);
-  setStyleSheet(QString::fromUtf8(kQss.data(), kQss.size()));
+  ApplyStyleSheet();
 
   // Remove the context help button (question mark button) from the window.
   Qt::WindowFlags flags = windowFlags();
@@ -846,6 +846,18 @@ void ConfigDialog::LaunchAdministrationDialog() {
 
 void ConfigDialog::EnableApplyButton() {
   configDialogButtonBox->button(QDialogButtonBox::Apply)->setEnabled(true);
+}
+
+void ConfigDialog::ApplyStyleSheet() {
+  setStyleSheet(QString::fromUtf8(kQss.data(), kQss.size()));
+}
+
+bool ConfigDialog::event(QEvent *event) {
+  if (event->type() == QEvent::ApplicationPaletteChange ||
+    event->type() == QEvent::PaletteChange) {
+    ApplyStyleSheet();
+  }
+  return QWidget::event(event);
 }
 
 // Catch MouseButtonRelease event to toggle the CheckBoxes

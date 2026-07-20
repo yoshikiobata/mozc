@@ -77,9 +77,11 @@ class ConfigDialog : public QDialog, private Ui::ConfigDialog {
   virtual void EnableApplyButton();
 
  protected:
+  bool event(QEvent *event) override;
   bool eventFilter(QObject *obj, QEvent *event) override;
 
  private:
+  void ApplyStyleSheet();
   bool GetConfig(config::Config *config);
   bool SetConfig(const config::Config &config);
   // Set/GetSendStatsChechBox read/write registry or file directly
